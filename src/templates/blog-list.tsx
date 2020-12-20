@@ -43,8 +43,15 @@ const BlogIndex = ({
 
   const isFirst = currentPage === 1
   const isLast = currentPage === numPages
-  const prevPage = currentPage - 1 === 1 ? "/" : (currentPage - 1).toString()
-  const nextPage = (currentPage + 1).toString()
+  const prevPage = currentPage - 1 === 1 ? "/" : `/${(currentPage - 1).toString()}`
+  const nextPage = `/${(currentPage + 1).toString()}`
+
+  console.log(`currentPage : ${currentPage}`);
+  console.log(`numPages : ${numPages}`);
+  console.log(`isFirst : ${isFirst}`);
+  console.log(`isLast : ${isLast}`);
+  console.log(`prevPage : ${prevPage}`);
+  console.log(`nextPage : ${nextPage}`);
 
   return (
     <Layout location={location} title={siteTitle}>

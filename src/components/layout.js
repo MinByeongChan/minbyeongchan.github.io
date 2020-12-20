@@ -4,7 +4,8 @@ import { ThemeToggler } from "gatsby-plugin-dark-mode"
 import { scale } from "../utils/typography"
 
 import Footer from "./footer"
-import "./global.css"
+import "../assets/style/global.css"
+import AppLeft from "./AppLeft"
 
 const Layout = ({ location, title, children }) => {
   const toggle = (
@@ -91,10 +92,11 @@ const Layout = ({ location, title, children }) => {
     >
       <div className="sidebar">
         <div
-          className="md:h-screen p-4 flex flex-col justify-center items-center"
-          style={{ minHeight: 200 }}
+          className="md:h-screen p-4 flex flex-col items-center"
+          style={{ minHeight: 200, justifyContent: 'space-between' }}
         >
-          {header}
+
+          <AppLeft/>
         </div>
       </div>
 

@@ -1,15 +1,15 @@
 module.exports = {
   pathPrefix: "/leonids",
   siteMetadata: {
-    title: `Leonids`,
+    title: `ByeongChan`,
     author: {
-      name: `@ry_zou`,
+      name: `@ByeongChan`,
       summary: `web dev`,
     },
     description: `A simple, fixed sidebar two columns Gatsby.js blog starter.`,
     siteUrl: `https://renyuanz.github.io/leonids`,
     social: {
-      twitter: `ry_zou`,
+      twitter: `MinByeongChan`,
     },
     defaultImage: "images/bg.jpeg",
   },
@@ -83,5 +83,7 @@ module.exports = {
     `gatsby-plugin-offline`,
     "gatsby-plugin-dark-mode",
     `gatsby-plugin-postcss`,
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-styled-components`
   ],
 }

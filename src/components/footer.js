@@ -7,11 +7,11 @@ const Footer = () => {
       {` `}
       <a href="https://www.gatsbyjs.org">Gatsby</a> and{" "}
       <a
-        href="https://github.com/renyuanz/leonids"
+        href="https://github.com/minbyeongchan"
         target="_blank"
         rel="noreferrer"
       >
-        Leonids theme
+        Byeong Chan
       </a>
       .
     </footer>

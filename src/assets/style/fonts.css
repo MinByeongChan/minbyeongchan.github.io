@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "MalgunSl";
+  font-weight: lighter;
+  src: url("../../fonts/malgunsl.ttf");
+}
+
+@font-face {
+  font-family: "Malgun";
+  font-weight: normal;
+  src: url("../../fonts/malgunbd.ttf");
+}
+
+@font-face {
+  font-family: "MalgunBd";
+  font-weight: bold;
+  src: url("../../fonts/malgunbd.ttf");
+}
+
+@font-face {
+  font-family: "Nanumsongulsee";
+  font-weight: normal;
+  src: url("../../fonts/nanumsonguelsee.ttf");
+}
