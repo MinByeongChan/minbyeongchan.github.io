@@ -1,7 +1,6 @@
 ---
 title: "[백준] 1012 유기농 배추"
 date: "2019-12-30"
-description: "Backjoon"
 categories: [Algorithm]
 tags: [BOJ DFS]
 comments: true
