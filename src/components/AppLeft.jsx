@@ -1,25 +1,25 @@
-import React from "react"
-import { Link } from "gatsby"
-import styled from "styled-components"
-import { ThemeToggler } from "gatsby-plugin-dark-mode"
+import React from 'react';
+import { Link } from 'gatsby';
+import styled from 'styled-components';
+import { ThemeToggler } from 'gatsby-plugin-dark-mode';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
-import { faGithub } from "@fortawesome/free-brands-svg-icons"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 const toggle = (
   <ThemeToggler>
     {({ toggleTheme, theme }) => {
-      const isDarkMode = theme === "dark"
+      const isDarkMode = theme === 'dark';
       if (theme == null) {
-        return null
+        return null;
       }
 
       return (
         <button
           aria-label="theme-switch"
           className="leading-none p-1"
-          onClick={() => toggleTheme(isDarkMode ? "light" : "dark")}
+          onClick={() => toggleTheme(isDarkMode ? 'light' : 'dark')}
         >
           {isDarkMode ? (
             <svg
@@ -51,37 +51,22 @@ const toggle = (
             </svg>
           )}
         </button>
-      )
+      );
     }}
   </ThemeToggler>
-)
+);
 
 const AppLeft = ({ header }) => {
-  // onClickSlideTab = () => {
-  //   this.props.store.dispatch(setTab())
-  // }
-
-  // listener = () => {
-  //   const tabState = this.props.store.getState().tab.tabState
-
-  //   this.setState({
-  //     slideState: tabState,
-  //   })
-  // }
-
-  // 스토어 데이터 변경 시 렌더링 동작
-  // unsubscribe = this.props.store.subscribe(this.listener);
-
   return (
-    <NavWrapper>
-      <div>
+    <div>
+      <NavWrapper>
         <div>{toggle}</div>
         <div
           style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            width: "100%",
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100%',
           }}
         >
           {/* Title */}
@@ -94,19 +79,19 @@ const AppLeft = ({ header }) => {
           >
             <div
               style={{
-                width: "120px",
-                height: "120px",
-                borderRadius: "60px",
-                padding: "0.5rem",
-                backgroundColor: "rgb(148, 148, 148)",
+                width: '120px',
+                height: '120px',
+                borderRadius: '60px',
+                padding: '0.5rem',
+                backgroundColor: 'rgb(148, 148, 148)',
               }}
             >
               <img
-                src={require("../assets/me_img.png")}
+                src={require('../assets/me_img.png')}
                 alt="logo"
                 style={{
-                  width: "120px",
-                  margin: "0",
+                  width: '120px',
+                  margin: '0',
                 }}
               />
             </div>
@@ -127,7 +112,7 @@ const AppLeft = ({ header }) => {
           {/* <Link to="/about"> */}
           <li
             onClick={() => {
-              alert(`서비스 준비중입니다.`)
+              alert(`서비스 준비중입니다.`);
             }}
           >
             <h3>About</h3>
@@ -139,7 +124,7 @@ const AppLeft = ({ header }) => {
         <BottomContainer>
           <BottomContentWrapper>
             <FontAwesomeIcon icon={faEnvelope} size="lg" />
-            <div style={{ marginLeft: "10px" }}>
+            <div style={{ marginLeft: '10px' }}>
               <a href=" javascript:window.open('mailto:' + ['mbc0481','naver.com'].join('@'))">
                 mbc0481@naver.com
               </a>
@@ -148,36 +133,36 @@ const AppLeft = ({ header }) => {
 
           <BottomContentWrapper>
             <FontAwesomeIcon icon={faGithub} size="lg" />
-            <div style={{ marginLeft: "10px" }}>
+            <div style={{ marginLeft: '10px' }}>
               <a href="https://github.com/MinByeongChan">MinByeongChan</a>
             </div>
           </BottomContentWrapper>
         </BottomContainer>
-      </div>
-    </NavWrapper>
-  )
-}
+      </NavWrapper>
+    </div>
+  );
+};
 
 const NavWrapper = styled.div`
   width: 100%;
   margin: 1rem 0 0 0;
-`
+`;
 
 const UlWrapper = styled.ul`
   margin: 5rem auto 0 auto;
   list-style: none;
   padding: 0;
-`
+`;
 const BottomContainer = styled.div`
   position: absolute;
+  left: 4rem;
   bottom: 3rem;
-  margin: 0 3rem;
-`
+`;
 
 const BottomContentWrapper = styled.div`
   display: flex;
   width: 100%;
   alignitems: center;
-`
+`;
 
-export default AppLeft
+export default AppLeft;
