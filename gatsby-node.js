@@ -65,6 +65,14 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+
+  createPage({
+    path: "/about",
+    component: path.resolve(`./src/templates/about.js`),
+    context: {
+      
+    },
+  })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
