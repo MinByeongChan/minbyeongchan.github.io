@@ -1,12 +1,13 @@
 ---
 title: '[React hook] useCallback, 컴포넌트 성능 최적화'
-date: '2021-01-04'
+date: '2021-01-05'
 categories: [React]
-tags: [React useMemo Hook]
+tags: [React useCallback Hook]
 comments: true
 ---
 
-[React 문서 참조해서 정리](https://ko.reactjs.org/docs/hooks-reference.html#usecallback)
+[React 문서 참조](https://ko.reactjs.org/docs/hooks-reference.html#usecallback)
+[daleseo 참조](https://www.daleseo.com/react-hooks-use-callback/)
 
 # useCallback
 
