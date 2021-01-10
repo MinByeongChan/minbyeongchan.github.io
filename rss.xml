@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[ByeongChan]]></title><description><![CDATA[A simple, fixed sidebar two columns Gatsby.js blog starter.]]></description><link>https://renyuanz.github.io/leonids</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 10 Jan 2021 09:01:26 GMT</lastBuildDate><item><title><![CDATA[[React hook] useCallback, 컴포넌트 성능 최적화]]></title><description><![CDATA[React 문서 참조
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[ByeongChan]]></title><description><![CDATA[A simple, fixed sidebar two columns Gatsby.js blog starter.]]></description><link>https://renyuanz.github.io/leonids</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 10 Jan 2021 13:38:20 GMT</lastBuildDate><item><title><![CDATA[[React hook] useCallback, 컴포넌트 성능 최적화]]></title><description><![CDATA[React 문서 참조
 daleseo 참조 useCallback 이번엔 이다. 와 마찬가지로 메모이제이션 기법을 사용하여 성능을 최적화 시킨다. useMemo와 차이점이 있는데, useMemo…]]></description><link>https://renyuanz.github.io/leonids/react-ch15-useCallback-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/react-ch15-useCallback-post/</guid><pubDate>Tue, 05 Jan 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a href=&quot;https://ko.reactjs.org/docs/hooks-reference.html#usecallback&quot;&gt;React 문서 참조&lt;/a&gt;
 &lt;a href=&quot;https://www.daleseo.com/react-hooks-use-callback/&quot;&gt;daleseo 참조&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;useCallback&lt;/h1&gt;
@@ -754,7 +754,26 @@ daleseo 참조 useCallback 이번엔 이다. 와 마찬가지로 메모이제이
 &lt;iframe height=&quot;301&quot; style=&quot;width: 100%;&quot; scrolling=&quot;no&quot; title=&quot;RwGpQjM&quot; src=&quot;https://codepen.io/minbyeongchan/embed/RwGpQjM?height=301&amp;theme-id=dark&amp;default-tab=js,result&quot; frameborder=&quot;no&quot; loading=&quot;lazy&quot; allowtransparency=&quot;true&quot; allowfullscreen=&quot;true&quot;&gt;
   See the Pen &lt;a href=&apos;https://codepen.io/minbyeongchan/pen/RwGpQjM&apos;&gt;RwGpQjM&lt;/a&gt; by ILikeTteokBoKki
   (&lt;a href=&apos;https://codepen.io/minbyeongchan&apos;&gt;@minbyeongchan&lt;/a&gt;) on &lt;a href=&apos;https://codepen.io&apos;&gt;CodePen&lt;/a&gt;.
-&lt;/iframe&gt;</content:encoded></item><item><title><![CDATA[[React] map함수를 활용한 리스트 컴포넌트 만들기]]></title><description><![CDATA[do-it-라액트프로그래밍 정석 교재 참조해서 공부 map map 함수는 javascript에서 새로운 배열을 만드는 매우 유용한 함수이다. list를 2배해서 새로운 배열 list_new…]]></description><link>https://renyuanz.github.io/leonids/react-ch5-functioncomponent-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/react-ch5-functioncomponent-post/</guid><pubDate>Fri, 27 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a href=&quot;&quot;&gt;do-it-라액트프로그래밍 정석 교재 참조해서 공부&lt;/a&gt;&lt;/p&gt;
+&lt;/iframe&gt;</content:encoded></item><item><title><![CDATA[[React] LocalStorage vs Cookie]]></title><description><![CDATA[StackOverflow 형님들 참조해서 정리 일반적으로 웹에서 로그인 API를 연동하기 위해 로그인 정보를 저장할 수단 및 방법이 필요하다. 방법은 여러가지가 있겠지만 두가지를 정리하려한다. 그것은 LocalStorage…]]></description><link>https://renyuanz.github.io/leonids/react-ch6-localstorage_cookies-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/react-ch6-localstorage_cookies-post/</guid><pubDate>Fri, 27 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/51109559/get-cookie-with-react&quot;&gt;StackOverflow 형님들 참조해서 정리&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;일반적으로 웹에서 로그인 API를 연동하기 위해 로그인 정보를 저장할 수단 및 방법이 필요하다.&lt;/p&gt;
+&lt;p&gt;방법은 여러가지가 있겠지만 두가지를 정리하려한다. 그것은 LocalStorage라는 기능을 사용하거나 Cookie에 저장하는 방식이다.&lt;/p&gt;
+&lt;h1&gt;LocalStorage&lt;/h1&gt;
+&lt;p&gt;로컬스토리지는 영어 번역 그대로 &lt;code class=&quot;language-text&quot;&gt;지역 저장소&lt;/code&gt;를 말한다. 지역이란 Web Browser를 말한다. 브라우저에 저장하므로서 데이터를 보존시킬 수 있다.&lt;/p&gt;
+&lt;p&gt;장점은 보존 기간이 무기한이라는 것이다. 한번 저장후 건들지 않는 이상 절대 없어지지 않는다.&lt;/p&gt;
+&lt;p&gt;단, HTML5에서 지원하기 때문에 최신 Browser를 사용해야한다.&lt;/p&gt;
+&lt;p&gt;마지막으로 데이터는 &lt;strong&gt;5MB&lt;/strong&gt;까지 한정된다. 근데 5MB이면 충분히 쓰고도 남을 데이터이 때문에 특별히 걱정 하지 않아도 될 부분이다.&lt;/p&gt;
+&lt;h1&gt;Cookies&lt;/h1&gt;
+&lt;p&gt;쿠키는 마찬가지로 저장 데이터이다. 하지만 로컬스토리지와 몇가지 차이점이 있다.&lt;/p&gt;
+&lt;p&gt;쿠키는 어느 &lt;strong&gt;브라우저에서 사용이 가능&lt;/strong&gt;하다. 그리고 &lt;strong&gt;영속적이지 않다&lt;/strong&gt;. &lt;strong&gt;일정 시간이 지나면 사라지는 데이터&lt;/strong&gt;이다.&lt;/p&gt;
+&lt;p&gt;그래서 각 쿠키마다 제거되는 시점이 존재한다.&lt;/p&gt;
+&lt;h1&gt;LocalStorage VS Cookies&lt;/h1&gt;
+&lt;p&gt;쿠키와 로컬스토리지는 데이터를 저장한다는 공통점이 있지만 위와같은 차이점이 있어 사용 용도가 좀 다르다.&lt;/p&gt;
+&lt;p&gt;쿠키는 일반적으로 &lt;code class=&quot;language-text&quot;&gt;Server-Side&lt;/code&gt;에서 사용되고, 로컬스토리지는 &lt;code class=&quot;language-text&quot;&gt;Client-Side&lt;/code&gt;에서 사용된다.&lt;/p&gt;
+&lt;p&gt;쿠키는 HTTP flag를 통해 전송 되기 때문에 Javascript로 제어할 수 없다. 그리고 결국 서버에서 제공해야하는 정보이기 때문에 Server-side에 속한다.&lt;/p&gt;
+&lt;p&gt;로컬스토리지는 서버와 전혀 무관하다. 클라이언트(Web)에서 바로 get,set이 가능하기 때문에 Client-Side에 속한다.&lt;/p&gt;
+&lt;p&gt;하지만 로컬스토리지는 &lt;strong&gt;보안상 XSS 공격에 취약&lt;/strong&gt;할 수 있다. 로컬 스토리지는 웹에 저장되기 때문에 key만 알면 바로 접근이 가능하기 때문에, 로그인 정보와 같은 데이터는 저장하지 않는것이 좋을 것 같다. 로컬 스토리지 이외에 SessionStorage(HTML5부터 지원)도 마찬가지이다.&lt;/p&gt;
+&lt;p&gt;그럼 쿠키는 어떤가,&lt;/p&gt;
+&lt;p&gt;쿠키도 마찬가지이다. 하지만 쿠키는 서버의 작업이 필요하다. JWT와 같은 암호화를 시켜서 전달하면 보안상 괜찮은 방식으로 데이터를 받을 수 있다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[React] map함수를 활용한 리스트 컴포넌트 만들기]]></title><description><![CDATA[do-it-라액트프로그래밍 정석 교재 참조해서 공부 map map 함수는 javascript에서 새로운 배열을 만드는 매우 유용한 함수이다. list를 2배해서 새로운 배열 list_new…]]></description><link>https://renyuanz.github.io/leonids/react-ch5-functioncomponent-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/react-ch5-functioncomponent-post/</guid><pubDate>Fri, 27 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a href=&quot;&quot;&gt;do-it-라액트프로그래밍 정석 교재 참조해서 공부&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;map&lt;/h1&gt;
 &lt;p&gt;map 함수는 javascript에서 새로운 배열을 만드는 매우 유용한 함수이다.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; list &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
@@ -817,26 +836,7 @@ daleseo 참조 useCallback 이번엔 이다. 와 마찬가지로 메모이제이
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;state에 list라는 배열을 생성한 후, axios라이브러리를 사용해서 json 데이터를 가져왔다.&lt;/p&gt;
 &lt;p&gt;json array를 list에 초기화 한후 map으로 돌려 컴포넌트를 만든다.&lt;/p&gt;
-&lt;p&gt;ul안에 li를 생성할 수도 있고 다양한 방법으로 재사용 가능한 컴포넌트가 생성이 가능하다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[React] LocalStorage vs Cookie]]></title><description><![CDATA[StackOverflow 형님들 참조해서 정리 일반적으로 웹에서 로그인 API를 연동하기 위해 로그인 정보를 저장할 수단 및 방법이 필요하다. 방법은 여러가지가 있겠지만 두가지를 정리하려한다. 그것은 LocalStorage…]]></description><link>https://renyuanz.github.io/leonids/react-ch6-localstorage_cookies-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/react-ch6-localstorage_cookies-post/</guid><pubDate>Fri, 27 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/51109559/get-cookie-with-react&quot;&gt;StackOverflow 형님들 참조해서 정리&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;일반적으로 웹에서 로그인 API를 연동하기 위해 로그인 정보를 저장할 수단 및 방법이 필요하다.&lt;/p&gt;
-&lt;p&gt;방법은 여러가지가 있겠지만 두가지를 정리하려한다. 그것은 LocalStorage라는 기능을 사용하거나 Cookie에 저장하는 방식이다.&lt;/p&gt;
-&lt;h1&gt;LocalStorage&lt;/h1&gt;
-&lt;p&gt;로컬스토리지는 영어 번역 그대로 &lt;code class=&quot;language-text&quot;&gt;지역 저장소&lt;/code&gt;를 말한다. 지역이란 Web Browser를 말한다. 브라우저에 저장하므로서 데이터를 보존시킬 수 있다.&lt;/p&gt;
-&lt;p&gt;장점은 보존 기간이 무기한이라는 것이다. 한번 저장후 건들지 않는 이상 절대 없어지지 않는다.&lt;/p&gt;
-&lt;p&gt;단, HTML5에서 지원하기 때문에 최신 Browser를 사용해야한다.&lt;/p&gt;
-&lt;p&gt;마지막으로 데이터는 &lt;strong&gt;5MB&lt;/strong&gt;까지 한정된다. 근데 5MB이면 충분히 쓰고도 남을 데이터이 때문에 특별히 걱정 하지 않아도 될 부분이다.&lt;/p&gt;
-&lt;h1&gt;Cookies&lt;/h1&gt;
-&lt;p&gt;쿠키는 마찬가지로 저장 데이터이다. 하지만 로컬스토리지와 몇가지 차이점이 있다.&lt;/p&gt;
-&lt;p&gt;쿠키는 어느 &lt;strong&gt;브라우저에서 사용이 가능&lt;/strong&gt;하다. 그리고 &lt;strong&gt;영속적이지 않다&lt;/strong&gt;. &lt;strong&gt;일정 시간이 지나면 사라지는 데이터&lt;/strong&gt;이다.&lt;/p&gt;
-&lt;p&gt;그래서 각 쿠키마다 제거되는 시점이 존재한다.&lt;/p&gt;
-&lt;h1&gt;LocalStorage VS Cookies&lt;/h1&gt;
-&lt;p&gt;쿠키와 로컬스토리지는 데이터를 저장한다는 공통점이 있지만 위와같은 차이점이 있어 사용 용도가 좀 다르다.&lt;/p&gt;
-&lt;p&gt;쿠키는 일반적으로 &lt;code class=&quot;language-text&quot;&gt;Server-Side&lt;/code&gt;에서 사용되고, 로컬스토리지는 &lt;code class=&quot;language-text&quot;&gt;Client-Side&lt;/code&gt;에서 사용된다.&lt;/p&gt;
-&lt;p&gt;쿠키는 HTTP flag를 통해 전송 되기 때문에 Javascript로 제어할 수 없다. 그리고 결국 서버에서 제공해야하는 정보이기 때문에 Server-side에 속한다.&lt;/p&gt;
-&lt;p&gt;로컬스토리지는 서버와 전혀 무관하다. 클라이언트(Web)에서 바로 get,set이 가능하기 때문에 Client-Side에 속한다.&lt;/p&gt;
-&lt;p&gt;하지만 로컬스토리지는 &lt;strong&gt;보안상 XSS 공격에 취약&lt;/strong&gt;할 수 있다. 로컬 스토리지는 웹에 저장되기 때문에 key만 알면 바로 접근이 가능하기 때문에, 로그인 정보와 같은 데이터는 저장하지 않는것이 좋을 것 같다. 로컬 스토리지 이외에 SessionStorage(HTML5부터 지원)도 마찬가지이다.&lt;/p&gt;
-&lt;p&gt;그럼 쿠키는 어떤가,&lt;/p&gt;
-&lt;p&gt;쿠키도 마찬가지이다. 하지만 쿠키는 서버의 작업이 필요하다. JWT와 같은 암호화를 시켜서 전달하면 보안상 괜찮은 방식으로 데이터를 받을 수 있다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[React] map함수를 활용한 리스트 컴포넌트 만들기]]></title><description><![CDATA[do-it-라액트프로그래밍 정석 교재 참조해서 공부 map map 함수는 javascript에서 새로운 배열을 만드는 매우 유용한 함수이다. list를 2배해서 새로운 배열 list_new…]]></description><link>https://renyuanz.github.io/leonids/react-ch4-maptocomponent-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/react-ch4-maptocomponent-post/</guid><pubDate>Thu, 12 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a href=&quot;&quot;&gt;do-it-라액트프로그래밍 정석 교재 참조해서 공부&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;ul안에 li를 생성할 수도 있고 다양한 방법으로 재사용 가능한 컴포넌트가 생성이 가능하다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[React] map함수를 활용한 리스트 컴포넌트 만들기]]></title><description><![CDATA[do-it-라액트프로그래밍 정석 교재 참조해서 공부 map map 함수는 javascript에서 새로운 배열을 만드는 매우 유용한 함수이다. list를 2배해서 새로운 배열 list_new…]]></description><link>https://renyuanz.github.io/leonids/react-ch4-maptocomponent-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/react-ch4-maptocomponent-post/</guid><pubDate>Thu, 12 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a href=&quot;&quot;&gt;do-it-라액트프로그래밍 정석 교재 참조해서 공부&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;map&lt;/h1&gt;
 &lt;p&gt;map 함수는 javascript에서 새로운 배열을 만드는 매우 유용한 함수이다.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; list &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
@@ -1089,45 +1089,7 @@ A_object&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;a &lt;span
 &lt;a href=&quot;#fnref-1&quot; class=&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Testing "Readability" with a Bunch of Text]]></title><description><![CDATA[Portland in shoreditch Vice, labore typewriter pariatur hoodie fap sartorial Austin. Pinterest literally occupy Schlitz forage. Odio ad blue…]]></description><link>https://renyuanz.github.io/leonids/readability-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/readability-post/</guid><pubDate>Mon, 27 Jul 2020 07:26:03 GMT</pubDate><content:encoded>&lt;p&gt;Portland in shoreditch Vice, labore typewriter pariatur hoodie fap sartorial Austin. Pinterest literally occupy Schlitz forage. Odio ad blue bottle vinyl, 90’s narwhal commodo bitters pour-over nostrud. Ugh est hashtag in, fingerstache adipisicing laboris esse Pinterest shabby chic Portland. Shoreditch bicycle rights anim, flexitarian laboris put a bird on it vinyl cupidatat narwhal. Hashtag artisan skateboard, flannel Bushwick nesciunt salvia aute fixie do plaid post-ironic dolor McSweeney’s. Cliche pour-over chambray nulla four loko skateboard sapiente hashtag.&lt;/p&gt;
-&lt;p&gt;Vero laborum commodo occupy. Semiotics voluptate mumblecore pug. Cosby sweater ullamco quinoa ennui assumenda, sapiente occupy delectus lo-fi. Ea fashion axe Marfa cillum aliquip. Retro Bushwick keytar cliche. Before they sold out sustainable gastropub Marfa readymade, ethical Williamsburg skateboard brunch qui consectetur gentrify semiotics. Mustache cillum irony, fingerstache magna pour-over keffiyeh tousled selfies.&lt;/p&gt;
-&lt;h2&gt;Cupidatat 90’s lo-fi authentic try-hard&lt;/h2&gt;
-&lt;p&gt;In pug Portland incididunt mlkshk put a bird on it vinyl quinoa. Terry Richardson shabby chic +1, scenester Tonx excepteur tempor fugiat voluptate fingerstache aliquip nisi next level. Farm-to-table hashtag Truffaut, Odd Future ex meggings gentrify single-origin coffee try-hard 90’s.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Sartorial hoodie&lt;/li&gt;
-&lt;li&gt;Labore viral forage&lt;/li&gt;
-&lt;li&gt;Tote bag selvage&lt;/li&gt;
-&lt;li&gt;DIY exercitation et id ugh tumblr church-key&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Incididunt umami sriracha, ethical fugiat VHS ex assumenda yr irure direct trade. Marfa Truffaut bicycle rights, kitsch placeat Etsy kogi asymmetrical. Beard locavore flexitarian, kitsch photo booth hoodie plaid ethical readymade leggings yr.&lt;/p&gt;
-&lt;p&gt;Aesthetic odio dolore, meggings disrupt qui readymade stumptown brunch Terry Richardson pour-over gluten-free. Banksy american apparel in selfies, biodiesel flexitarian organic meh wolf quinoa gentrify banjo kogi. Readymade tofu ex, scenester dolor umami fingerstache occaecat fashion axe Carles jean shorts minim. Keffiyeh fashion axe nisi Godard mlkshk dolore. Lomo you probably haven’t heard of them eu non, Odd Future Truffaut pug keytar meggings McSweeney’s Pinterest cred. Etsy literally aute esse, eu bicycle rights qui meggings fanny pack. Gentrify leggings pug flannel duis.&lt;/p&gt;
-&lt;h2&gt;Forage occaecat cardigan qui&lt;/h2&gt;
-&lt;p&gt;Fashion axe hella gastropub lo-fi kogi 90’s aliquip +1 veniam delectus tousled. Cred sriracha locavore gastropub kale chips, iPhone mollit sartorial. Anim dolore 8-bit, pork belly dolor photo booth aute flannel small batch. Dolor disrupt ennui, tattooed whatever salvia Banksy sartorial roof party selfies raw denim sint meh pour-over. Ennui eu cardigan sint, gentrify iPhone cornhole.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Whatever velit occaecat quis deserunt gastropub, leggings elit tousled roof party 3 wolf moon kogi pug blue bottle ea. Fashion axe shabby chic Austin quinoa pickled laborum bitters next level, disrupt deep v accusamus non fingerstache.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Tote bag asymmetrical elit sunt. Occaecat authentic Marfa, hella McSweeney’s next level irure veniam master cleanse. Sed hoodie letterpress artisan wolf leggings, 3 wolf moon commodo ullamco. Anim occupy ea labore Terry Richardson. Tofu ex master cleanse in whatever pitchfork banh mi, occupy fugiat fanny pack Austin authentic. Magna fugiat 3 wolf moon, labore McSweeney’s sustainable vero consectetur. Gluten-free disrupt enim, aesthetic fugiat jean shorts trust fund keffiyeh magna try-hard.&lt;/p&gt;
-&lt;h2&gt;Hoodie Duis&lt;/h2&gt;
-&lt;p&gt;Actually salvia consectetur, hoodie duis lomo YOLO sunt sriracha. Aute pop-up brunch farm-to-table odio, salvia irure occaecat. Sriracha small batch literally skateboard. Echo Park nihil hoodie, aliquip forage artisan laboris. Trust fund reprehenderit nulla locavore. Stumptown raw denim kitsch, keffiyeh nulla twee dreamcatcher fanny pack ullamco 90’s pop-up est culpa farm-to-table. Selfies 8-bit do pug odio.&lt;/p&gt;
-&lt;h3&gt;Thundercats Ho!&lt;/h3&gt;
-&lt;p&gt;Fingerstache thundercats Williamsburg, deep v scenester Banksy ennui vinyl selfies mollit biodiesel duis odio pop-up. Banksy 3 wolf moon try-hard, sapiente enim stumptown deep v ad letterpress. Squid beard brunch, exercitation raw denim yr sint direct trade. Raw denim narwhal id, flannel DIY McSweeney’s seitan. Letterpress artisan bespoke accusamus, meggings laboris consequat Truffaut qui in seitan. Sustainable cornhole Schlitz, twee Cosby sweater banh mi deep v forage letterpress flannel whatever keffiyeh. Sartorial cred irure, semiotics ethical sed blue bottle nihil letterpress.&lt;/p&gt;
-&lt;p&gt;Occupy et selvage squid, pug brunch blog nesciunt hashtag mumblecore skateboard yr kogi. Ugh small batch swag four loko. Fap post-ironic qui tote bag farm-to-table american apparel scenester keffiyeh vero, swag non pour-over gentrify authentic pitchfork. Schlitz scenester lo-fi voluptate, tote bag irony bicycle rights pariatur vero Vice freegan wayfarers exercitation nisi shoreditch. Chambray tofu vero sed. Street art swag literally leggings, Cosby sweater mixtape PBR lomo Banksy non in pitchfork ennui McSweeney’s selfies. Odd Future Banksy non authentic.&lt;/p&gt;
-&lt;p&gt;Aliquip enim artisan dolor post-ironic. Pug tote bag Marfa, deserunt pour-over Portland wolf eu odio intelligentsia american apparel ugh ea. Sunt viral et, 3 wolf moon gastropub pug id. Id fashion axe est typewriter, mlkshk Portland art party aute brunch. Sint pork belly Cosby sweater, deep v mumblecore kitsch american apparel. Try-hard direct trade tumblr sint skateboard. Adipisicing bitters excepteur biodiesel, pickled gastropub aute veniam.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Syntax Highlighting Post]]></title><description><![CDATA[Syntax highlighting is a feature that displays source code, in different colors and fonts according to the category of terms. This feature…]]></description><link>https://renyuanz.github.io/leonids/code-highlighting-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/code-highlighting-post/</guid><pubDate>Mon, 27 Jul 2020 07:26:03 GMT</pubDate><content:encoded>&lt;p&gt;Syntax highlighting is a feature that displays source code, in different colors and fonts according to the category of terms. This feature facilitates writing in a structured language such as a programming language or a markup language as both structures and syntax errors are visually distinct. Highlighting does not affect the meaning of the text itself; it is intended only for human readers.&lt;sup id=&quot;fnref-1&quot;&gt;&lt;a href=&quot;#fn-1&quot; class=&quot;footnote-ref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;h3&gt;Fenced Code Blocks&lt;/h3&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;css&quot;&gt;&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;#container&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;token property&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; left&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;token property&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0 -240px 0 0&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;token property&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 100%&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;div class=&quot;footnotes&quot;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&quot;fn-1&quot;&gt;
-&lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Syntax_highlighting&quot;&gt;http://en.wikipedia.org/wiki/Syntax_highlighting&lt;/a&gt;&lt;/p&gt;
-&lt;a href=&quot;#fnref-1&quot; class=&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Sample Post]]></title><description><![CDATA[HTML Elements Below is just about everything you’ll need to style in the theme. Check the source code to see the many embedded elements…]]></description><link>https://renyuanz.github.io/leonids/sample-post-1/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/sample-post-1/</guid><pubDate>Mon, 27 Jul 2020 07:26:03 GMT</pubDate><content:encoded>&lt;h2&gt;HTML Elements&lt;/h2&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Sample Post]]></title><description><![CDATA[HTML Elements Below is just about everything you’ll need to style in the theme. Check the source code to see the many embedded elements…]]></description><link>https://renyuanz.github.io/leonids/sample-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/sample-post/</guid><pubDate>Mon, 27 Jul 2020 07:26:03 GMT</pubDate><content:encoded>&lt;h2&gt;HTML Elements&lt;/h2&gt;
 &lt;p&gt;Below is just about everything you’ll need to style in the theme. Check the source code to see the many embedded elements within paragraphs.&lt;/p&gt;
 &lt;h1&gt;Heading 1&lt;/h1&gt;
 &lt;h2&gt;Heading 2&lt;/h2&gt;
@@ -1188,7 +1150,22 @@ A_object&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;a &lt;span
 &lt;blockquote&gt;
 &lt;p&gt;And this is how a quote looks.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Some &lt;a href=&quot;http://renyuanz.github.io&quot;&gt;link&lt;/a&gt; can also be shown.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Sample Post]]></title><description><![CDATA[HTML Elements Below is just about everything you’ll need to style in the theme. Check the source code to see the many embedded elements…]]></description><link>https://renyuanz.github.io/leonids/sample-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/sample-post/</guid><pubDate>Mon, 27 Jul 2020 07:26:03 GMT</pubDate><content:encoded>&lt;h2&gt;HTML Elements&lt;/h2&gt;
+&lt;p&gt;Some &lt;a href=&quot;http://renyuanz.github.io&quot;&gt;link&lt;/a&gt; can also be shown.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Syntax Highlighting Post]]></title><description><![CDATA[Syntax highlighting is a feature that displays source code, in different colors and fonts according to the category of terms. This feature…]]></description><link>https://renyuanz.github.io/leonids/code-highlighting-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/code-highlighting-post/</guid><pubDate>Mon, 27 Jul 2020 07:26:03 GMT</pubDate><content:encoded>&lt;p&gt;Syntax highlighting is a feature that displays source code, in different colors and fonts according to the category of terms. This feature facilitates writing in a structured language such as a programming language or a markup language as both structures and syntax errors are visually distinct. Highlighting does not affect the meaning of the text itself; it is intended only for human readers.&lt;sup id=&quot;fnref-1&quot;&gt;&lt;a href=&quot;#fn-1&quot; class=&quot;footnote-ref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;h3&gt;Fenced Code Blocks&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;css&quot;&gt;&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;#container&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; left&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0 -240px 0 0&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 100%&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;footnotes&quot;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&quot;fn-1&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Syntax_highlighting&quot;&gt;http://en.wikipedia.org/wiki/Syntax_highlighting&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;#fnref-1&quot; class=&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Sample Post]]></title><description><![CDATA[HTML Elements Below is just about everything you’ll need to style in the theme. Check the source code to see the many embedded elements…]]></description><link>https://renyuanz.github.io/leonids/sample-post-1/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/sample-post-1/</guid><pubDate>Mon, 27 Jul 2020 07:26:03 GMT</pubDate><content:encoded>&lt;h2&gt;HTML Elements&lt;/h2&gt;
 &lt;p&gt;Below is just about everything you’ll need to style in the theme. Check the source code to see the many embedded elements within paragraphs.&lt;/p&gt;
 &lt;h1&gt;Heading 1&lt;/h1&gt;
 &lt;h2&gt;Heading 2&lt;/h2&gt;
@@ -1302,7 +1279,30 @@ A_object&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;a &lt;span
 &lt;li&gt;Item one&lt;/li&gt;
 &lt;li&gt;Item two&lt;/li&gt;
 &lt;li&gt;Item three&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[[React] 컴포넌트 개념, props 데이터 전달방법]]></title><description><![CDATA[React 가이드 참조해서 공부
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Testing "Readability" with a Bunch of Text]]></title><description><![CDATA[Portland in shoreditch Vice, labore typewriter pariatur hoodie fap sartorial Austin. Pinterest literally occupy Schlitz forage. Odio ad blue…]]></description><link>https://renyuanz.github.io/leonids/readability-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/readability-post/</guid><pubDate>Mon, 27 Jul 2020 07:26:03 GMT</pubDate><content:encoded>&lt;p&gt;Portland in shoreditch Vice, labore typewriter pariatur hoodie fap sartorial Austin. Pinterest literally occupy Schlitz forage. Odio ad blue bottle vinyl, 90’s narwhal commodo bitters pour-over nostrud. Ugh est hashtag in, fingerstache adipisicing laboris esse Pinterest shabby chic Portland. Shoreditch bicycle rights anim, flexitarian laboris put a bird on it vinyl cupidatat narwhal. Hashtag artisan skateboard, flannel Bushwick nesciunt salvia aute fixie do plaid post-ironic dolor McSweeney’s. Cliche pour-over chambray nulla four loko skateboard sapiente hashtag.&lt;/p&gt;
+&lt;p&gt;Vero laborum commodo occupy. Semiotics voluptate mumblecore pug. Cosby sweater ullamco quinoa ennui assumenda, sapiente occupy delectus lo-fi. Ea fashion axe Marfa cillum aliquip. Retro Bushwick keytar cliche. Before they sold out sustainable gastropub Marfa readymade, ethical Williamsburg skateboard brunch qui consectetur gentrify semiotics. Mustache cillum irony, fingerstache magna pour-over keffiyeh tousled selfies.&lt;/p&gt;
+&lt;h2&gt;Cupidatat 90’s lo-fi authentic try-hard&lt;/h2&gt;
+&lt;p&gt;In pug Portland incididunt mlkshk put a bird on it vinyl quinoa. Terry Richardson shabby chic +1, scenester Tonx excepteur tempor fugiat voluptate fingerstache aliquip nisi next level. Farm-to-table hashtag Truffaut, Odd Future ex meggings gentrify single-origin coffee try-hard 90’s.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sartorial hoodie&lt;/li&gt;
+&lt;li&gt;Labore viral forage&lt;/li&gt;
+&lt;li&gt;Tote bag selvage&lt;/li&gt;
+&lt;li&gt;DIY exercitation et id ugh tumblr church-key&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Incididunt umami sriracha, ethical fugiat VHS ex assumenda yr irure direct trade. Marfa Truffaut bicycle rights, kitsch placeat Etsy kogi asymmetrical. Beard locavore flexitarian, kitsch photo booth hoodie plaid ethical readymade leggings yr.&lt;/p&gt;
+&lt;p&gt;Aesthetic odio dolore, meggings disrupt qui readymade stumptown brunch Terry Richardson pour-over gluten-free. Banksy american apparel in selfies, biodiesel flexitarian organic meh wolf quinoa gentrify banjo kogi. Readymade tofu ex, scenester dolor umami fingerstache occaecat fashion axe Carles jean shorts minim. Keffiyeh fashion axe nisi Godard mlkshk dolore. Lomo you probably haven’t heard of them eu non, Odd Future Truffaut pug keytar meggings McSweeney’s Pinterest cred. Etsy literally aute esse, eu bicycle rights qui meggings fanny pack. Gentrify leggings pug flannel duis.&lt;/p&gt;
+&lt;h2&gt;Forage occaecat cardigan qui&lt;/h2&gt;
+&lt;p&gt;Fashion axe hella gastropub lo-fi kogi 90’s aliquip +1 veniam delectus tousled. Cred sriracha locavore gastropub kale chips, iPhone mollit sartorial. Anim dolore 8-bit, pork belly dolor photo booth aute flannel small batch. Dolor disrupt ennui, tattooed whatever salvia Banksy sartorial roof party selfies raw denim sint meh pour-over. Ennui eu cardigan sint, gentrify iPhone cornhole.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Whatever velit occaecat quis deserunt gastropub, leggings elit tousled roof party 3 wolf moon kogi pug blue bottle ea. Fashion axe shabby chic Austin quinoa pickled laborum bitters next level, disrupt deep v accusamus non fingerstache.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Tote bag asymmetrical elit sunt. Occaecat authentic Marfa, hella McSweeney’s next level irure veniam master cleanse. Sed hoodie letterpress artisan wolf leggings, 3 wolf moon commodo ullamco. Anim occupy ea labore Terry Richardson. Tofu ex master cleanse in whatever pitchfork banh mi, occupy fugiat fanny pack Austin authentic. Magna fugiat 3 wolf moon, labore McSweeney’s sustainable vero consectetur. Gluten-free disrupt enim, aesthetic fugiat jean shorts trust fund keffiyeh magna try-hard.&lt;/p&gt;
+&lt;h2&gt;Hoodie Duis&lt;/h2&gt;
+&lt;p&gt;Actually salvia consectetur, hoodie duis lomo YOLO sunt sriracha. Aute pop-up brunch farm-to-table odio, salvia irure occaecat. Sriracha small batch literally skateboard. Echo Park nihil hoodie, aliquip forage artisan laboris. Trust fund reprehenderit nulla locavore. Stumptown raw denim kitsch, keffiyeh nulla twee dreamcatcher fanny pack ullamco 90’s pop-up est culpa farm-to-table. Selfies 8-bit do pug odio.&lt;/p&gt;
+&lt;h3&gt;Thundercats Ho!&lt;/h3&gt;
+&lt;p&gt;Fingerstache thundercats Williamsburg, deep v scenester Banksy ennui vinyl selfies mollit biodiesel duis odio pop-up. Banksy 3 wolf moon try-hard, sapiente enim stumptown deep v ad letterpress. Squid beard brunch, exercitation raw denim yr sint direct trade. Raw denim narwhal id, flannel DIY McSweeney’s seitan. Letterpress artisan bespoke accusamus, meggings laboris consequat Truffaut qui in seitan. Sustainable cornhole Schlitz, twee Cosby sweater banh mi deep v forage letterpress flannel whatever keffiyeh. Sartorial cred irure, semiotics ethical sed blue bottle nihil letterpress.&lt;/p&gt;
+&lt;p&gt;Occupy et selvage squid, pug brunch blog nesciunt hashtag mumblecore skateboard yr kogi. Ugh small batch swag four loko. Fap post-ironic qui tote bag farm-to-table american apparel scenester keffiyeh vero, swag non pour-over gentrify authentic pitchfork. Schlitz scenester lo-fi voluptate, tote bag irony bicycle rights pariatur vero Vice freegan wayfarers exercitation nisi shoreditch. Chambray tofu vero sed. Street art swag literally leggings, Cosby sweater mixtape PBR lomo Banksy non in pitchfork ennui McSweeney’s selfies. Odd Future Banksy non authentic.&lt;/p&gt;
+&lt;p&gt;Aliquip enim artisan dolor post-ironic. Pug tote bag Marfa, deserunt pour-over Portland wolf eu odio intelligentsia american apparel ugh ea. Sunt viral et, 3 wolf moon gastropub pug id. Id fashion axe est typewriter, mlkshk Portland art party aute brunch. Sint pork belly Cosby sweater, deep v mumblecore kitsch american apparel. Try-hard direct trade tumblr sint skateboard. Adipisicing bitters excepteur biodiesel, pickled gastropub aute veniam.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[React] 컴포넌트 개념, props 데이터 전달방법]]></title><description><![CDATA[React 가이드 참조해서 공부
 di-it-라액트프로그래밍 정석 교재 참조해서 공부 컴포넌트 리액트는 기본적으로 컴포넌트별로 동작한다. 컴포넌트란, 각 HTML DOM에 대한 정보가 담겨있는 것이다. DOM…]]></description><link>https://renyuanz.github.io/leonids/react-ch2-props-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/react-ch2-props-post/</guid><pubDate>Sun, 26 Jul 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a href=&quot;https://ko.reactjs.org/docs/rendering-elements.html&quot;&gt;React 가이드 참조해서 공부&lt;/a&gt;
 &lt;a href=&quot;&quot;&gt;di-it-라액트프로그래밍 정석 교재 참조해서 공부&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;컴포넌트&lt;/h1&gt;
@@ -3372,7 +3372,33 @@ RRRRR&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;되게 간단하게 풀었다ㅋㅋㅋ. 처음 입력은 temp에 받고 이후 sol1은 정상적으로 영역을 구하고, sol2는 temp에서 R을 모두 없앤 후 영역을 구했다.&lt;/p&gt;
 &lt;p&gt;다른 방법을 시도하긴 했는데 실패해서 간단하게 풀었다.&lt;/p&gt;
 &lt;h1&gt;Source&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/MinByeongChan/myMBC/blob/master/Codetest/baekjoon/10026_ColorBlindness.cpp&quot;&gt;Github 전체소스&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[백준] 2583 영역 구하기]]></title><description><![CDATA[Problem BOJ 2583 눈금의 간격이 1인 M×N(M,N≤100)크기의 모눈종이가 있다. 이 모눈종이 위에 눈금에 맞추어 K개의 직사각형을 그릴 때, 이들 K…]]></description><link>https://renyuanz.github.io/leonids/algorithm-BOJ-2583-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/algorithm-BOJ-2583-post/</guid><pubDate>Wed, 08 Jan 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Problem&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/MinByeongChan/myMBC/blob/master/Codetest/baekjoon/10026_ColorBlindness.cpp&quot;&gt;Github 전체소스&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[Android] Activity와 AppCompatActivity의 차이점]]></title><description><![CDATA[Activity와 AppCompatActivity의 차이점을 알아보기 전에 먼저 Context를 알아야한다. Context란? 는 안드로이드 시스템에서 제공하는 추상 클래스를 말한다. Context는 이제부터 알아볼 Activity…]]></description><link>https://renyuanz.github.io/leonids/android-ch3-activity-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/android-ch3-activity-post/</guid><pubDate>Wed, 08 Jan 2020 00:00:00 GMT</pubDate><content:encoded>&lt;style&gt;
+    .android {
+        color: green;
+    } 
+&lt;/style&gt;
+&lt;p&gt;Activity와 AppCompatActivity의 차이점을 알아보기 전에 먼저 Context를 알아야한다.&lt;/p&gt;
+&lt;h1&gt;Context란?&lt;/h1&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Context&lt;/code&gt;는 안드로이드 시스템에서 제공하는 추상 클래스를 말한다. Context는 이제부터 알아볼 Activity, AppcompatActivity, ActionBarActivity 등 과 같은 클래스들의 &lt;code class=&quot;language-text&quot;&gt;슈퍼클래스&lt;/code&gt;이다. 또한 액티비티, 브로드캐스트, 인텐트를 사용할 때 사용되기도 한다.&lt;/p&gt;
+&lt;p&gt;인텐트 예제를 봐도 Context가 사용되는 것을 많이 봤을 것이다.&lt;/p&gt;
+&lt;h1&gt;Activity&lt;/h1&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Activity&lt;/code&gt;는 Context로부터 불러져온 클래스 중 하나이다. 사용자의 포커싱이 주어진 상태를 말한다. 포커싱이 주어졌다는 것은 사용자가 터치하거나 어떤 이벤트를 주는 것이 가능한 상태를 말한다. Activity는 이러한 이벤트들을 실제 가능하게 만들고, 이벤트로 부터 발생한 데이터를 처리하기까지 한다.&lt;/p&gt;
+&lt;p&gt;인텐트(액티비티간 데이터를 송수신하는 것) 역시 액티비티로부터 파생되는 개념이다.&lt;/p&gt;
+&lt;p&gt;액티비티는 모든 Activity에서 &lt;code class=&quot;language-text&quot;&gt;Base&lt;/code&gt;를 의미한다. &lt;strong&gt;즉 다른 ~Activity는 모두 Activity로부터 상속받은 클래스들이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;h1&gt;AppcompatActivity&lt;/h1&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;AppcompatActivity&lt;/code&gt;는 앞서 말했듯이 Activity를 상속받는다. 그럼 왜 따로 Activity를 상속받는 또다른 액티비티를 만들었을까?&lt;/p&gt;
+&lt;p&gt;안드로이드 버전은 계속 업그레이드 되고, 향상된 성능과 추가된 기능에 따라서 새로운 Activity가 생겨난 것이다.&lt;/p&gt;
+&lt;p&gt;관계를 나타내면 다음과 같이 생각할 수 있다. 예제로 fragment를 상속하자.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;AppCompatActivity&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;FragmentActivity&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;android.content.&lt;code class=&quot;language-text&quot;&gt;Context&lt;/code&gt;
+-&gt; android.content.ContextWrapper
+-&gt; android.view.ContextThemeWrapper
+-&gt; android.app.&lt;code class=&quot;language-text&quot;&gt;Activity&lt;/code&gt;
+-&gt; android.support.v4.app.&lt;code class=&quot;language-text&quot;&gt;FragmentActivity&lt;/code&gt;
+-&gt; android.support.v7.app.&lt;code class=&quot;language-text&quot;&gt;AppCompatActivity&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;위에 표는 안드로이드 개발자 가이드에서 참조한 것이다.&lt;/p&gt;
+&lt;p&gt;힌눈에 상속관계를 살펴볼 수 있다. 최근에는 &lt;code class=&quot;language-text&quot;&gt;androidX&lt;/code&gt;까지 나왔다는 것도 알아두자.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[백준] 2583 영역 구하기]]></title><description><![CDATA[Problem BOJ 2583 눈금의 간격이 1인 M×N(M,N≤100)크기의 모눈종이가 있다. 이 모눈종이 위에 눈금에 맞추어 K개의 직사각형을 그릴 때, 이들 K…]]></description><link>https://renyuanz.github.io/leonids/algorithm-BOJ-2583-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/algorithm-BOJ-2583-post/</guid><pubDate>Wed, 08 Jan 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Problem&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/2583&quot;&gt;BOJ 2583&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;눈금의 간격이 1인 M×N(M,N≤100)크기의 모눈종이가 있다. 이 모눈종이 위에 눈금에 맞추어 K개의 직사각형을 그릴 때, 이들 K개의 직사각형의 내부를 제외한 나머지 부분이 몇 개의 분리된 영역으로 나누어진다.&lt;/p&gt;
 &lt;p&gt;예를 들어 M=5, N=7 인 모눈종이 위에 &amp;#x3C;그림 1&gt;과 같이 직사각형 3개를 그렸다면, 그 나머지 영역은 &amp;#x3C;그림 2&gt;와 같이 3개의 분리된 영역으로 나누어지게 된다.&lt;/p&gt;
@@ -3432,33 +3458,7 @@ RRRRR&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;result벡터는 영역 크기들을 오름차순 정렬해주기 위해 선언하였다. 정렬은 main에서 수행된다.&lt;/p&gt;
 &lt;p&gt;DFS를 응용아닌 응용을해서 풀었던 문제였다. 비슷한 문제를 몇번 풀어봐서 간단하게 풀 수 있었다.&lt;/p&gt;
 &lt;h1&gt;Source&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/MinByeongChan/myMBC/blob/master/Codetest/baekjoon/2583_GetArea.cpp&quot;&gt;Github 전체소스&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[Android] Activity와 AppCompatActivity의 차이점]]></title><description><![CDATA[Activity와 AppCompatActivity의 차이점을 알아보기 전에 먼저 Context를 알아야한다. Context란? 는 안드로이드 시스템에서 제공하는 추상 클래스를 말한다. Context는 이제부터 알아볼 Activity…]]></description><link>https://renyuanz.github.io/leonids/android-ch3-activity-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/android-ch3-activity-post/</guid><pubDate>Wed, 08 Jan 2020 00:00:00 GMT</pubDate><content:encoded>&lt;style&gt;
-    .android {
-        color: green;
-    } 
-&lt;/style&gt;
-&lt;p&gt;Activity와 AppCompatActivity의 차이점을 알아보기 전에 먼저 Context를 알아야한다.&lt;/p&gt;
-&lt;h1&gt;Context란?&lt;/h1&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Context&lt;/code&gt;는 안드로이드 시스템에서 제공하는 추상 클래스를 말한다. Context는 이제부터 알아볼 Activity, AppcompatActivity, ActionBarActivity 등 과 같은 클래스들의 &lt;code class=&quot;language-text&quot;&gt;슈퍼클래스&lt;/code&gt;이다. 또한 액티비티, 브로드캐스트, 인텐트를 사용할 때 사용되기도 한다.&lt;/p&gt;
-&lt;p&gt;인텐트 예제를 봐도 Context가 사용되는 것을 많이 봤을 것이다.&lt;/p&gt;
-&lt;h1&gt;Activity&lt;/h1&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Activity&lt;/code&gt;는 Context로부터 불러져온 클래스 중 하나이다. 사용자의 포커싱이 주어진 상태를 말한다. 포커싱이 주어졌다는 것은 사용자가 터치하거나 어떤 이벤트를 주는 것이 가능한 상태를 말한다. Activity는 이러한 이벤트들을 실제 가능하게 만들고, 이벤트로 부터 발생한 데이터를 처리하기까지 한다.&lt;/p&gt;
-&lt;p&gt;인텐트(액티비티간 데이터를 송수신하는 것) 역시 액티비티로부터 파생되는 개념이다.&lt;/p&gt;
-&lt;p&gt;액티비티는 모든 Activity에서 &lt;code class=&quot;language-text&quot;&gt;Base&lt;/code&gt;를 의미한다. &lt;strong&gt;즉 다른 ~Activity는 모두 Activity로부터 상속받은 클래스들이다.&lt;/strong&gt;&lt;/p&gt;
-&lt;h1&gt;AppcompatActivity&lt;/h1&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;AppcompatActivity&lt;/code&gt;는 앞서 말했듯이 Activity를 상속받는다. 그럼 왜 따로 Activity를 상속받는 또다른 액티비티를 만들었을까?&lt;/p&gt;
-&lt;p&gt;안드로이드 버전은 계속 업그레이드 되고, 향상된 성능과 추가된 기능에 따라서 새로운 Activity가 생겨난 것이다.&lt;/p&gt;
-&lt;p&gt;관계를 나타내면 다음과 같이 생각할 수 있다. 예제로 fragment를 상속하자.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;AppCompatActivity&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;FragmentActivity&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;android.content.&lt;code class=&quot;language-text&quot;&gt;Context&lt;/code&gt;
--&gt; android.content.ContextWrapper
--&gt; android.view.ContextThemeWrapper
--&gt; android.app.&lt;code class=&quot;language-text&quot;&gt;Activity&lt;/code&gt;
--&gt; android.support.v4.app.&lt;code class=&quot;language-text&quot;&gt;FragmentActivity&lt;/code&gt;
--&gt; android.support.v7.app.&lt;code class=&quot;language-text&quot;&gt;AppCompatActivity&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;위에 표는 안드로이드 개발자 가이드에서 참조한 것이다.&lt;/p&gt;
-&lt;p&gt;힌눈에 상속관계를 살펴볼 수 있다. 최근에는 &lt;code class=&quot;language-text&quot;&gt;androidX&lt;/code&gt;까지 나왔다는 것도 알아두자.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[백준] 9466 팀 프로젝트]]></title><description><![CDATA[Problem BOJ 946…]]></description><link>https://renyuanz.github.io/leonids/algorithm-BOJ-9466-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/algorithm-BOJ-9466-post/</guid><pubDate>Tue, 07 Jan 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Problem&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/MinByeongChan/myMBC/blob/master/Codetest/baekjoon/2583_GetArea.cpp&quot;&gt;Github 전체소스&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[백준] 9466 팀 프로젝트]]></title><description><![CDATA[Problem BOJ 946…]]></description><link>https://renyuanz.github.io/leonids/algorithm-BOJ-9466-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/algorithm-BOJ-9466-post/</guid><pubDate>Tue, 07 Jan 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Problem&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/9466&quot;&gt;BOJ 9466&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;이번 가을학기에 ‘문제 해결’ 강의를 신청한 학생들은 텀 프로젝트를 수행해야 한다. 프로젝트 팀원 수에는 제한이 없다. 심지어 모든 학생들이 동일한 팀의 팀원인 경우와 같이 한 팀만 있을 수도 있다. 프로젝트 팀을 구성하기 위해, 모든 학생들은 프로젝트를 함께하고 싶은 학생을 선택해야 한다. (단, 단 한 명만 선택할 수 있다.) 혼자 하고 싶어하는 학생은 자기 자신을 선택하는 것도 가능하다.&lt;/p&gt;
 &lt;p&gt;학생들이(s1, s2, …, sr)이라 할 때, r=1이고 s1이 s1을 선택하는 경우나, s1이 s2를 선택하고, s2가 s3를 선택하고,…, sr-1이 sr을 선택하고, sr이 s1을 선택하는 경우에만 한 팀이 될 수 있다.&lt;/p&gt;
@@ -3669,7 +3669,36 @@ L: 왼쪽으로 한 칸 가기&lt;/p&gt;
 &lt;p&gt;을 의미한다.&lt;/p&gt;
 &lt;p&gt;탐색 후 좌표가 false이면 아직 탐색을 안했다는 것이고 true로 변경해준다. 단, 양방향으로 나타내주기 위해 탐색전, 탐색후 좌표 둘다 true로 변경해준다.&lt;/p&gt;
 &lt;h1&gt;Source&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/MinByeongChan/myMBC/blob/master/Codetest/Programmers/LengthOfVisited.cpp&quot;&gt;Github 전체소스&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[Javascript] 변수선언 방식의 차이(const, var, let)]]></title><description><![CDATA[Object 란 객체지향은 어떤 Object를 명시하여 보다 코드 구성을 간결하고 개발자가 읽기 쉬운 형태로 구성한다. 여기서 기초가 되는 것은 당연 Object(객체)이다. JS에서도 Object가 사용되는데, Java와 C…]]></description><link>https://renyuanz.github.io/leonids/javascript-ch2-object-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/javascript-ch2-object-post/</guid><pubDate>Thu, 02 Jan 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Object 란&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/MinByeongChan/myMBC/blob/master/Codetest/Programmers/LengthOfVisited.cpp&quot;&gt;Github 전체소스&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[Javascript] 변수선언 방식의 차이(const, var, let)]]></title><description><![CDATA[var Javascript(이하 “JS”)에서 는 일반적으로 모든 변수 타입을 받는다. 일반적인 프로그래밍 언어(C/C++, Java 등등)에서는 변수마다 각 자료형을 선언해주었다. Int, char, string과같이 말이다. 하지만 JS…]]></description><link>https://renyuanz.github.io/leonids/javascript-ch1-variables-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/javascript-ch1-variables-post/</guid><pubDate>Thu, 02 Jan 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;var&lt;/h2&gt;
+&lt;p&gt;Javascript(이하 “JS”)에서 &lt;code class=&quot;language-text&quot;&gt;var&lt;/code&gt;는 일반적으로 모든 변수 타입을 받는다. 일반적인 프로그래밍 언어(C/C++, Java 등등)에서는 변수마다 각 자료형을 선언해주었다. Int, char, string과같이 말이다. 하지만 JS에서는 그럴 필요가 없다. &lt;code class=&quot;language-text&quot;&gt;number&lt;/code&gt;는 정수, 실수 모든 것을 포함한다.&lt;/p&gt;
+&lt;p&gt;암튼 var의 기능은 이렇게 모든 자료형 타입을 받는다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token script&quot;&gt;&lt;span class=&quot;token language-javascript&quot;&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;MBC&quot;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// string&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; b &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// int&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; c &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1.11&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// float&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;모두 컴파일 에러없이 정상적으로 동작한다.&lt;/p&gt;
+&lt;h2&gt;const&lt;/h2&gt;
+&lt;p&gt;C++에서도 언급했던 &lt;code class=&quot;language-text&quot;&gt;const&lt;/code&gt;이다. JS에서도 똑같이 적용된다. 한번 초기화한 변수는 변경 불가능한 것을 의미한다. 단, 선언 방식이 좀 다른데 아래 예제롤 보고 참고하자.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token script&quot;&gt;&lt;span class=&quot;token language-javascript&quot;&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;MBC&quot;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; b &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;HELLO&quot;&lt;/span&gt;
+
+  a &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; b &lt;span class=&quot;token comment&quot;&gt;// ERROR&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;let&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;let&lt;/code&gt;은 먼가 생소하다. var는 모든 자료형을 받는다고 한다. 이것은 프로그래밍 할때 큰 단점으로 다가올 수 있다. 이런 단점을 보완하기 위해 있는 것이 &lt;code class=&quot;language-text&quot;&gt;let&lt;/code&gt;이다.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;let&lt;/code&gt;은 &lt;strong&gt;scope(괄호 안)에서 재 초기화 시킨 것은 scope외 밖에서는 영향 받지 않는다.&lt;/strong&gt; 무슨의미인지는 아래 예제를 보면 와닿을 것이다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token script&quot;&gt;&lt;span class=&quot;token language-javascript&quot;&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a &lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// scope안에서 재 초기화&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 변하지 않고 10 출력&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위 예제는 a(10)에 10을 더해 20을 출력하려고 했다. 하지만 출력 결과는 10이 나온다. 이것이 let의 특성이다.&lt;/p&gt;
+&lt;p&gt;scope안에서 초기화 시켜버리면 &lt;strong&gt;scope안에서&lt;/strong&gt;는 20이 출력될것이다.&lt;/p&gt;
+&lt;p&gt;하지만 &lt;strong&gt;밖&lt;/strong&gt;에서는 다시 10이 출력된다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[Javascript] 변수선언 방식의 차이(const, var, let)]]></title><description><![CDATA[Object 란 객체지향은 어떤 Object를 명시하여 보다 코드 구성을 간결하고 개발자가 읽기 쉬운 형태로 구성한다. 여기서 기초가 되는 것은 당연 Object(객체)이다. JS에서도 Object가 사용되는데, Java와 C…]]></description><link>https://renyuanz.github.io/leonids/javascript-ch2-object-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/javascript-ch2-object-post/</guid><pubDate>Thu, 02 Jan 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Object 란&lt;/h1&gt;
 &lt;p&gt;객체지향은 어떤 Object를 명시하여 보다 코드 구성을 간결하고 개발자가 읽기 쉬운 형태로 구성한다. 여기서 기초가 되는 것은 당연 Object(객체)이다.&lt;/p&gt;
 &lt;p&gt;JS에서도 Object가 사용되는데, Java와 C++과는 조큼 다른 형식으로 쓰인다.&lt;/p&gt;
 &lt;p&gt;알아보기 전에 우선 배열부터 알아보자.&lt;/p&gt;
@@ -3715,36 +3744,7 @@ L: 왼쪽으로 한 칸 가기&lt;/p&gt;
 그 결과를 확인하기 위해 document.write()를 사용하여 출력 결과를 확인했다.&lt;/p&gt;
 &lt;p&gt;arr인자를 가져오는 방법은 arr.list[]라고 선언한다. []안에는 list안에 들어있는 인자들의 key값이 된다. list[key]값을 불러오면 그에 대한 value가 출력된다.&lt;/p&gt;
 &lt;p&gt;show는 function()이라는 인자를 value로 사용됫다. 따라서 show를 불러오면 function내용이 출력되는데 주의할 점은 &lt;strong&gt;show()&lt;/strong&gt;라고 선언해야한다. show뒤에 function이라 선언했기 때문에 show는 메소드를 의미한다.&lt;/p&gt;
-&lt;p&gt;결과적으로 key값인 a, b, c가 출력되고 그에대한 value 1, 2, 3이 차례대로 출력되는 것을 확인할 수 있다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[Javascript] 변수선언 방식의 차이(const, var, let)]]></title><description><![CDATA[var Javascript(이하 “JS”)에서 는 일반적으로 모든 변수 타입을 받는다. 일반적인 프로그래밍 언어(C/C++, Java 등등)에서는 변수마다 각 자료형을 선언해주었다. Int, char, string과같이 말이다. 하지만 JS…]]></description><link>https://renyuanz.github.io/leonids/javascript-ch1-variables-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/javascript-ch1-variables-post/</guid><pubDate>Thu, 02 Jan 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;var&lt;/h2&gt;
-&lt;p&gt;Javascript(이하 “JS”)에서 &lt;code class=&quot;language-text&quot;&gt;var&lt;/code&gt;는 일반적으로 모든 변수 타입을 받는다. 일반적인 프로그래밍 언어(C/C++, Java 등등)에서는 변수마다 각 자료형을 선언해주었다. Int, char, string과같이 말이다. 하지만 JS에서는 그럴 필요가 없다. &lt;code class=&quot;language-text&quot;&gt;number&lt;/code&gt;는 정수, 실수 모든 것을 포함한다.&lt;/p&gt;
-&lt;p&gt;암튼 var의 기능은 이렇게 모든 자료형 타입을 받는다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token script&quot;&gt;&lt;span class=&quot;token language-javascript&quot;&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;MBC&quot;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// string&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; b &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// int&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; c &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1.11&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// float&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;모두 컴파일 에러없이 정상적으로 동작한다.&lt;/p&gt;
-&lt;h2&gt;const&lt;/h2&gt;
-&lt;p&gt;C++에서도 언급했던 &lt;code class=&quot;language-text&quot;&gt;const&lt;/code&gt;이다. JS에서도 똑같이 적용된다. 한번 초기화한 변수는 변경 불가능한 것을 의미한다. 단, 선언 방식이 좀 다른데 아래 예제롤 보고 참고하자.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token script&quot;&gt;&lt;span class=&quot;token language-javascript&quot;&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;MBC&quot;&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; b &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;HELLO&quot;&lt;/span&gt;
-
-  a &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; b &lt;span class=&quot;token comment&quot;&gt;// ERROR&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;let&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;let&lt;/code&gt;은 먼가 생소하다. var는 모든 자료형을 받는다고 한다. 이것은 프로그래밍 할때 큰 단점으로 다가올 수 있다. 이런 단점을 보완하기 위해 있는 것이 &lt;code class=&quot;language-text&quot;&gt;let&lt;/code&gt;이다.&lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;let&lt;/code&gt;은 &lt;strong&gt;scope(괄호 안)에서 재 초기화 시킨 것은 scope외 밖에서는 영향 받지 않는다.&lt;/strong&gt; 무슨의미인지는 아래 예제를 보면 와닿을 것이다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token script&quot;&gt;&lt;span class=&quot;token language-javascript&quot;&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a &lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// scope안에서 재 초기화&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 변하지 않고 10 출력&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;위 예제는 a(10)에 10을 더해 20을 출력하려고 했다. 하지만 출력 결과는 10이 나온다. 이것이 let의 특성이다.&lt;/p&gt;
-&lt;p&gt;scope안에서 초기화 시켜버리면 &lt;strong&gt;scope안에서&lt;/strong&gt;는 20이 출력될것이다.&lt;/p&gt;
-&lt;p&gt;하지만 &lt;strong&gt;밖&lt;/strong&gt;에서는 다시 10이 출력된다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[백준] 11403 경로 찾기]]></title><description><![CDATA[Problem BOJ 11403 가중치 없는 방향 그래프 G가 주어졌을 때, 모든 정점 (i, j)에 대해서, i에서 j로 가는 경로가 있는지 없는지 구하는 프로그램을 작성하시오. 첫째 줄에 정점의 개수 N (1 ≤ N ≤ 10…]]></description><link>https://renyuanz.github.io/leonids/algorithm-BOJ-11403-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/algorithm-BOJ-11403-post/</guid><pubDate>Wed, 01 Jan 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Problem&lt;/h1&gt;
+&lt;p&gt;결과적으로 key값인 a, b, c가 출력되고 그에대한 value 1, 2, 3이 차례대로 출력되는 것을 확인할 수 있다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[백준] 11403 경로 찾기]]></title><description><![CDATA[Problem BOJ 11403 가중치 없는 방향 그래프 G가 주어졌을 때, 모든 정점 (i, j)에 대해서, i에서 j로 가는 경로가 있는지 없는지 구하는 프로그램을 작성하시오. 첫째 줄에 정점의 개수 N (1 ≤ N ≤ 10…]]></description><link>https://renyuanz.github.io/leonids/algorithm-BOJ-11403-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/algorithm-BOJ-11403-post/</guid><pubDate>Wed, 01 Jan 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Problem&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/11403&quot;&gt;BOJ 11403&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;가중치 없는 방향 그래프 G가 주어졌을 때, 모든 정점 (i, j)에 대해서, i에서 j로 가는 경로가 있는지 없는지 구하는 프로그램을 작성하시오.&lt;/p&gt;
 &lt;p&gt;첫째 줄에 정점의 개수 N (1 ≤ N ≤ 100)이 주어진다. 둘째 줄부터 N개 줄에는 그래프의 인접 행렬이 주어진다. i번째 줄의 j번째 숫자가 1인 경우에는 i에서 j로 가는 간선이 존재한다는 뜻이고, 0인 경우는 없다는 뜻이다. i번째 줄의 i번째 숫자는 항상 0이다.&lt;/p&gt;
@@ -4756,7 +4756,89 @@ recycler_View&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;layou
 		dp&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;j &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;dp&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;j &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  dp&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;j &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; coin&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;답지를 보고 힌트를 얻은 문제였다. 드릅게 어렵다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[백준] 1806 부분합]]></title><description><![CDATA[Problem BOJ 1806 10,000 이하의 자연수로 이루어진 길이 N짜리 수열이 주어진다. 이 수열에서 연속된 수들의 부분합 중에 그 합이 S 이상이 되는 것 중, 가장 짧은 것의 길이를 구하는 프로그램을 작성하시오. Solution…]]></description><link>https://renyuanz.github.io/leonids/algorithm-BOJ-1806-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/algorithm-BOJ-1806-post/</guid><pubDate>Tue, 10 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Problem&lt;/h1&gt;
+&lt;p&gt;답지를 보고 힌트를 얻은 문제였다. 드릅게 어렵다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[백준] 1912 연속합]]></title><description><![CDATA[Problem BOJ 1912 n개의 정수로 이루어진 임의의 수열이 주어진다. 우리는 이 중 연속된 몇 개의 수를 선택해서 구할 수 있는 합 중 가장 큰 합을 구하려고 한다. 단, 수는 한 개 이상 선택해야 한다. 예를 들어서 10, -4, 3,…]]></description><link>https://renyuanz.github.io/leonids/algorithm-BOJ-1912-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/algorithm-BOJ-1912-post/</guid><pubDate>Tue, 10 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Problem&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/1912&quot;&gt;BOJ 1912&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;n개의 정수로 이루어진 임의의 수열이 주어진다. 우리는 이 중 연속된 몇 개의 수를 선택해서 구할 수 있는 합 중 가장 큰 합을 구하려고 한다. 단, 수는 한 개 이상 선택해야 한다.&lt;/p&gt;
+&lt;p&gt;예를 들어서 10, -4, 3, 1, 5, 6, -35, 12, 21, -1 이라는 수열이 주어졌다고 하자. 여기서 정답은 12+21인 33이 정답이 된다.&lt;/p&gt;
+&lt;h1&gt;Solution 1&lt;/h1&gt;
+&lt;h2&gt;문제 접근 순서&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;제한시간 조건과 주어진 n의 최대값을 보고 완전탐색으로 접근하면 효율성 문제가 있을거같음.&lt;/li&gt;
+&lt;li&gt;DP로 접근.&lt;/li&gt;
+&lt;li&gt;한차례의 반복문이 시작되고 최대값을 계속해서 갱신&lt;/li&gt;
+&lt;li&gt;배열의 인덱스 값이 음수일때를 분기점으로 하여 다시 최대값 갱신&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;n의 값이 5000이상 일때 동작이 안됨…&lt;/p&gt;
+&lt;p&gt;원인은 스택오버플로우 현상때문에 발생하는듯 하다.&lt;/p&gt;
+&lt;p&gt;BinarySearch함수에서 적당한 시간에 빠져나오지 못하여 스택이 샇이고 도중에 중단되는 것 같다. 탈출조건을 잘 설정한 것 같은데 이상하게 안된다.&lt;/p&gt;
+&lt;h3&gt;Source 1&lt;/h3&gt;
+&lt;p&gt;{% highlight cpp %}
+void BinarySearch1(int i, long long int sum) {&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;long long int sum_temp = sum + v[i];
+
+if (sum_temp &amp;lt; dp[i])
+	return;
+
+// Update dp[i](max value)
+if (sum_temp &amp;gt; dp[i])
+	dp[i] = sum_temp;
+
+// Searching for max value
+if (dp[i] &amp;gt; mx)
+	mx = dp[i];
+
+if (i &amp;gt; N - 2)
+	return;
+
+BinarySearch1(i + 1, dp[i]);
+
+if (v[i + 1] &amp;lt; 0 &amp;amp;&amp;amp; i &amp;lt; N-3)
+	BinarySearch1(i + 2, 0);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;}
+{% endhighlight %}&lt;/p&gt;
+&lt;h1&gt;Solution 2&lt;/h1&gt;
+&lt;h2&gt;문제 접근 순서&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;탑다운&lt;/code&gt; 방식으로 풀이할때 리턴값을 제대로 설정을 못해 &lt;code class=&quot;language-text&quot;&gt;바텀업&lt;/code&gt; 접근 방식으로 풀이를 진행하였다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;각 벡터에 대한 입력을 받은 후 dp벡터에 그대로 복사.&lt;/li&gt;
+&lt;li&gt;dp[i-1]이 음수일때를 체크.&lt;/li&gt;
+&lt;li&gt;dp[i-1] + dp[i] 가 양수이면 계속 dp[i]에 더함.
+(계속 더하는 것이 최대값을 갖는 방법이기 때문)&lt;/li&gt;
+&lt;li&gt;매 반복시 최대값을 검사.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Source 2&lt;/h3&gt;
+&lt;p&gt;{% highlight cpp %}
+int main() {
+cin &gt;&gt; N;
+v.resize(N);&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;for (int i = 0; i &amp;lt; N; i++)
+	cin &amp;gt;&amp;gt; v[i];
+
+// duplicate Input vector
+dp = v;
+
+//Binary search
+//BinarySearch(0, 0);
+
+// when First index is minus value,
+if (dp[0] &amp;gt; mx)
+	mx = dp[0];
+
+for (int i = 1; i &amp;lt; N; i++) {
+
+	if (dp[i - 1] &amp;gt; 0 &amp;amp;&amp;amp; dp[i] + dp[i - 1] &amp;gt; 0) {
+		dp[i] += dp[i - 1];
+	}
+	if (mx &amp;lt; dp[i])
+		mx = dp[i];
+}
+
+cout &amp;lt;&amp;lt; mx;
+
+return 0;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;}
+{% endhighlight %}&lt;/p&gt;
+&lt;p&gt;문제만 보면 별로 어려울것 같지 않은 문제였지만 생각보다 오래걸린 문제였다. 아직 탈출조건을 잘 설정 못해서 계속 해맷다. 갈길이 멀다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[백준] 1806 부분합]]></title><description><![CDATA[Problem BOJ 1806 10,000 이하의 자연수로 이루어진 길이 N짜리 수열이 주어진다. 이 수열에서 연속된 수들의 부분합 중에 그 합이 S 이상이 되는 것 중, 가장 짧은 것의 길이를 구하는 프로그램을 작성하시오. Solution…]]></description><link>https://renyuanz.github.io/leonids/algorithm-BOJ-1806-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/algorithm-BOJ-1806-post/</guid><pubDate>Tue, 10 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Problem&lt;/h1&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/1806&quot;&gt;BOJ 1806&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;10,000 이하의 자연수로 이루어진 길이 N짜리 수열이 주어진다. 이 수열에서 연속된 수들의 부분합 중에 그 합이 S 이상이 되는 것 중, 가장 짧은 것의 길이를 구하는 프로그램을 작성하시오.&lt;/p&gt;
@@ -4922,89 +5004,7 @@ vector&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span
 &lt;p&gt;이 소스에서 투 포인튼는 left와 right이다. left, right 각각 으로 초기화 시켜주고, sum을 v[0]으로 초기화 시켜준 후, while문을 동작시킨다.&lt;/p&gt;
 &lt;p&gt;sum이 입력 값 S보다 작을 때, right를 1씩 증가시킨다. 부분합의 길이를 늘리는 것이다. 계속해서 더해지다가 sum이 입력 값 S 이상이 되면 len를 구하고 최솟값을 구하게 된다.&lt;/p&gt;
 &lt;p&gt;여기서 중요한 포인트는 left를 한칸씩 줄여나가며 부분합의 길이를 줄이는 것이다.&lt;/p&gt;
-&lt;p&gt;이분탐색으로 간단하게 풀릴줄 알았는데 이분탐색 마저 오류가 발생하는 문제였다. 이분탐색 뿐만 아니라, Mid탐색하는 것이 길어지면 최대 100,000까지 가기 때문에 문제가 있을것으로 생각된다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[백준] 1912 연속합]]></title><description><![CDATA[Problem BOJ 1912 n개의 정수로 이루어진 임의의 수열이 주어진다. 우리는 이 중 연속된 몇 개의 수를 선택해서 구할 수 있는 합 중 가장 큰 합을 구하려고 한다. 단, 수는 한 개 이상 선택해야 한다. 예를 들어서 10, -4, 3,…]]></description><link>https://renyuanz.github.io/leonids/algorithm-BOJ-1912-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/algorithm-BOJ-1912-post/</guid><pubDate>Tue, 10 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Problem&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/1912&quot;&gt;BOJ 1912&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;n개의 정수로 이루어진 임의의 수열이 주어진다. 우리는 이 중 연속된 몇 개의 수를 선택해서 구할 수 있는 합 중 가장 큰 합을 구하려고 한다. 단, 수는 한 개 이상 선택해야 한다.&lt;/p&gt;
-&lt;p&gt;예를 들어서 10, -4, 3, 1, 5, 6, -35, 12, 21, -1 이라는 수열이 주어졌다고 하자. 여기서 정답은 12+21인 33이 정답이 된다.&lt;/p&gt;
-&lt;h1&gt;Solution 1&lt;/h1&gt;
-&lt;h2&gt;문제 접근 순서&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;제한시간 조건과 주어진 n의 최대값을 보고 완전탐색으로 접근하면 효율성 문제가 있을거같음.&lt;/li&gt;
-&lt;li&gt;DP로 접근.&lt;/li&gt;
-&lt;li&gt;한차례의 반복문이 시작되고 최대값을 계속해서 갱신&lt;/li&gt;
-&lt;li&gt;배열의 인덱스 값이 음수일때를 분기점으로 하여 다시 최대값 갱신&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;n의 값이 5000이상 일때 동작이 안됨…&lt;/p&gt;
-&lt;p&gt;원인은 스택오버플로우 현상때문에 발생하는듯 하다.&lt;/p&gt;
-&lt;p&gt;BinarySearch함수에서 적당한 시간에 빠져나오지 못하여 스택이 샇이고 도중에 중단되는 것 같다. 탈출조건을 잘 설정한 것 같은데 이상하게 안된다.&lt;/p&gt;
-&lt;h3&gt;Source 1&lt;/h3&gt;
-&lt;p&gt;{% highlight cpp %}
-void BinarySearch1(int i, long long int sum) {&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;long long int sum_temp = sum + v[i];
-
-if (sum_temp &amp;lt; dp[i])
-	return;
-
-// Update dp[i](max value)
-if (sum_temp &amp;gt; dp[i])
-	dp[i] = sum_temp;
-
-// Searching for max value
-if (dp[i] &amp;gt; mx)
-	mx = dp[i];
-
-if (i &amp;gt; N - 2)
-	return;
-
-BinarySearch1(i + 1, dp[i]);
-
-if (v[i + 1] &amp;lt; 0 &amp;amp;&amp;amp; i &amp;lt; N-3)
-	BinarySearch1(i + 2, 0);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;}
-{% endhighlight %}&lt;/p&gt;
-&lt;h1&gt;Solution 2&lt;/h1&gt;
-&lt;h2&gt;문제 접근 순서&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;탑다운&lt;/code&gt; 방식으로 풀이할때 리턴값을 제대로 설정을 못해 &lt;code class=&quot;language-text&quot;&gt;바텀업&lt;/code&gt; 접근 방식으로 풀이를 진행하였다.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;각 벡터에 대한 입력을 받은 후 dp벡터에 그대로 복사.&lt;/li&gt;
-&lt;li&gt;dp[i-1]이 음수일때를 체크.&lt;/li&gt;
-&lt;li&gt;dp[i-1] + dp[i] 가 양수이면 계속 dp[i]에 더함.
-(계속 더하는 것이 최대값을 갖는 방법이기 때문)&lt;/li&gt;
-&lt;li&gt;매 반복시 최대값을 검사.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3&gt;Source 2&lt;/h3&gt;
-&lt;p&gt;{% highlight cpp %}
-int main() {
-cin &gt;&gt; N;
-v.resize(N);&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;for (int i = 0; i &amp;lt; N; i++)
-	cin &amp;gt;&amp;gt; v[i];
-
-// duplicate Input vector
-dp = v;
-
-//Binary search
-//BinarySearch(0, 0);
-
-// when First index is minus value,
-if (dp[0] &amp;gt; mx)
-	mx = dp[0];
-
-for (int i = 1; i &amp;lt; N; i++) {
-
-	if (dp[i - 1] &amp;gt; 0 &amp;amp;&amp;amp; dp[i] + dp[i - 1] &amp;gt; 0) {
-		dp[i] += dp[i - 1];
-	}
-	if (mx &amp;lt; dp[i])
-		mx = dp[i];
-}
-
-cout &amp;lt;&amp;lt; mx;
-
-return 0;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;}
-{% endhighlight %}&lt;/p&gt;
-&lt;p&gt;문제만 보면 별로 어려울것 같지 않은 문제였지만 생각보다 오래걸린 문제였다. 아직 탈출조건을 잘 설정 못해서 계속 해맷다. 갈길이 멀다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[백준] 2941 크로아티아 알파벳]]></title><description><![CDATA[Problem BOJ 2941 예전에는 운영체제에서 크로아티아 알파벳을 입력할 수가 없었다. 따라서, 다음과 같이 크로아티아 알파벳을 변경해서 입력했다. 크로아티아 알파벳 변경 č c= ć c- dž dz= đ d- lj lj nj nj š s= ž…]]></description><link>https://renyuanz.github.io/leonids/algorithm-BOJ-2941-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/algorithm-BOJ-2941-post/</guid><pubDate>Sat, 02 Nov 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Problem&lt;/h1&gt;
+&lt;p&gt;이분탐색으로 간단하게 풀릴줄 알았는데 이분탐색 마저 오류가 발생하는 문제였다. 이분탐색 뿐만 아니라, Mid탐색하는 것이 길어지면 최대 100,000까지 가기 때문에 문제가 있을것으로 생각된다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[백준] 2941 크로아티아 알파벳]]></title><description><![CDATA[Problem BOJ 2941 예전에는 운영체제에서 크로아티아 알파벳을 입력할 수가 없었다. 따라서, 다음과 같이 크로아티아 알파벳을 변경해서 입력했다. 크로아티아 알파벳 변경 č c= ć c- dž dz= đ d- lj lj nj nj š s= ž…]]></description><link>https://renyuanz.github.io/leonids/algorithm-BOJ-2941-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/algorithm-BOJ-2941-post/</guid><pubDate>Sat, 02 Nov 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Problem&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/2941&quot;&gt;BOJ 2941&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;예전에는 운영체제에서 크로아티아 알파벳을 입력할 수가 없었다. 따라서, 다음과 같이 크로아티아 알파벳을 변경해서 입력했다.&lt;/p&gt;
 &lt;table&gt;
@@ -5268,75 +5268,7 @@ string st&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
 	&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;이번에도 노가다 밖에 떠오르지 않아서 이렇게 풀었다. 문자열은 노가다 밖에 없단 말인가 ㅋㅋ&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[한이음 코딩테스트] 문제 1]]></title><description><![CDATA[Problem 누나와 내가 백화점에서 물건을 구매하려고 한다.
-따로 구매하려던 도중 50달러 이상을 구매하면 10달러를 할인해주는 프로모션이 진행중이였다.
-나는 9달러, 50달러 물건을,
-누나는 6…]]></description><link>https://renyuanz.github.io/leonids/algorithm-hanium-1-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/algorithm-hanium-1-post/</guid><pubDate>Sat, 26 Oct 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Problem&lt;/h1&gt;
-&lt;p&gt;누나와 내가 백화점에서 물건을 구매하려고 한다.
-따로 구매하려던 도중 50달러 이상을 구매하면 10달러를 할인해주는 프로모션이 진행중이였다.
-나는 9달러, 50달러 물건을,
-누나는 67달러 물건을 구매하려고 할 때, 총 내야하는 금액은 얼마인가?&lt;/p&gt;
-&lt;p&gt;goods배열 안에 구매하려는 물품의 가격이 제공된다.&lt;/p&gt;
-&lt;h2&gt;제약조건&lt;/h2&gt;
-&lt;p&gt;goods 요소의 크기는 1&amp;#x3C;= 요소 &amp;#x3C;= 99&lt;/p&gt;
-&lt;h2&gt;Solution&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cpp&quot;&gt;&lt;pre class=&quot;language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;v#include &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;iostream&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
-&lt;span class=&quot;token macro property&quot;&gt;&lt;span class=&quot;token directive-hash&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;token directive keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&amp;lt;vector&gt;&lt;/span&gt;&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;namespace&lt;/span&gt; std&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Solution&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
-	&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; SIZE&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;//벡터 크기&lt;/span&gt;
-	&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; result &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sum_temp &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-	&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;vector&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; goods&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-		SIZE &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; goods&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-		&lt;span class=&quot;token comment&quot;&gt;//총 낼 금액을 먼저 산정&lt;/span&gt;
-		&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; SIZE&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-			result &lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt; goods&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-		&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-		&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; SIZE&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-
-			&lt;span class=&quot;token comment&quot;&gt;//50 이상인 것들을 스캔하여 제외시킨다.&lt;/span&gt;
-			&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;goods&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;50&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-				&lt;span class=&quot;token comment&quot;&gt;//goods[i] = 0;&lt;/span&gt;
-				result &lt;span class=&quot;token operator&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-			&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-			&lt;span class=&quot;token comment&quot;&gt;//50미만이면 sum_temp 변수에 50을 더해간다&lt;/span&gt;
-			&lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;goods&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-				&lt;span class=&quot;token comment&quot;&gt;//goods[i] = 0;&lt;/span&gt;
-				sum_temp &lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt; goods&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-				&lt;span class=&quot;token comment&quot;&gt;//sum_temp가 50이상이면 그때 전체 낼 금액에서 10을 할인&lt;/span&gt;
-				&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sum_temp &lt;span class=&quot;token operator&quot;&gt;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-					result &lt;span class=&quot;token operator&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-					sum_temp &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-				&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-			&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-		&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-		&lt;span class=&quot;token comment&quot;&gt;//return&lt;/span&gt;
-		&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; result&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-	Solution A&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-	vector&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; goods&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;15&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-	cout &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; A&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;goods&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; endl&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-	&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; n&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-	cin &lt;span class=&quot;token operator&quot;&gt;&gt;&gt;&lt;/span&gt; n&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-	&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;main에는 입력 조건들을 설정해 놓았다. 프로그래머스와 유사하게 class 안 solution 함수를 제작하는 포맷으로 구성되어있다.&lt;/p&gt;
-&lt;p&gt;처음에 총 내야하는 금액인 전체 금액을 하고, 각 배열에 담겨있는 금액이 50달러 이상인지 체크를 한다.
-50달러 이상이면 할인금액인 10달러를 빼고, 50달러 미만이면 나머지 50달러 미만인 물건들에 대한 합을 구하기 위해 temp에 값을 저장해 놓는다.
-비교적 쉬웠던 문제였다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[한이음 코딩테스트] 문제 2]]></title><description><![CDATA[Problem 아버지가 중고차를 사주신다고 하여 중고차를 알아보는 보았다. 제일 저렴한 차는 뭔가 찜찜하다고 3번째로 저렴한 중고차량을 구매한다고 한다. 같은 금액일 경우 동일한 등수로 취급한다. 예제 prices = {70, 20, 30 60, 5…]]></description><link>https://renyuanz.github.io/leonids/algorithm-hanium-2-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/algorithm-hanium-2-post/</guid><pubDate>Sat, 26 Oct 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Problem&lt;/h1&gt;
+&lt;p&gt;이번에도 노가다 밖에 떠오르지 않아서 이렇게 풀었다. 문자열은 노가다 밖에 없단 말인가 ㅋㅋ&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[한이음 코딩테스트] 문제 2]]></title><description><![CDATA[Problem 아버지가 중고차를 사주신다고 하여 중고차를 알아보는 보았다. 제일 저렴한 차는 뭔가 찜찜하다고 3번째로 저렴한 중고차량을 구매한다고 한다. 같은 금액일 경우 동일한 등수로 취급한다. 예제 prices = {70, 20, 30 60, 5…]]></description><link>https://renyuanz.github.io/leonids/algorithm-hanium-2-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/algorithm-hanium-2-post/</guid><pubDate>Sat, 26 Oct 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Problem&lt;/h1&gt;
 &lt;p&gt;아버지가 중고차를 사주신다고 하여 중고차를 알아보는 보았다. 제일 저렴한 차는 뭔가 찜찜하다고 3번째로 저렴한 중고차량을 구매한다고 한다. 같은 금액일 경우 동일한 등수로 취급한다.&lt;/p&gt;
 &lt;h2&gt;예제&lt;/h2&gt;
 &lt;ol&gt;
@@ -5512,7 +5444,75 @@ dfs 매 시도마다 ”-“을 덧붙였기 때문에 pop_back()를 사용해 �
 &lt;p&gt;다시 돌아와 문자열 길이가 40 미만이면 그대로를 출력하게된다.&lt;/p&gt;
 &lt;p&gt;C++ 컴파일러가 gnu C11인지 모르고 풀어서 망한 문제&lt;/p&gt;
 &lt;p&gt;진작 알았으면 풀었을 텐데, substr같은 라이브러리 사용하는 것 외에 다른 방법을 생각했을텐데 아쉽다.&lt;/p&gt;
-&lt;p&gt;일단 C14기준으로밖에 못풀어서 C14기준으로 코드를 올렸다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[백준] 2908 상수 (문자열)]]></title><description><![CDATA[Problem BOJ 290…]]></description><link>https://renyuanz.github.io/leonids/algorithm-BOJ-2606-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/algorithm-BOJ-2606-post/</guid><pubDate>Tue, 22 Oct 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Problem&lt;/h1&gt;
+&lt;p&gt;일단 C14기준으로밖에 못풀어서 C14기준으로 코드를 올렸다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[한이음 코딩테스트] 문제 1]]></title><description><![CDATA[Problem 누나와 내가 백화점에서 물건을 구매하려고 한다.
+따로 구매하려던 도중 50달러 이상을 구매하면 10달러를 할인해주는 프로모션이 진행중이였다.
+나는 9달러, 50달러 물건을,
+누나는 6…]]></description><link>https://renyuanz.github.io/leonids/algorithm-hanium-1-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/algorithm-hanium-1-post/</guid><pubDate>Sat, 26 Oct 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Problem&lt;/h1&gt;
+&lt;p&gt;누나와 내가 백화점에서 물건을 구매하려고 한다.
+따로 구매하려던 도중 50달러 이상을 구매하면 10달러를 할인해주는 프로모션이 진행중이였다.
+나는 9달러, 50달러 물건을,
+누나는 67달러 물건을 구매하려고 할 때, 총 내야하는 금액은 얼마인가?&lt;/p&gt;
+&lt;p&gt;goods배열 안에 구매하려는 물품의 가격이 제공된다.&lt;/p&gt;
+&lt;h2&gt;제약조건&lt;/h2&gt;
+&lt;p&gt;goods 요소의 크기는 1&amp;#x3C;= 요소 &amp;#x3C;= 99&lt;/p&gt;
+&lt;h2&gt;Solution&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cpp&quot;&gt;&lt;pre class=&quot;language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;v#include &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;iostream&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;token macro property&quot;&gt;&lt;span class=&quot;token directive-hash&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;token directive keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&amp;lt;vector&gt;&lt;/span&gt;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;namespace&lt;/span&gt; std&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Solution&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; SIZE&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;//벡터 크기&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; result &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sum_temp &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+	&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;vector&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; goods&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		SIZE &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; goods&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+		&lt;span class=&quot;token comment&quot;&gt;//총 낼 금액을 먼저 산정&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; SIZE&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+			result &lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt; goods&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+		&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; SIZE&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+
+			&lt;span class=&quot;token comment&quot;&gt;//50 이상인 것들을 스캔하여 제외시킨다.&lt;/span&gt;
+			&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;goods&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;50&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+				&lt;span class=&quot;token comment&quot;&gt;//goods[i] = 0;&lt;/span&gt;
+				result &lt;span class=&quot;token operator&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+			&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+			&lt;span class=&quot;token comment&quot;&gt;//50미만이면 sum_temp 변수에 50을 더해간다&lt;/span&gt;
+			&lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;goods&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+				&lt;span class=&quot;token comment&quot;&gt;//goods[i] = 0;&lt;/span&gt;
+				sum_temp &lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt; goods&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+				&lt;span class=&quot;token comment&quot;&gt;//sum_temp가 50이상이면 그때 전체 낼 금액에서 10을 할인&lt;/span&gt;
+				&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sum_temp &lt;span class=&quot;token operator&quot;&gt;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+					result &lt;span class=&quot;token operator&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+					sum_temp &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+				&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+			&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+		&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+		&lt;span class=&quot;token comment&quot;&gt;//return&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; result&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	Solution A&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	vector&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; goods&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;15&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	cout &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; A&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;goods&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; endl&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+	&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; n&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	cin &lt;span class=&quot;token operator&quot;&gt;&gt;&gt;&lt;/span&gt; n&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+	&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;main에는 입력 조건들을 설정해 놓았다. 프로그래머스와 유사하게 class 안 solution 함수를 제작하는 포맷으로 구성되어있다.&lt;/p&gt;
+&lt;p&gt;처음에 총 내야하는 금액인 전체 금액을 하고, 각 배열에 담겨있는 금액이 50달러 이상인지 체크를 한다.
+50달러 이상이면 할인금액인 10달러를 빼고, 50달러 미만이면 나머지 50달러 미만인 물건들에 대한 합을 구하기 위해 temp에 값을 저장해 놓는다.
+비교적 쉬웠던 문제였다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[백준] 2908 상수 (문자열)]]></title><description><![CDATA[Problem BOJ 290…]]></description><link>https://renyuanz.github.io/leonids/algorithm-BOJ-2606-post/</link><guid isPermaLink="false">https://renyuanz.github.io/leonids/algorithm-BOJ-2606-post/</guid><pubDate>Tue, 22 Oct 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Problem&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/2908&quot;&gt;BOJ 2908&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;상근이의 동생 상수는 수학을 정말 못한다. 상수는 숫자를 읽는데 문제가 있다. 이렇게 수학을 못하는 상수를 위해서 상근이는 수의 크기를 비교하는 문제를 내주었다. 상근이는 세 자리 수 두 개를 칠판에 써주었다. 그 다음에 크기가 큰 수를 말해보라고 했다.&lt;/p&gt;
 &lt;p&gt;상수는 수를 다른 사람과 다르게 거꾸로 읽는다. 예를 들어, 734과 893을 칠판에 적었다면, 상수는 이 수를 437과 398로 읽는다. 따라서, 상수는 두 수중 큰 수인 437을 큰 수라고 말할 것이다.&lt;/p&gt;
