@@ -1,31 +1,30 @@
-import React, { useEffect, useState } from "react"
-import { Link } from "gatsby"
-import { ThemeToggler } from "gatsby-plugin-dark-mode"
-import styled from "styled-components"
+import React, { useEffect, useState } from 'react';
+import { Link } from 'gatsby';
+import { ThemeToggler } from 'gatsby-plugin-dark-mode';
+import styled from 'styled-components';
 
-import { scale } from "../utils/typography"
-import Footer from "./footer"
-import "../assets/style/global.css"
-import AppLeft from "./AppLeft"
+import { scale } from '../utils/typography';
+import Footer from './footer';
+import '../assets/style/global.css';
+import AppLeft from './AppLeft';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Layout = ({ location, title, children }) => {
+  const innerWidth = window.innerWidth;
   const [tabState, setTabState] = useState({
     flag: false,
     width: 0,
   });
 
   useEffect(() => {
-    window.addEventListener('resize', ()=>{
-      var innerWidth = window.innerWidth;
-      if(window.innerWidth > 768){
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
         setTabState({
           flag: true,
           width: innerWidth,
         });
-      }else {
+      } else {
         setTabState({
           flag: false,
           width: innerWidth,
@@ -35,23 +34,25 @@ const Layout = ({ location, title, children }) => {
   }, []);
 
   const onClickSlideTab = () => {
-    let state = tabState.flag;
-    setTabState({...tabState, flag: !state});
+    setTabState({
+      flag: !tabState.flag,
+      width: !tabState.flag ? innerWidth : 0,
+    });
   };
 
   const toggle = (
     <ThemeToggler>
       {({ toggleTheme, theme }) => {
-        const isDarkMode = theme === "dark"
+        const isDarkMode = theme === 'dark';
         if (theme == null) {
-          return null
+          return null;
         }
 
         return (
           <button
             aria-label="theme-switch"
             className="leading-none p-1"
-            onClick={() => toggleTheme(isDarkMode ? "light" : "dark")}
+            onClick={() => toggleTheme(isDarkMode ? 'light' : 'dark')}
           >
             {isDarkMode ? (
               <svg
@@ -83,10 +84,10 @@ const Layout = ({ location, title, children }) => {
               </svg>
             )}
           </button>
-        )
+        );
       }}
     </ThemeToggler>
-  )
+  );
 
   const header = (
     <>
@@ -110,28 +111,28 @@ const Layout = ({ location, title, children }) => {
         </Link>
       </h2>
     </>
-  )
+  );
 
   return (
     <div
       style={{
-        backgroundColor: "var(--bg)",
-        color: "var(--textNormal)",
-        transition: "color 0.2s ease-out, background 0.2s ease-out",
-        minHeight: "100vh",
+        backgroundColor: 'var(--bg)',
+        color: 'var(--textNormal)',
+        transition: 'color 0.2s ease-out, background 0.2s ease-out',
+        minHeight: '100vh',
       }}
     >
-      <MenuBtnWrapper onClick={onClickSlideTab} >
-        <FontAwesomeIcon icon={faBars} size="lg"/>
+      <MenuBtnWrapper onClick={onClickSlideTab}>
+        <FontAwesomeIcon icon={faBars} size="lg" />
       </MenuBtnWrapper>
-      
+
       <SideBarWrapper tabState={tabState.flag} width={tabState.width}>
         <div className="sidebar">
-          <div  
+          <div
             className="md:h-screen p-4 flex flex-col items-center"
             style={{ minHeight: 200, justifyContent: 'space-between' }}
           >
-            <AppLeft/>
+            <AppLeft />
           </div>
         </div>
       </SideBarWrapper>
@@ -141,38 +142,38 @@ const Layout = ({ location, title, children }) => {
         <Footer />
       </div>
     </div>
-  )
-}
+  );
+};
 
 const MenuBtnWrapper = styled.div(() => ({
-  padding:"1rem",
-  zIndex:"12",
-  position: "fixed",
-  cursor:"pointer",
-  display:"none",
-  "@media  (min-width: 0px) and (max-width: 768px)": {
-    opacity:"1",
-    display:"block",
-  }
+  padding: '1rem',
+  zIndex: '12',
+  position: 'fixed',
+  cursor: 'pointer',
+  display: 'none',
+  '@media  (min-width: 0px) and (max-width: 768px)': {
+    opacity: '1',
+    display: 'block',
+  },
 }));
 
-const SideBarWrapper = styled.div(({tabState, width}) => ({ 
-  position: "fixed",
+const SideBarWrapper = styled.div(({ tabState, width }) => ({
+  position: 'fixed',
   top: 0,
   left: 0,
-  overflow: tabState ?"hidden": "",
-  transition: "0.2s linear",
-  height: "100%",
-  zIndex: "11",
-  overflow: "hidden",
-  textAlign: "center",
-  backgroundColor: "var(--lightBg)",
-  "@media  (min-width: 0px) and (max-width: 768px)": {
-    width: tabState ? `${width}px !important` : "0% !important",
+  overflow: tabState ? 'hidden' : '',
+  transition: '0.2s linear',
+  height: '100%',
+  zIndex: '11',
+  overflow: 'hidden',
+  textAlign: 'center',
+  backgroundColor: 'var(--lightBg)',
+  '@media  (min-width: 0px) and (max-width: 768px)': {
+    width: tabState ? `${width}px !important` : '0% !important',
   },
-  "@media  (min-width: 769px)": {
-    opacity: "1 !important",
+  '@media  (min-width: 769px)': {
+    opacity: '1 !important',
   },
 }));
 
-export default Layout
+export default Layout;

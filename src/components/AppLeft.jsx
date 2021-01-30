@@ -98,7 +98,7 @@ const AppLeft = ({ header }) => {
           </Link>
         </div>
 
-        <div style={{}}>
+        <div>
           <h4>MBC의 개발 비망록</h4>
         </div>
 
@@ -109,15 +109,11 @@ const AppLeft = ({ header }) => {
               <h3>Development</h3>
             </li>
           </Link>
-          {/* <Link to="/about"> */}
-          <li
-            onClick={() => {
-              alert(`서비스 준비중입니다.`);
-            }}
-          >
-            <h3>About</h3>
-          </li>
-          {/* </Link> */}
+          <Link to="/about">
+            <li>
+              <h3>About</h3>
+            </li>
+          </Link>
         </UlWrapper>
 
         {/* Bottom */}

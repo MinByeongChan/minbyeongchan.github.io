@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: "/leonids",
+  pathPrefix: '/leonids',
   siteMetadata: {
     title: `ByeongChan`,
     author: {
@@ -11,7 +11,7 @@ module.exports = {
     social: {
       twitter: `MinByeongChan`,
     },
-    defaultImage: "images/bg.jpeg",
+    defaultImage: 'images/bg.jpeg',
   },
   plugins: [
     {
@@ -55,7 +55,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: `UA-62251910-1`,
+        trackingId: `G-DVKT399JDL`,
       },
     },
     `gatsby-plugin-feed`,
@@ -68,7 +68,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/me_img.png`,
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -81,7 +81,7 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
-    "gatsby-plugin-dark-mode",
+    'gatsby-plugin-dark-mode',
     `gatsby-plugin-postcss`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-styled-components`,
@@ -108,4 +108,4 @@ module.exports = {
       },
     },
   ],
-}
+};
