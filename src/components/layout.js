@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'gatsby';
 import { ThemeToggler } from 'gatsby-plugin-dark-mode';
 import styled from 'styled-components';
@@ -14,12 +14,17 @@ const Layout = ({ title, children }) => {
   const [tabState, setTabState] = useState({
     flag: false,
   });
+  const widthRef = useRef('');
 
   const onClickTabBtn = () => {
     setTabState({
       flag: !tabState.flag,
     });
   };
+
+  if (typeof window !== `undefined`) {
+    widthRef.current = window.innerWidth;
+  }
 
   const toggle = (
     <ThemeToggler>
@@ -107,7 +112,7 @@ const Layout = ({ title, children }) => {
         <FontAwesomeIcon icon={faBars} size="lg" />
       </MenuBtnWrapper>
 
-      <SideBarWrapper tabState={tabState.flag} width={window.innerWidth}>
+      <SideBarWrapper tabState={tabState.flag} width={widthRef.current}>
         <div className="sidebar">
           <div
             className="md:h-screen p-4 flex flex-col items-center"
