@@ -10,33 +10,14 @@ import AppLeft from './AppLeft';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Layout = ({ location, title, children }) => {
-  const innerWidth = window.innerWidth;
+const Layout = ({ title, children }) => {
   const [tabState, setTabState] = useState({
     flag: false,
-    width: 0,
   });
 
-  useEffect(() => {
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 768) {
-        setTabState({
-          flag: true,
-          width: innerWidth,
-        });
-      } else {
-        setTabState({
-          flag: false,
-          width: innerWidth,
-        });
-      }
-    });
-  }, []);
-
-  const onClickSlideTab = () => {
+  const onClickTabBtn = () => {
     setTabState({
       flag: !tabState.flag,
-      width: !tabState.flag ? innerWidth : 0,
     });
   };
 
@@ -122,11 +103,11 @@ const Layout = ({ location, title, children }) => {
         minHeight: '100vh',
       }}
     >
-      <MenuBtnWrapper onClick={onClickSlideTab}>
+      <MenuBtnWrapper onClick={onClickTabBtn}>
         <FontAwesomeIcon icon={faBars} size="lg" />
       </MenuBtnWrapper>
 
-      <SideBarWrapper tabState={tabState.flag} width={tabState.width}>
+      <SideBarWrapper tabState={tabState.flag} width={window.innerWidth}>
         <div className="sidebar">
           <div
             className="md:h-screen p-4 flex flex-col items-center"
@@ -162,17 +143,15 @@ const SideBarWrapper = styled.div(({ tabState, width }) => ({
   top: 0,
   left: 0,
   overflow: tabState ? 'hidden' : '',
-  transition: '0.2s linear',
+  transition: '0.3s linear',
   height: '100%',
   zIndex: '11',
   overflow: 'hidden',
   textAlign: 'center',
   backgroundColor: 'var(--lightBg)',
   '@media  (min-width: 0px) and (max-width: 768px)': {
-    width: tabState ? `${width}px !important` : '0% !important',
-  },
-  '@media  (min-width: 769px)': {
-    opacity: '1 !important',
+    width: tabState && `${width}px !important`,
+    marginLeft: tabState ? `0px !important` : `-${width}px !important`,
   },
 }));
 

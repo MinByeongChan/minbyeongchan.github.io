@@ -6,6 +6,7 @@ export const fontSize = {
   xg: '25px',
   xxg: '35px',
   xxxg: '55px',
+  h1: '63px',
 };
 
 export const fontWeight = {
@@ -18,6 +19,7 @@ export const color = {
   black: 'rgb(0,0,0)',
   darkslategray: '#2f4f4f',
   white: 'rgb(255,255,255)',
+  lightWhite: '#f2f4f8',
   lightGrey: 'rgb(239,239,239)',
   blue1: 'rgb(0,95,255)',
   blue2: 'rgb(0,126,255)',
@@ -33,6 +35,11 @@ export const color = {
   goldenrod: '#daa520',
   darksalmon: '#e9967a',
   darkkhaki: '#bdb76b',
+  blue: '#0000ff',
+  mediumblue: '#0000cd',
   dodgerblue: '#1e90ff',
   loyalblue: '#4169e1',
+  orange: '#ffa500',
+  coral: '#ff7f50',
+  lightblue: '#add8e6',
 };
