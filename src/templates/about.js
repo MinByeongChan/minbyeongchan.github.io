@@ -18,6 +18,7 @@ import {
   faReact,
   faAndroid,
   faAws,
+  faNodeJs,
 } from '@fortawesome/free-brands-svg-icons';
 
 const About = () => {
@@ -112,7 +113,7 @@ const About = () => {
           </div>
           <SkillRow>
             <div style={{ margin: '0 0 10px 0' }}>
-              <TextDefault size="lg">Experienced</TextDefault>
+              <TextDefault size="lg">Front End</TextDefault>
             </div>
             <div
               style={{
@@ -127,21 +128,33 @@ const About = () => {
                   <FontAwesomeIcon icon={faReact} size="1x" />
                 </span>
                 <TextDefault size="md" style={{ margin: '0 10px' }}>
-                  React / Gatsby / Redux / jQuery
+                  React / Redux / Redux-saga / jQuery
                 </TextDefault>
               </SkillLayout>
-              <SkillLayout>
-                <span style={{ color: 'rgb(48,215,128)' }}>
-                  <FontAwesomeIcon icon={faAndroid} size="1x" />
-                </span>
-                <TextDefault size="md" style={{ margin: '0 10px' }}>
-                  Android
-                </TextDefault>
-              </SkillLayout>
+            </div>
+          </SkillRow>
+          <SkillRow>
+            <div style={{ margin: '0 0 10px 0' }}>
+              <TextDefault size="lg">Back End</TextDefault>
+            </div>
+            <div
+              style={{
+                padding: '2px',
+                borderRadius: '2px',
+                display: 'flex',
+                flexFlow: 'wrap',
+              }}
+            >
               <SkillLayout>
                 <FontAwesomeIcon icon={faAws} size="1x" />
                 <TextDefault size="md" style={{ margin: '0 10px' }}>
                   AWS EC2
+                </TextDefault>
+              </SkillLayout>
+              <SkillLayout>
+                <FontAwesomeIcon icon={faNodeJs} size="1x" />
+                <TextDefault size="md" style={{ margin: '0 10px' }}>
+                  Node.js / Express
                 </TextDefault>
               </SkillLayout>
               <SkillLayout>
@@ -226,6 +239,14 @@ const About = () => {
                 flexFlow: 'wrap',
               }}
             >
+              <SkillLayout>
+                <span style={{ color: 'rgb(48,215,128)' }}>
+                  <FontAwesomeIcon icon={faAndroid} size="1x" />
+                </span>
+                <TextDefault size="md" style={{ margin: '0 10px' }}>
+                  Android
+                </TextDefault>
+              </SkillLayout>
               <SkillLayout>
                 <FontAwesomeIcon icon={faGithub} size="1x" />
                 <TextDefault size="md" style={{ margin: '0 10px' }}>
@@ -411,6 +432,71 @@ const About = () => {
           <IframeLayout alt="profile" src="https://minbyeongchan.github.io/" />
         </ProjWrapper>
       </AboutLayout>
+
+      <div
+        style={{
+          maxWidth: '1200px',
+          margin: '60px auto 0 auto',
+          padding: '30px 0',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'flex-end',
+        }}
+      >
+        <div
+          style={{
+            padding: '0 30px',
+            width: '300px',
+          }}
+        >
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'flex-end',
+            }}
+          >
+            <TextDefault size="xxg" color="black">
+              Contact Me
+            </TextDefault>
+            <img
+              src={require('../assets/me_img.png')}
+              style={{ width: '50px', height: '50px', margin: '0 0 0 5px', padding: '0' }}
+            />
+          </div>
+          <div style={{ margin: '20px 0 0 0' }}>
+            <div>
+              <TextDefault size="lg" color="black">
+                email
+              </TextDefault>
+              <TextDefault size="md" color="black" style={{ margin: '0 0 0 10px' }}>
+                <a href="mailto:mbc0481@naver.com">mbc0481@naver.com</a>
+              </TextDefault>
+            </div>
+
+            <div>
+              <TextDefault size="lg" bold color="black">
+                Phone
+              </TextDefault>
+              <TextDefault size="md" color="black" style={{ margin: '0 0 0 10px' }}>
+                <a href="tel:01077020481">010-7702-0481</a>
+              </TextDefault>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer
+        style={{
+          maxWidth: '1200px',
+          borderTop: '1px solid #222',
+          margin: '80px auto 0 auto',
+          padding: '30px 0',
+        }}
+      >
+        <div style={{ textAlign: 'center' }}>
+          © 2021, Built with Gatsby and <a href="https://github.com/MinByeongChan">Byeong Chan.</a>
+        </div>
+      </footer>
     </main>
   );
 };
