@@ -9,7 +9,7 @@ import { Main } from '../templates/Main';
 import { Config } from '../utils/Config';
 import { getAllPosts } from '../utils/Content';
 
-const Index = (props: IBlogGalleryProps) => (
+const Index: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => (
   <Main
     meta={(
       <Meta
