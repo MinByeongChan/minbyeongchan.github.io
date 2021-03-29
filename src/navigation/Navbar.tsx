@@ -12,7 +12,7 @@ import { color, fontSize, fontWeight } from '../utils/StyleTheme';
 const NavLayout = styled.nav(() => ({
   width: '100%',
   height: '68px',
-  borderBottom: `1px solid ${color.darkWhite}`
+  borderBottom: `1px solid ${color.darkWhite}`,
 }));
 
 const NavUl = styled.ul(() => ({
@@ -44,24 +44,28 @@ const NavLi = styled.li(() => ({
   },
 }));
 
-const Text = styled.span(() => ({
-  fontSize: fontSize.md,
-  fontWeight: fontWeight.bold,
-  padding: '0 16px',
-}));
+const Text = styled.span`
+  font-size: ${fontSize.md};
+  font-weight: ${fontWeight.bold};
+  padding: 0 16px;
+`;
 
 const Navbar = () => (
   <NavLayout>
     <NavUl>
       <NavLi>
         <Link href="/">
-          <a><Text>Blog</Text></a>
+          <a>
+            <Text>Blog</Text>
+          </a>
         </Link>
         <div className="bottom-line" />
       </NavLi>
       <NavLi>
         <Link href="/about/">
-          <a><Text>About</Text></a>
+          <a>
+            <Text>About</Text>
+          </a>
         </Link>
         <div className="bottom-line" />
       </NavLi>

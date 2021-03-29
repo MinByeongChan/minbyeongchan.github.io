@@ -17,7 +17,7 @@ type IMetaProps = {
   };
 };
 
-const Meta = (props: IMetaProps) => {
+const Meta: React.FC<IMetaProps> = (props: IMetaProps) => {
   const router = useRouter();
 
   return (

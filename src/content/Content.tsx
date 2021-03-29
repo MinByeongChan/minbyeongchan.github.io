@@ -4,7 +4,7 @@ type IContentProps = {
   children: ReactNode;
 };
 
-const Content = (props: IContentProps) => (
+const Content: React.FC<IContentProps> = (props: IContentProps) => (
   <div className="content">
     {props.children}
 

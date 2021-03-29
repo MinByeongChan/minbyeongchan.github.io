@@ -17,12 +17,13 @@ const Layout = styled.div(() => ({
   padding: '80px 40px',
 }));
 
-const BlogGallery = (props: IBlogGalleryProps) => (
+const BlogGallery: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => (
   <Layout>
-    <span style={{
-      fontSize: fontSize.h1,
-      fontWeight: fontWeight.bold
-    }}
+    <span
+      style={{
+        fontSize: fontSize.h1,
+        fontWeight: fontWeight.bold,
+      }}
     >
       Post
     </span>
