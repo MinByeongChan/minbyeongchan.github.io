@@ -13,20 +13,20 @@ export type IBlogGalleryProps = {
   pagination: IPaginationProps;
 };
 
-const Layout = styled.div(() => ({
-  padding: '80px 40px',
-}));
+const Layout = styled.div`
+  padding: 80px 40px;
+`;
+
+const TopText = styled.span`
+  font-size: ${fontSize.h1};
+  font-weightL ${fontWeight.bold};
+`;
 
 const BlogGallery: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => (
   <Layout>
-    <span
-      style={{
-        fontSize: fontSize.h1,
-        fontWeight: fontWeight.bold,
-      }}
-    >
+    <TopText>
       Post
-    </span>
+    </TopText>
     <ul>
       {props.posts.map((elt) => (
         <li key={elt.slug} className="mb-3 flex justify-between">
@@ -41,7 +41,10 @@ const BlogGallery: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => (
       ))}
     </ul>
 
-    <Pagination previous={props.pagination.previous} next={props.pagination.next} />
+    <Pagination 
+      pagingList={props.pagination.pagingList}
+      previous={props.pagination.previous} 
+      next={props.pagination.next} />
   </Layout>
 );
 

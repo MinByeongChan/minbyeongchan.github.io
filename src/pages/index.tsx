@@ -8,6 +8,7 @@ import { IPaginationProps } from '../pagination/Pagination';
 import { Main } from '../templates/Main';
 import { Config } from '../utils/Config';
 import { getAllPosts } from '../utils/Content';
+import { convertTo2D, createPageList } from '../utils/Pagination';
 
 const Index: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => (
   <Main
@@ -23,9 +24,19 @@ const Index: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => (
 );
 
 export const getStaticProps: GetStaticProps<IBlogGalleryProps> = async () => {
-  const posts = getAllPosts(['title', 'date', 'slug']);
+  const posts = getAllPosts(['title', 'date', 'description', 'slug']);
   const pagination: IPaginationProps = {};
+  const pages = convertTo2D(posts, Config.pagination_size);
 
+  const maxPage = pages.length;
+  const pagingIndicator = Config.paging_indicator;
+
+  console.log("maxPage", maxPage)
+  console.log("pagingIndicator", pagingIndicator)
+
+  const pagingList = createPageList(1, maxPage, pagingIndicator);
+
+  pagination.pagingList = pagingList;
   if (posts.length > Config.pagination_size) {
     pagination.next = '/page2';
   }
