@@ -1,13 +1,11 @@
 import React from 'react';
-
-import { format } from 'date-fns';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
-import { Content } from '../../content/Content';
 import { Meta } from '../../layout/Meta';
 import { Main } from '../../templates/Main';
 import { getAllPosts, getPostBySlug } from '../../utils/Content';
 import { markdownToHtml } from '../../utils/Markdown';
+import PostLayout from '../../layout/PostLayout';
 
 type IPostUrl = {
   slug: string;
@@ -24,7 +22,7 @@ type IPostProps = {
 
 const DisplayPost = (props: IPostProps) => (
   <Main
-    meta={(
+    meta={
       <Meta
         title={props.title}
         description={props.description}
@@ -34,17 +32,16 @@ const DisplayPost = (props: IPostProps) => (
           modified_date: props.modified_date,
         }}
       />
-    )}
+    }
   >
-    <h1 className="text-center font-bold text-3xl text-gray-900">{props.title}</h1>
-    <div className="text-center text-sm mb-8">{format(new Date(props.date), 'LLLL d, yyyy')}</div>
-
-    <Content>
-      <div
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={{ __html: props.content }}
-      />
-    </Content>
+    <PostLayout
+      title={props.title}
+      description={props.description}
+      image={props.image}
+      date={props.date}
+      modified_date={props.modified_date}
+      content={props.content}
+    />
   </Main>
 );
 
