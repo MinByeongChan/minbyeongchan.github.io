@@ -11,14 +11,7 @@ import { getAllPosts } from '../utils/Content';
 import { convertTo2D, createPageList } from '../utils/Pagination';
 
 const Index: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => (
-  <Main
-    meta={(
-      <Meta
-        title="WELCOME MY BLOG"
-        description={Config.description}
-      />
-    )}
-  >
+  <Main meta={<Meta title="WELCOME MY BLOG" description={Config.description} />}>
     <BlogGallery posts={props.posts} pagination={props.pagination} />
   </Main>
 );
@@ -31,12 +24,15 @@ export const getStaticProps: GetStaticProps<IBlogGalleryProps> = async () => {
   const maxPage = pages.length;
   const pagingIndicator = Config.paging_indicator;
 
-  console.log("maxPage", maxPage)
-  console.log("pagingIndicator", pagingIndicator)
+  console.log('maxPage', maxPage);
+  console.log('pagingIndicator', pagingIndicator);
 
   const pagingList = createPageList(1, maxPage, pagingIndicator);
 
+  // pagination 오브젝트 init
   pagination.pagingList = pagingList;
+  pagination.maxPage = maxPage.toString();
+  pagination.currPage = '1';
   if (posts.length > Config.pagination_size) {
     pagination.next = '/page2';
   }

@@ -8,7 +8,7 @@ import { IPaginationProps } from '../pagination/Pagination';
 import { Main } from '../templates/Main';
 import { Config } from '../utils/Config';
 import { getAllPosts } from '../utils/Content';
-import { convertTo2D } from '../utils/Pagination';
+import { convertTo2D, createPageList } from '../utils/Pagination';
 
 type IPageUrl = {
   page: string;
@@ -42,19 +42,29 @@ export const getStaticProps: GetStaticProps<IBlogGalleryProps, IPageUrl> = async
   const posts = getAllPosts(['title', 'date', 'description', 'slug']);
 
   const pages = convertTo2D(posts, Config.pagination_size);
-  const currentPage = Number(params!.page.replace('page', ''));
-  const currentInd = currentPage - 1;
+  const currPage = Number(params!.page.replace('page', ''));
+  const currentInd = currPage - 1;
 
   const pagination: IPaginationProps = {};
 
-  if (currentPage < pages.length) {
-    pagination.next = `page${currentPage + 1}`;
+  const maxPage = pages.length;
+  const pagingIndicator = Config.paging_indicator;
+
+  const pagingList = createPageList(currPage, maxPage, pagingIndicator);
+
+  // pagination 오브젝트 init
+  pagination.pagingList = pagingList;
+  pagination.maxPage = maxPage.toString();
+  pagination.currPage = currPage.toString();
+
+  if (currPage < pages.length) {
+    pagination.next = `page${currPage + 1}`;
   }
 
-  if (currentPage === 2) {
+  if (currPage === 2) {
     pagination.previous = '/';
   } else {
-    pagination.previous = `page${currentPage - 1}`;
+    pagination.previous = `page${currPage - 1}`;
   }
 
   return {

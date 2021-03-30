@@ -5,6 +5,6 @@ export const Config = {
   url: 'https://example.com',
   locale: 'kr',
   author: 'Byeong Chan',
-  pagination_size: 3,
+  pagination_size: 9,
   paging_indicator: 3,
 };
