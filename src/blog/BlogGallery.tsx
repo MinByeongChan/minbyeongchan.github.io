@@ -14,7 +14,9 @@ export type IBlogGalleryProps = {
 };
 
 const Layout = styled.div`
-  padding: 42px 60px 0 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 42px 20px 0 20px;
 `;
 
 const TopText = styled.div`
@@ -25,15 +27,14 @@ const TopText = styled.div`
 
 const GalleryWrapper = styled.div(() => ({
   display: 'grid',
-  width: '100%',
   justifyContent: 'center',
-  gridTemplateColumns: 'auto auto auto',
+  gridTemplateColumns: '1fr 1fr 1fr',
   gridGap: '10px',
   '@media screen and (min-width: 481px) and (max-width: 1080px)': {
-    gridTemplateColumns: 'auto auto',
+    gridTemplateColumns: '1fr 1fr',
   },
   '@media screen and (min-width: 0px) and (max-width: 480px)': {
-    gridTemplateColumns: 'auto',
+    gridTemplateColumns: '1fr',
   },
 }));
 
