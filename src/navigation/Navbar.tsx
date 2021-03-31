@@ -5,13 +5,11 @@ import Link from 'next/link';
 
 import { color, fontSize, fontWeight } from '../utils/StyleTheme';
 
-// type INavbarProps = {
-//   children: ReactNode;
-// };
-
-const NavLayout = styled.nav(() => ({
+const NavContainer = styled.nav(() => ({
   width: '100%',
-  height: '68px',
+  maxWidth: '1200px',
+  margin: '0 auto',
+  height: '67px',
   borderBottom: `1px solid ${color.darkWhite}`,
 }));
 
@@ -20,7 +18,6 @@ const NavUl = styled.ul(() => ({
   justifyContent: 'flex-end',
   alignItems: 'center',
   height: '100%',
-  padding: '0 60px',
 }));
 
 const NavLi = styled.li(() => ({
@@ -51,7 +48,7 @@ const Text = styled.span`
 `;
 
 const Navbar = () => (
-  <NavLayout>
+  <NavContainer>
     <NavUl>
       <NavLi>
         <Link href="/">
@@ -70,7 +67,7 @@ const Navbar = () => (
         <div className="bottom-line" />
       </NavLi>
     </NavUl>
-  </NavLayout>
+  </NavContainer>
 );
 
 export default Navbar;

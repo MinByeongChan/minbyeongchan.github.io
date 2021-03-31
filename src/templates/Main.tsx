@@ -10,41 +10,43 @@ type IMainProps = {
   children: ReactNode;
 };
 
-const Layout = styled.main(() => ({
-  maxWidth: '1200px',
-  margin: '0 auto',
-}));
+const LayoutMain = styled.main`
+  min-height: 650px;
+`;
 
-const BottomWrapper = styled.div`
+const BottomWrapper = styled.footer`
+  width: 100%;
+  background-color: ${color.black};
   text-align: center;
-  padding: 30px 0;
+  padding: 60px 30px;
+  color: ${color.white};
   a {
     color: ${color.orange};
     font-weight: ${fontWeight.bold};
   }
 `;
+const BottomContainer = styled.div`
+  min-width: 1200px;
+  margin: 0 auto;
+`;
 
 const Main: React.FC<IMainProps> = (props: IMainProps) => (
-  <Layout>
+  <>
     {props.meta}
 
     <section>
       <Navbar />
 
-      <section>{props.children}</section>
+      <LayoutMain>{props.children}</LayoutMain>
 
       <BottomWrapper>
-        <span>© Copyright {new Date().getFullYear()} Powered with</span>
-        <a href="https://github.com/MinByeongChan"> Byeong Chan</a>
-        {/*
-         * PLEASE READ THIS SECTION
-         * We'll really appreciate if you could have a link to our website
-         * The link doesn't need to appear on every pages, one link on one page is enough.
-         * Thank you for your support it'll mean a lot for us.
-         */}
+        <BottomContainer>
+          <span>© Copyright {new Date().getFullYear()} Powered with</span>
+          <a href="https://github.com/MinByeongChan"> Byeong Chan</a>
+        </BottomContainer>
       </BottomWrapper>
     </section>
-  </Layout>
+  </>
 );
 
 export { Main };

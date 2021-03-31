@@ -20,7 +20,7 @@ const Layout = styled.div`
 const TopText = styled.div`
   font-size: ${fontSize.h1};
   font-weightL ${fontWeight.bold};
-  margin-bottom: 60px;
+  margin-bottom: 25px;
 `;
 
 const GalleryWrapper = styled.div(() => ({
@@ -60,8 +60,8 @@ const BlogGallery: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => (
   <Layout>
     <TopText>Post</TopText>
     <GalleryWrapper>
-      {props.posts.map((elt) => (
-        <GalleryItem>
+      {props.posts.map((elt, index) => (
+        <GalleryItem key={index}>
           <Link href="/posts/[slug]" as={`/posts/${elt.slug}`}>
             <a>
               <div style={{ padding: '15px 15px 20px 15px' }}>

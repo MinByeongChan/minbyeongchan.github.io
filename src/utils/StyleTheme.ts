@@ -22,8 +22,10 @@ export const fontSize = {
   md: '17px',
   lg: '18px',
   xg: '20px',
-  xxg: '22px',
-  h1: '52px'
+  xxg: '30px',
+  h3: '38px',
+  h2: '45px',
+  h1: '52px',
 };
 
 export const fontWeight = {
