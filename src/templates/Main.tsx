@@ -5,7 +5,7 @@ import styled from '@emotion/styled';
 import Navbar from '../navigation/Navbar';
 import { color, fontSize, fontWeight } from '../utils/StyleTheme';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee, faEnvelopeOpen, faMobileAlt, faPhoneSquareAlt } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelopeOpen, faPhoneSquareAlt } from '@fortawesome/free-solid-svg-icons';
 import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
 
 type IMainProps = {
@@ -24,10 +24,10 @@ const BottomWrapper = styled.footer`
   a {
     color: ${color.orange};
     font-weight: ${fontWeight.bold};
-  };
+  }
   @media screen and (min-width: 0px) and (max-width: 480px) {
     padding: 40px 20px;
-  };
+  } ;
 `;
 const BottomContainer = styled.div`
   max-width: 1200px;
@@ -40,7 +40,7 @@ const BottomContentTitle = styled.div`
     margin: 0 0 10px 0;
     font-size: ${fontSize.xg};
     font-weight: ${fontWeight.bold};
-  };
+  }
   .footer-subtitle {
     margin: 0;
     font-size: ${fontSize.sm};
@@ -49,18 +49,18 @@ const BottomContentTitle = styled.div`
 
 const BottomContentMid = styled.div`
   .mid-container {
-    display:flex;
-    align-items:center;
+    display: flex;
+    align-items: center;
     margin: 10px 0;
-  };
+  }
   .left-img {
     width: 22px;
     height: auto;
-  };
+  }
   a {
     font-size: ${fontSize.sm};
-    margin-left:15px;
-  };
+    margin-left: 15px;
+  }
 `;
 
 const BottomContentEnd = styled.div`
@@ -86,19 +86,19 @@ const Main: React.FC<IMainProps> = (props: IMainProps) => (
 
           <BottomContentMid>
             <div className="mid-container">
-              <FontAwesomeIcon className="left-img"icon={faGithubSquare} inverse />
-              <a>Byeong Chan</a>
+              <FontAwesomeIcon className="left-img" icon={faGithubSquare} inverse />
+              <a href="https://github.com/MinByeongChan">Byeong Chan</a>
             </div>
             <div className="mid-container">
               <FontAwesomeIcon className="left-img" icon={faEnvelopeOpen} inverse />
-              <a>mbc0481@naver.com</a>
+              <a href="mailto:mbc0481@naver.com">mbc0481@naver.com</a>
             </div>
             <div className="mid-container">
               <FontAwesomeIcon className="left-img" icon={faPhoneSquareAlt} inverse />
-              <a>010-7702-0481</a>
+              <a href="tel:01077020481">010-7702-0481</a>
             </div>
           </BottomContentMid>
-          
+
           <BottomContentEnd>
             <span>© Copyright {new Date().getFullYear()} Powered with</span>
             <a href="https://github.com/MinByeongChan"> Byeong Chan</a>
