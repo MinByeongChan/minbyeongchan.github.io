@@ -1,16 +1,14 @@
-import React, { useState } from 'react';
-
+import React, { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 import { format } from 'date-fns';
 import Link from 'next/link';
 
 import { Pagination, IPaginationProps } from '../pagination/Pagination';
 import { PostItems } from '../utils/Content';
-import useInput from '../hooks/useInput';
-
 import { color, fontSize, fontWeight } from '../utils/StyleTheme';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faTag, faTags } from '@fortawesome/free-solid-svg-icons';
+import { useRouter, withRouter } from 'next/router';
 
 export type IBlogGalleryProps = {
   posts: PostItems[];
@@ -59,6 +57,23 @@ const GalleryItem = styled.div(() => ({
     fontSize: `${fontSize.sm}`,
     padding: '10px 10px 0px 0px',
   },
+  '.gallery-item-tags': {
+    display: 'flex',
+    flexWrap:"wrap",
+    marginTop:"5px",
+    ".tags-img": {
+      width: '15px',
+      height: 'auto',
+      marginRight:"3px"
+    },
+    ".tag-item": {
+      fontSize: fontSize.sm,
+      marginRight: '3px',
+      "&:hover": {
+        opacity: '0.7',
+      }
+    }
+  },
 }));
 
 const TopWrapper = styled.div`
@@ -73,22 +88,31 @@ const TopWrapper = styled.div`
 `;
 
 const BlogGallery: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => {
+  const router = useRouter();
   // const [search, onChangeSearch] = useInput('');
   const [posts, setPosts] = useState(props.posts);
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState(router.query.search ? router.query.search.toString() : '');
 
+  // 검색 필드 onChange 
   const onChangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let inputVal = e.target.value;
+    searhFiltering(e.target.value);
+  };
+
+  // 검색 필터링 함수
+  const searhFiltering = (value: string) => {
+    let inputVal = value;
     setSearch(inputVal);
 
     if (inputVal.length > 0) {
       const tmp = props.posts.filter((data) => {
         const title = data.title.toString();
         const desc = data.description.toString();
+        const tags = data.tag.toString();
 
         return (
           title.match(new RegExp(inputVal, 'i')) !== null ||
-          desc.match(new RegExp(inputVal, 'i')) !== null
+          desc.match(new RegExp(inputVal, 'i')) !== null ||
+          tags.match(new RegExp(inputVal, 'i')) !== null
         );
       });
 
@@ -96,7 +120,11 @@ const BlogGallery: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => {
     } else {
       setPosts(props.posts);
     }
-  };
+  }
+
+  useEffect(() => {
+    searhFiltering(search);
+  }, [])
 
   return (
     <Layout>
@@ -119,6 +147,12 @@ const BlogGallery: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => {
                     <span>{format(new Date(elt.date), 'LLL d, yyyy')}</span>
                     <span className="gallery-item-readmore">read more</span>
                   </div>
+                  <div className="gallery-item-tags">
+                    <FontAwesomeIcon className={'tags-img'} icon={faTags} />
+                    {elt.tag.map((item, index) => (
+                      <span className="tag-item" key={index}>{item}</span>
+                    ))}
+                  </div>
                 </div>
               </a>
             </Link>
@@ -138,4 +172,4 @@ const BlogGallery: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => {
   );
 };
 
-export { BlogGallery };
+export default withRouter(BlogGallery);

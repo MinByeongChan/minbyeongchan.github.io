@@ -28,7 +28,7 @@ export function createPageList(currPage: number, maxPage: number, pagingIndicato
 
   if (1 <= currPage && currPage <= pivot) {
     pageStart = 1;
-    pageEnd = pivot + interval;
+    pageEnd = pivot + interval - 1;
   } else if (maxPage - pivot < currPage && currPage <= maxPage) {
     pageStart = maxPage - pivot;
     pageEnd = maxPage;

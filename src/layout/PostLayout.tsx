@@ -84,7 +84,7 @@ const PostLayout = (props: IPostProps) => {
   return (
     <Layout>
       <ContentLayout>
-        <TitleContainer style={{}}>
+        <TitleContainer>
           <span className="title">{props.title}</span>
           <span className="date">{format(new Date(props.date), 'LLLL d, yyyy')}</span>
         </TitleContainer>

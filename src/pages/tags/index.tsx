@@ -5,46 +5,60 @@ import { Main } from '../../templates/Main';
 import { Meta } from '../../layout/Meta';
 import TagLayout from '../../layout/TagLayout';
 import { getAllPosts } from '../../utils/Content';
-import { IPaginationProps } from '../../pagination/Pagination';
-import { convertTo2D, createPageList } from '../../utils/Pagination';
-import { Config } from '../../utils/Config';
-import { IBlogGalleryProps } from '../../blog/BlogGallery';
 
-const Tags = () => {
+export type ITagProps = {
+  tags: ITag[]
+}
+
+export interface ITag {
+  name: string;
+  cnt: number;
+}
+
+const Tags: React.FC<ITagProps> = (props: ITagProps) => {
   return (
     <Main meta={<Meta title="Lorem ipsum" description="Lorem ipsum" />}>
-      <TagLayout />
+      <TagLayout tags={props.tags}/>
     </Main>
   );
 };
 
-export const getStaticProps: GetStaticProps<IBlogGalleryProps> = async () => {
+export const getStaticProps: GetStaticProps<ITagProps> = async () => {
   const posts = getAllPosts(['title', 'date', 'description', 'slug', 'tag']);
-  const pagination: IPaginationProps = {};
-  const tagType = {
-    name: '',
-    num: '',
-  };
 
-  // const tags = [];
-  // posts.forEach((post) => {
-  //   tags.find((data) => {
-  //     return
-  //   })
-  //   return {};
-  // });
+  const tags: ITag[]= [];
 
-  // console.log('tags', tags);
+  posts.forEach((post) => {
+    const tagArr: any[] = post.tag;
 
-  const pages = convertTo2D(posts, Config.pagination_size);
+    tagArr.forEach((item) => {
+      let idx = 0;
+      // 기존 tags 배열에 tag가 있는지 검사
+      const filtered = tags.find((data, index) => {
+        idx = index;
+        return data.name === item;
+      });
 
-  const maxPage = pages.length;
-  const pagingIndicator = Config.paging_indicator;
+      // tag가 없으면 새로운 태그 오브젝트 추가
+      if(filtered === undefined) {
+        tags.push({
+          name: item,
+          cnt: 1
+        })
+      } else {  // tag가 존재하면 기존 태그 오브젝트의 cnt 추가
+        tags[idx].cnt++;
+      }
+    });
+  });
+
+  // 태그 배열 정렬
+  tags.sort((a, b) => {
+    return b.cnt - a.cnt;
+  });
 
   return {
     props: {
-      posts: posts.slice(0, Config.pagination_size),
-      pagination,
+      tags: tags
     },
   };
 };

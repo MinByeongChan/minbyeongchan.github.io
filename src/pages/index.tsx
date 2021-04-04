@@ -2,7 +2,7 @@ import React from 'react';
 
 import { GetStaticProps } from 'next';
 
-import { BlogGallery, IBlogGalleryProps } from '../blog/BlogGallery';
+import BlogGallery,{ IBlogGalleryProps } from '../blog/BlogGallery';
 import { Meta } from '../layout/Meta';
 import { IPaginationProps } from '../pagination/Pagination';
 import { Main } from '../templates/Main';
@@ -19,13 +19,6 @@ const Index: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => (
 export const getStaticProps: GetStaticProps<IBlogGalleryProps> = async () => {
   const posts = getAllPosts(['title', 'date', 'description', 'slug', 'tag']);
   const pagination: IPaginationProps = {};
-
-  // console.log('posts', posts);
-  // const tags = posts.map((post) => {
-  //   return post.tag;
-  // });
-
-  // console.log('tags', tags);
 
   const pages = convertTo2D(posts, Config.pagination_size);
 
