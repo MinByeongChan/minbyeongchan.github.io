@@ -7,8 +7,9 @@ import { Pagination, IPaginationProps } from '../pagination/Pagination';
 import { PostItems } from '../utils/Content';
 import { color, fontSize, fontWeight } from '../utils/StyleTheme';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faTag, faTags } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faTags } from '@fortawesome/free-solid-svg-icons';
 import { useRouter, withRouter } from 'next/router';
+import { Config } from '../utils/Config';
 
 export type IBlogGalleryProps = {
   posts: PostItems[];
@@ -40,41 +41,53 @@ const GalleryWrapper = styled.div(() => ({
   },
 }));
 
-const GalleryItem = styled.div(() => ({
-  width: '100%',
-  // border: `1px solid ${color.darkBlack}`,
-  color: `${color.darkBlack}`,
-  padding: '25px 12px',
-  '.gallery-item-title': {
-    fontSize: `${fontSize.xxg}`,
-  },
-  '.gallery-item-desc': {
-    fontSize: `${fontSize.md}`,
-  },
-  '.gallery-item-bottom': {
-    display: 'flex',
-    justifyContent: 'space-between',
-    fontSize: `${fontSize.sm}`,
-    padding: '10px 10px 0px 0px',
-  },
-  '.gallery-item-tags': {
-    display: 'flex',
-    flexWrap:"wrap",
-    marginTop:"5px",
-    ".tags-img": {
-      width: '15px',
-      height: 'auto',
-      marginRight:"3px"
-    },
-    ".tag-item": {
-      fontSize: fontSize.sm,
-      marginRight: '3px',
-      "&:hover": {
-        opacity: '0.7',
+const GalleryItem = styled.div`
+  width: 100%;
+  color: ${color.darkBlack};
+  padding: 25px 12px;
+  .gallery-item-title {
+    display: inline;
+    font-size: ${fontSize.xxg};
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0px 2px 0px;
+    }
+  }
+  .gallery-item-author {
+    font-size: ${fontSize.sm};
+    margin-top: 9px;
+    .gallery-item-date {
+      font-weight: ${fontWeight.bold};
+    }
+    a {
+      font-weight: ${fontWeight.bold};
+      color: ${color.orange};
+    }
+  }
+  .gallery-item-desc {
+    font-size: ${fontSize.md};
+    margin-top: 9px;
+  }
+  .gallery-item-tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    .tags-img {
+      width: 15px;
+      height: auto;
+      margin-right: 6px;
+    }
+    .tag-item {
+      font-size: ${fontSize.sm};
+      margin: 0 3px 2px 0;
+      float: left;
+      &:hover {
+        opacity: 0.7;
+        box-shadow: 0px 2px 0px;
       }
     }
-  },
-}));
+  }
+`;
 
 const TopWrapper = styled.div`
   display: flex;
@@ -84,16 +97,41 @@ const TopWrapper = styled.div`
     width: 20px;
     height: 20px;
     margin-left: 15px;
+    cursor: pointer;
+    :hover {
+      .search-input {
+        opacity: 1;
+      }
+    }
   }
+  @media screen and (min-width: 0px) and (max-width: 481px) {
+    flex-direction: column;
+  } ;
+`;
+
+interface ISearchInput {
+  searchToggle: boolean;
+}
+const SearchInput = styled.input`
+  opacity: ${(props: ISearchInput) => (props.searchToggle ? '1' : '0')};
+  border: none;
+  border-bottom: 1px solid #000;
+  font-size: ${fontSize.md};
+  padding-left: 5px;
+  outline: none;
+  transition: 0.2s linear;
 `;
 
 const BlogGallery: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => {
   const router = useRouter();
-  // const [search, onChangeSearch] = useInput('');
-  const [posts, setPosts] = useState(props.posts);
-  const [search, setSearch] = useState(router.query.search ? router.query.search.toString() : '');
 
-  // 검색 필드 onChange 
+  const [posts, setPosts] = useState(props.posts);
+  const [search, setSearch] = useState(
+    router.query.search !== undefined ? router.query.search.toString() : '',
+  );
+  const [searchToggle, setSearchToggle] = useState(false);
+
+  // 검색 필드 onChange
   const onChangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     searhFiltering(e.target.value);
   };
@@ -120,42 +158,58 @@ const BlogGallery: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => {
     } else {
       setPosts(props.posts);
     }
-  }
+  };
 
   useEffect(() => {
     searhFiltering(search);
-  }, [])
+  }, [router.query.search]);
 
   return (
     <Layout>
       <TopWrapper>
         <TopText>Post</TopText>
-        <div>
-          <input type="text" value={search} onChange={onChangeSearch} />
-          <FontAwesomeIcon className="search-img" icon={faSearch} />
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <SearchInput
+            className="search-input"
+            type="text"
+            value={search}
+            onChange={onChangeSearch}
+            searchToggle={searchToggle}
+          />
+          <div onClick={() => setSearchToggle(!searchToggle)}>
+            <FontAwesomeIcon className="search-img" icon={faSearch} />
+          </div>
         </div>
       </TopWrapper>
       <GalleryWrapper>
         {posts.map((elt, index) => (
           <GalleryItem key={index}>
-            <Link href="/posts/[slug]" as={`/posts/${elt.slug}`}>
-              <a>
-                <div style={{ padding: '15px 15px 20px 15px' }}>
+            <div style={{ padding: '15px 15px 20px 15px' }}>
+              <Link href="/posts/[slug]" as={`/posts/${elt.slug}`}>
+                <a>
                   <h2 className="gallery-item-title">{elt.title}</h2>
-                  <div className="gallery-item-desc">{elt.description}</div>
-                  <div className="gallery-item-bottom">
-                    <span>{format(new Date(elt.date), 'LLL d, yyyy')}</span>
-                    <span className="gallery-item-readmore">read more</span>
-                  </div>
-                  <div className="gallery-item-tags">
-                    <FontAwesomeIcon className={'tags-img'} icon={faTags} />
-                    {elt.tag.map((item, index) => (
-                      <span className="tag-item" key={index}>{item}</span>
-                    ))}
-                  </div>
+                </a>
+              </Link>
+              <div className="gallery-item-author">
+                by <a href="https://github.com/MinByeongChan">{Config.author}</a> on{' '}
+                <span className="gallery-item-date">
+                  {format(new Date(elt.date), 'LLL d, yyyy')}
+                </span>
+              </div>
+              <div className="gallery-item-desc">{elt.description}</div>
+              <div className="gallery-item-tags">
+                <FontAwesomeIcon className={'tags-img'} icon={faTags} />
+                <div>
+                  {elt.tag.map((item, index) => (
+                    <Link href={`/?search=${item}`} key={index}>
+                      <a className="tag-item" key={index} onClick={() => setSearch(item)}>
+                        {item}
+                      </a>
+                    </Link>
+                  ))}
                 </div>
-              </a>
-            </Link>
+              </div>
+            </div>
           </GalleryItem>
         ))}
       </GalleryWrapper>

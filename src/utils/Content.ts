@@ -5,7 +5,10 @@ import matter from 'gray-matter';
 
 const postsDirectory = join(process.cwd(), '_posts');
 
-export type PostItems = {
+export interface PostItemsType {
+  tag: string[];
+}
+export type PostItems = PostItemsType & {
   [key: string]: string;
 };
 
@@ -18,7 +21,7 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   const fullPath = join(postsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
-  const items: PostItems = {};
+  const items: PostItems = {} as PostItems;
 
   // Ensure only the minimal needed data is exposed
   fields.forEach((field) => {

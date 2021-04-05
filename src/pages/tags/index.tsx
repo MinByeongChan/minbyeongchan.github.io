@@ -7,8 +7,8 @@ import TagLayout from '../../layout/TagLayout';
 import { getAllPosts } from '../../utils/Content';
 
 export type ITagProps = {
-  tags: ITag[]
-}
+  tags: ITag[];
+};
 
 export interface ITag {
   name: string;
@@ -18,7 +18,7 @@ export interface ITag {
 const Tags: React.FC<ITagProps> = (props: ITagProps) => {
   return (
     <Main meta={<Meta title="Lorem ipsum" description="Lorem ipsum" />}>
-      <TagLayout tags={props.tags}/>
+      <TagLayout tags={props.tags} />
     </Main>
   );
 };
@@ -26,10 +26,10 @@ const Tags: React.FC<ITagProps> = (props: ITagProps) => {
 export const getStaticProps: GetStaticProps<ITagProps> = async () => {
   const posts = getAllPosts(['title', 'date', 'description', 'slug', 'tag']);
 
-  const tags: ITag[]= [];
+  const tags: ITag[] = [];
 
   posts.forEach((post) => {
-    const tagArr: any[] = post.tag;
+    const tagArr = post.tag;
 
     tagArr.forEach((item) => {
       let idx = 0;
@@ -40,12 +40,13 @@ export const getStaticProps: GetStaticProps<ITagProps> = async () => {
       });
 
       // tag가 없으면 새로운 태그 오브젝트 추가
-      if(filtered === undefined) {
+      if (filtered === undefined) {
         tags.push({
           name: item,
-          cnt: 1
-        })
-      } else {  // tag가 존재하면 기존 태그 오브젝트의 cnt 추가
+          cnt: 1,
+        });
+      } else {
+        // tag가 존재하면 기존 태그 오브젝트의 cnt 추가
         tags[idx].cnt++;
       }
     });
@@ -58,7 +59,7 @@ export const getStaticProps: GetStaticProps<ITagProps> = async () => {
 
   return {
     props: {
-      tags: tags
+      tags: tags,
     },
   };
 };

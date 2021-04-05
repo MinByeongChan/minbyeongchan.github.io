@@ -6,9 +6,14 @@ import Link from 'next/link';
 import { color, fontSize, fontWeight } from '../utils/StyleTheme';
 
 const NavLayout = styled.nav(() => ({
+  position: 'sticky',
+  top: '0',
   width: '100%',
   height: '67px',
   borderBottom: `1px solid ${color.darkWhite}`,
+  boxShadow: '0 0 9px 3px rgb(41 41 41 / 25%)',
+  backgroundColor: `${color.white}`,
+  opacity: '0.9',
 }));
 
 const NavContainer = styled.div(() => ({

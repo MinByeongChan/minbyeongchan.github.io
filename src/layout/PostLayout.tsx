@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { format } from 'date-fns';
 import styled from '@emotion/styled';
 import { color, fontSize, fontWeight } from '../utils/StyleTheme';
@@ -31,7 +30,7 @@ const TitleContainer = styled.div`
   .date {
     font-size: ${fontSize.md};
     font-weight: ${fontWeight.bold};
-    color: ${color.grey};
+    color: ${color.gray};
     margin-left: 10px;
   }
   @media screen and (min-width: 481px) and (max-width: 1080px) {

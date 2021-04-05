@@ -2,6 +2,7 @@ export const color = {
   red: '#ff0000',
   fuchsia: '#ff009f',
   deeppink: '#ff1493',
+  orchid: '#da70d6',
   black: '#000000',
   darkBlack: 'rgb(41,44,50)',
   lightBlack: 'rgb(60, 71, 86)',
@@ -15,9 +16,9 @@ export const color = {
   lightgrey: '#d3d3d3',
   gainsboro: '#dcdcdc',
   green: 'rgb(14, 128, 64)',
-  dodgerblue:"#1e90ff",
+  dodgerblue: '#1e90ff',
   lightBlue: 'rgb(82, 166, 228)',
-  lightskyblue : '#87cefa',
+  lightskyblue: '#87cefa',
   orange: 'rgb(255,90,0)',
 };
 

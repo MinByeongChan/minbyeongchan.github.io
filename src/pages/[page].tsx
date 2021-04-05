@@ -2,7 +2,7 @@ import React from 'react';
 
 import { GetStaticPaths, GetStaticProps } from 'next';
 
-import { BlogGallery, IBlogGalleryProps } from '../blog/BlogGallery';
+import BlogGallery, { IBlogGalleryProps } from '../blog/BlogGallery';
 import { Meta } from '../layout/Meta';
 import { IPaginationProps } from '../pagination/Pagination';
 import { Main } from '../templates/Main';
@@ -39,7 +39,7 @@ export const getStaticPaths: GetStaticPaths<IPageUrl> = async () => {
 };
 
 export const getStaticProps: GetStaticProps<IBlogGalleryProps, IPageUrl> = async ({ params }) => {
-  const posts = getAllPosts(['title', 'date', 'description', 'slug']);
+  const posts = getAllPosts(['title', 'date', 'description', 'slug', 'tag']);
 
   const pages = convertTo2D(posts, Config.pagination_size);
   const currPage = Number(params!.page.replace('page', ''));
