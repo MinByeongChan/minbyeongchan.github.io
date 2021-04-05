@@ -20,15 +20,20 @@ export function convertUrlToLinkHref(url: string) {
   return '/[page]';
 }
 
+// 페이지 리스트 생성 함수
 export function createPageList(currPage: number, maxPage: number, pagingIndicator: number) {
   let resultList = [];
   const pivot = Math.ceil(pagingIndicator / 2);
-  const interval = pivot - 1;
+  const interval = Math.ceil(pivot / 2) - 1;
   var pageStart, pageEnd;
 
   if (1 <= currPage && currPage <= pivot) {
     pageStart = 1;
-    pageEnd = pivot + interval - 1;
+    if (maxPage < pivot) {
+      pageEnd = maxPage;
+    } else {
+      pageEnd = pivot + interval;
+    }
   } else if (maxPage - pivot < currPage && currPage <= maxPage) {
     pageStart = maxPage - pivot;
     pageEnd = maxPage;

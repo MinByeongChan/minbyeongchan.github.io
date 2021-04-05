@@ -6,5 +6,5 @@ export const Config = {
   locale: 'kr',
   author: 'Byeong Chan',
   pagination_size: 9,
-  paging_indicator: 3,
+  paging_indicator: 5,
 };
