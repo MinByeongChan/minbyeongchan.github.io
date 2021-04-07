@@ -1,7 +1,7 @@
 ---
 author: Byeong Chan
 title: "[프로그래머스] 124 나라의 숫자"
-description: ''
+description: '124 나라가 있습니다. 124 나라에서는 10진법이 아닌 다음과 같은 자신들만의 규칙으로 수를 표현합니다.'
 date: "2020-01-20"
 modified_date: "2020-01-20"
 tags: [Programmers]

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from '@emotion/styled';
 import { format } from 'date-fns';
 import Link from 'next/link';
@@ -109,17 +109,17 @@ const TopWrapper = styled.div`
   } ;
 `;
 
-interface ISearchInput {
-  searchToggle: boolean;
-}
 const SearchInput = styled.input`
-  opacity: ${(props: ISearchInput) => (props.searchToggle ? '1' : '0')};
+  width: 330px;
   border: none;
   border-bottom: 1px solid #000;
-  font-size: ${fontSize.md};
+  font-size: ${fontSize.sm};
   padding-left: 5px;
   outline: none;
   transition: 0.2s linear;
+  @media screen and (min-width: 0px) and (max-width: 481px) {
+    width: 80%;
+  } ;
 `;
 
 const BlogGallery: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => {
@@ -129,7 +129,6 @@ const BlogGallery: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => {
   const [search, setSearch] = useState(
     router.query.search !== undefined ? router.query.search.toString() : '',
   );
-  const [searchToggle, setSearchToggle] = useState(false);
 
   // 검색 필드 onChange
   const onChangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -164,7 +163,6 @@ const BlogGallery: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => {
     searhFiltering(search);
   }, [router.query.search]);
 
-  console.log('posts', posts);
   return (
     <Layout>
       <TopWrapper>
@@ -174,10 +172,10 @@ const BlogGallery: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => {
             className="search-input"
             type="text"
             value={search}
+            placeholder="검색내용, 태그 등을 입력해보세요!"
             onChange={onChangeSearch}
-            searchToggle={searchToggle}
           />
-          <div onClick={() => setSearchToggle(!searchToggle)}>
+          <div>
             <FontAwesomeIcon className="search-img" icon={faSearch} />
           </div>
         </div>

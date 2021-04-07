@@ -47,6 +47,9 @@ const TitleContainer = styled.div`
 `;
 
 const SubTitleContainer = styled.div`
+  display: flex;
+  align-items: center;
+  padding-bottom: 40px;
   .author-img {
     width: 30px;
     height: 30px;
@@ -95,7 +98,7 @@ const PostLayout = (props: IPostProps) => {
           <div className="title">{props.title}</div>
           <div className="date">{format(new Date(props.date), 'LLLL d, yyyy')}</div>
         </TitleContainer>
-        <SubTitleContainer style={{ display: 'flex', alignItems: 'center' }}>
+        <SubTitleContainer>
           <div className="author-img" />
           <span className="author-name">{Config.author}</span>
         </SubTitleContainer>

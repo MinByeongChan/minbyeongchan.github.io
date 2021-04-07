@@ -24,10 +24,8 @@ export function convertUrlToLinkHref(url: string) {
 export function createPageList(currPage: number, maxPage: number, pagingIndicator: number) {
   let resultList = [];
   const pivot = Math.ceil(pagingIndicator / 2);
-  const interval = pivot - 1 ;
+  const interval = pivot - 1;
   var pageStart, pageEnd;
-
-  console.log("maxPage", maxPage);
 
   if (1 <= currPage && currPage <= pivot) {
     pageStart = 1;

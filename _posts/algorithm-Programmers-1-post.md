@@ -1,6 +1,6 @@
 ---
 title: "[프로그래머스] 가장 큰 수(C++)"
-description: ''
+description: '0 또는 양의 정수가 주어졌을 때, 정수를 이어 붙여 만들 수 있는 가장 큰 수를 알아내 주세요.'
 date: "2019-10-15"
 modified_date: "2019-10-15"
 tags: [Programmers]

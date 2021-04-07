@@ -1,6 +1,6 @@
 ---
 title: "[프로그래머스] 숫자의 표현"
-description: ''
+description: '프로그래머스 문제는 백준처럼 정형화 되어있지 않아 처음에 접근하기가 어렵다. 무엇보다 문제 이해가 잘안된다'
 date: "2020-01-23"
 modified_date: "2020-01-23"
 tags: [Programmers]

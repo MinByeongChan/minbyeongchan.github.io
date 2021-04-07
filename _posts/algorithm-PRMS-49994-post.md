@@ -1,6 +1,6 @@
 ---
 title: "[프로그래머스] 방문 길이"
-description: ''
+description: '게임 캐릭터를 4가지 명령어를 통해 움직이려 합니다. 명령어는 다음과 같습니다.'
 date: "2020-01-05"
 modified_date: "2020-01-05"
 tags: [Programmers]

@@ -1,6 +1,6 @@
 ---
 title: "[프로그래머스] 이상한 문자 만들기"
-description: ''
+description: '문자열 s는 한 개 이상의 단어로 구성되어 있습니다. 각 단어는 하나 이상의 공백문자로 구분되어 있습니다.'
 date: "2020-01-15"
 modified_date: "2020-01-15"
 tags: [Programmers]

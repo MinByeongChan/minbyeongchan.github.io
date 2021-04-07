@@ -1,6 +1,6 @@
 ---
 title: "[프로그래머스] 스킬트리"
-description: ''
+description: '선행 스킬이란 어떤 스킬을 배우기 전에 먼저 배워야 하는 스킬을 뜻합니다.'
 date: "2020-01-28"
 modified_date: "2020-01-28"
 tags: [Programmers, 완전탐색]

@@ -1,6 +1,6 @@
 ---
 title: "[프로그래머스] 영어 끝말잇기"
-description: ''
+description: '1부터 n까지 번호가 붙어있는 n명의 사람이 영어 끝말잇기를 하고 있습니다. 영어 끝말잇기는 다음과 같은 규칙으로 진행됩니다.'
 date: "2020-02-04"
 modified_date: "2020-02-04"
 tags: [Programmers, 완전탐색]

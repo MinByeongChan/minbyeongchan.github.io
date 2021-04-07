@@ -1,6 +1,6 @@
 ---
 title: "[프로그래머스] 소수 찾기"
-description: ''
+description: '한자리 숫자가 적힌 종이 조각이 흩어져있습니다. 흩어진 종이 조각을 붙여 소수를 몇 개 만들 수 있는지 알아내려 합니다.'
 date: "2020-01-26"
 modified_date: "2020-01-26"
 tags: [Programmers, 에라스토테네스의체]
