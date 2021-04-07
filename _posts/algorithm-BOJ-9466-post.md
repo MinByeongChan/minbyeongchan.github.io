@@ -5,7 +5,7 @@ description: ''
 date: "2020-01-07"
 modified_date: "2020-01-07"
 categories: [Algorithm]
-tags: [BOJ DFS]
+tags: [BOJ, DFS]
 comments: true
 ---
 

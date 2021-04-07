@@ -5,7 +5,7 @@ desc: ''
 date: "2020-01-08"
 modified_date: "2020-01-08"
 categories: [Algorithm]
-tags: [BOJ DFS BFS]
+tags: [BOJ, DFS, BFS]
 comments: true
 ---
 

@@ -3,7 +3,7 @@ title: '[React hook] useCallback, 컴포넌트 성능 최적화'
 description: "이번엔 `useCallback`이다. useMemo와 마찬가지로 메모이제이션 기법을 사용하여 성능을 최적화 시킨다..."
 date: '2021-01-05'
 modified_date: '2021-01-05'
-tags: [React, useCallback Hook]
+tags: [React, useCallback, Hook]
 ---
 
 [React 문서 참조](https://ko.reactjs.org/docs/hooks-reference.html#usecallback)
