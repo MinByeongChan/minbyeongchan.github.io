@@ -19,19 +19,16 @@ const Layout = styled.div(() => ({
 }));
 
 const TitleContainer = styled.div`
-  display: flex;
-  align-items: flex-end;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   .title {
     font-size: ${fontSize.h2};
     font-weight: ${fontWeight.bold};
     color: ${color.darkBlack};
   }
   .date {
-    font-size: ${fontSize.md};
+    font-size: ${fontSize.sm};
     font-weight: ${fontWeight.bold};
     color: ${color.gray};
-    margin-left: 10px;
   }
   @media screen and (min-width: 481px) and (max-width: 1080px) {
     align-items: flex-start;
@@ -51,8 +48,8 @@ const TitleContainer = styled.div`
 
 const SubTitleContainer = styled.div`
   .author-img {
-    width: 42px;
-    height: 42px;
+    width: 30px;
+    height: 30px;
     background-image: url('/assets/images/mbc_img.png');
     background-position: 50% 50%;
     background-size: cover;
@@ -66,40 +63,51 @@ const SubTitleContainer = styled.div`
 `;
 
 const ContentLayout = styled.div(() => ({
-  width: '70%',
-  minWidth: '780px',
+  width: '100%',
+  maxWidth: '840px',
   margin: '0 auto',
   '@media screen and (min-width: 481px) and (max-width: 1080px)': {
     width: '100%',
     minWidth: '600px',
+    padding: `0 22px`,
   },
   '@media screen and (min-width: 0px) and (max-width: 480px)': {
     width: '100%',
     minWidth: '0px',
+    padding: `0 22px`,
   },
 }));
+
+const PostContainer = styled.div`
+  max-width: 720px;
+
+  @media screen and (min-width: 0px) and (max-width: 768px) {
+    width: 100%;
+    max-width: none;
+  } ;
+`;
 
 const PostLayout = (props: IPostProps) => {
   return (
     <Layout>
       <ContentLayout>
         <TitleContainer>
-          <span className="title">{props.title}</span>
-          <span className="date">{format(new Date(props.date), 'LLLL d, yyyy')}</span>
+          <div className="title">{props.title}</div>
+          <div className="date">{format(new Date(props.date), 'LLLL d, yyyy')}</div>
         </TitleContainer>
         <SubTitleContainer style={{ display: 'flex', alignItems: 'center' }}>
           <div className="author-img" />
           <span className="author-name">{Config.author}</span>
         </SubTitleContainer>
-      </ContentLayout>
 
-      <ContentLayout>
-        <Content>
-          <div
-            // eslint-disable-next-line react/no-danger
-            dangerouslySetInnerHTML={{ __html: props.content }}
-          />
-        </Content>
+        <PostContainer>
+          <Content>
+            <div
+              // eslint-disable-next-line react/no-danger
+              dangerouslySetInnerHTML={{ __html: props.content }}
+            />
+          </Content>
+        </PostContainer>
       </ContentLayout>
     </Layout>
   );
