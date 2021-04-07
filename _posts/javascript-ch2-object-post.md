@@ -1,9 +1,9 @@
 ---
 title: "[Javascript] 변수선언 방식의 차이(const, var, let)"
+description: ''
 date: "2020-01-02"
-category: [Javascript]
-tags: [Javascript Object 배열]
-comments: true
+modified_date: "2020-01-02"
+tags: [Javascript, Object, 배열]
 ---
 
 # Object 란

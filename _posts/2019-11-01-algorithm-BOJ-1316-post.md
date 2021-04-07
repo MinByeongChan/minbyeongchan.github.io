@@ -1,9 +1,9 @@
 ---
 title: "[백준] 1316 그룹 단어 체커 (문자열)"
+description: "그룹 단어란 단어에 존재하는 모든 문자에 대해서, 각 문자가 연속해서 나타나는 경우만을 말한다..."
 date: "2019-11-01"
-categories: [Algorithm]
-tags: [BOJ 문자열]
-comments: true
+modified_date: "2019-11-01"
+tags: [백준, 문자열]
 ---
 
 # Problem

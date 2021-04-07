@@ -1,9 +1,9 @@
 ---
 title: "[React] map함수를 활용한 리스트 컴포넌트 만들기"
+description: 'map 함수는 javascript에서 새로운 배열을 만드는 매우 유용한 함수이다.'
 date: "2020-11-12"
-categories: [React]
-tags: React map
-comments: true
+modified_date: '2020-11-12'
+tags: [React map]
 ---
 
 [do-it-라액트프로그래밍 정석 교재 참조해서 공부]()

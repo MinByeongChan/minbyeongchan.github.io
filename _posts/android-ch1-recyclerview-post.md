@@ -1,9 +1,9 @@
 ---
 title: "[Android] RecyclerView의 개념 및 사용법"
+description: 'recyclerview는 ListView를 보완하기 위해 나온것이다.'
 date: "2019-12-19"
-categories: [Android]
-tags: [Android RecyclerView]
-comments: true
+modified_date: "2019-12-19"
+tags: [Android, RecyclerView]
 ---
 
 # RecyclerView란?

@@ -1,9 +1,11 @@
 ---
 author: Byeong Chan
 title: "[백준] 10809 알파벳 찾기"
+description: ''
 date: "2019-11-01"
+modified_date: '2019-11-01'
 categories: [Algorithm]
-tags: [BOJ 문자열]
+tags: [BOJ, 문자열]
 comments: true
 ---
 

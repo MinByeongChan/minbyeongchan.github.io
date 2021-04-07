@@ -39,7 +39,7 @@ export const getStaticPaths: GetStaticPaths<IPageUrl> = async () => {
 };
 
 export const getStaticProps: GetStaticProps<IBlogGalleryProps, IPageUrl> = async ({ params }) => {
-  const posts = getAllPosts(['title', 'date', 'description', 'slug', 'tag']);
+  const posts = getAllPosts(['title', 'date', 'description', 'slug', 'tags']);
 
   const pages = convertTo2D(posts, Config.pagination_size);
   const currPage = Number(params!.page.replace('page', ''));
@@ -49,7 +49,7 @@ export const getStaticProps: GetStaticProps<IBlogGalleryProps, IPageUrl> = async
 
   const maxPage = pages.length;
   const pagingIndicator = Config.paging_indicator;
-  
+
   const pagingList = createPageList(currPage, maxPage, pagingIndicator);
 
   // pagination 오브젝트 init

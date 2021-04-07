@@ -1,9 +1,9 @@
 ---
 title: "[프로그래머스] 가장 큰 수(C++)"
+description: ''
 date: "2019-10-15"
-categories: [Algorithm]
+modified_date: "2019-10-15"
 tags: [Programmers]
-comments: true
 ---
 
 # Problem

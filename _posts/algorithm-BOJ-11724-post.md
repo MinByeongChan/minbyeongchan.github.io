@@ -1,9 +1,11 @@
 ---
 author: Byeong Chan
 title: "[백준] 11724 연결 요소의 개수"
+description: ''
 date: "2019-12-29"
+modified_date: "2019-12-29"
 categories: [Algorithm]
-tags: [BOJ DFS]
+tags: [백준, DFS]
 comments: true
 ---
 

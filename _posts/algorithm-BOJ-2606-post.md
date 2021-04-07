@@ -1,8 +1,10 @@
 ---
 title: "[백준] 2908 상수 (문자열)"
+description: ''
 date: "2019-10-22"
+modified_date: "2019-10-22"
 categories: [Algorithm]
-tags: [BOJ 문자열]
+tags: [BOJ, 문자열]
 comments: true
 ---
 

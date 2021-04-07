@@ -1,11 +1,9 @@
 ---
 title: "[백준] 1012 유기농 배추"
-description: 차세대 영농인 한나는 강원도 고랭지에서 유기농 배추를 재배하기로 하였다...
-categories: [Algorithm]
+description: "차세대 영농인 한나는 강원도 고랭지에서 유기농 배추를 재배하기로 하였다..."
 date: "2019-12-30"
-modified_date: '2019-12-30'
-tags: [BOJ DFS]
-comments: true
+modified_date: "2019-12-30"
+tag: [백준, BOJ, DFS]
 ---
 
 # Problem

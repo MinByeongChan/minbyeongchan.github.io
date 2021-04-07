@@ -1,9 +1,9 @@
 ---
 title: "[Android] SnackBar의 개념, 사용법"
+description: 'snackbar는 앱 사용자에게 알림메세지, 경고창 등을 나타내게 하는 기능이다.'
 date: "2019-12-31"
-categories: [Android]
-tags: [Android Snackbar]
-comments: true
+modified_date: "2019-12-31"
+tags: [Android, Snackbar]
 ---
 
 <style>

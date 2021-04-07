@@ -1,9 +1,9 @@
 ---
 title: "[프로그래머스] 이상한 문자 만들기"
+description: ''
 date: "2020-01-15"
-categories: [Algorithm]
+modified_date: "2020-01-15"
 tags: [Programmers]
-comments: true
 ---
 
 # Problem

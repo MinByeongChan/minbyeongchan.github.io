@@ -1,8 +1,10 @@
 ---
 title: "[백준] 2294 동전2"
+description: ''
 date: "2019-12-18"
+modified_date: '2019-12-18'
 categories: [Algorithm]
-tags: [BOJ DP]
+tags: [BOJ, DP]
 comments: true
 ---
 

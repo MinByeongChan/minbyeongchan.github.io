@@ -1,10 +1,9 @@
 ---
 title: "[React hook] hook에 대한 정리, hook에서의 state관리 useState"
+description: '리액트를 `do it 리액트 프로그래밍`으로 시작했다. 근데 이건 hook에 대해 전혀 다루지 않아서 hook에 대한 개념 조차 알지 못했다.'
 date: "2020-12-21"
-description: ""
-categories: [React]
-tags: [React useState Hook]
-comments: true
+modified_date: '2020-12-21'
+tags: [React, useState, Hook]
 ---
 
 리액트를 `do it 리액트 프로그래밍`으로 시작했다. 근데 이건 hook에 대해 전혀 다루지 않아서 hook에 대한 개념 조차 알지 못했다. 계속 리액트를 공부하다 보니 hook이란 것도 알게되어 정리하려한다.

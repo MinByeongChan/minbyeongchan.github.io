@@ -1,9 +1,9 @@
 ---
 title: "[프로그래머스] 방문 길이"
+description: ''
 date: "2020-01-05"
-categories: [Algorithm]
+modified_date: "2020-01-05"
 tags: [Programmers]
-comments: true
 ---
 
 # Problem

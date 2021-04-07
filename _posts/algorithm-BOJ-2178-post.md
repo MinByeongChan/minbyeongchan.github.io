@@ -1,9 +1,9 @@
 ---
 title: "[백준] 2178 미로 탐색(최소경로, BFS)"
+description: "N×M크기의 배열로 표현되는 미로가 있다..."
 date: "2019-12-29"
-categories: [Algorithm]
-tags: [BOJ BFS]
-comments: true
+modified_date: "2019-12-29"
+tags: [백준, BFS]
 ---
 
 # Problem

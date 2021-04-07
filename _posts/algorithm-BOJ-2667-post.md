@@ -1,9 +1,11 @@
 ---
 author: Byeong Chan
 title: "[백준] 2667 단지번호붙이기"
+description: ''
 date: "2019-12-30"
+modified_date: "2019-12-30"
 categories: [Algorithm]
-tags: [BOJ DFS]
+tags: [BOJ, DFS]
 comments: true
 ---
 

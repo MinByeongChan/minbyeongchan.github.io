@@ -1,9 +1,9 @@
 ---
 title: "[Android] SharedPreferences, 앱 내부 데이터 저장"
+description: '앱 개발을 하다보면 token과 같이 데이터를 저장해야하는 상황이 닥칠 수 있다.'
 date: "2020-01-16"
-categories: [Android]
-tags: [Android SharedPreferences]
-comments: true
+modified_date: "2020-01-16"
+tags: [Android, SharedPreferences]
 ---
 
 <style>

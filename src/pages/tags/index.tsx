@@ -24,32 +24,35 @@ const Tags: React.FC<ITagProps> = (props: ITagProps) => {
 };
 
 export const getStaticProps: GetStaticProps<ITagProps> = async () => {
-  const posts = getAllPosts(['title', 'date', 'description', 'slug', 'tag']);
+  const posts = getAllPosts(['title', 'date', 'description', 'slug', 'tags']);
 
   const tags: ITag[] = [];
 
   posts.forEach((post) => {
-    const tagArr = post.tag;
+    const tagArr = post.tags;
 
-    tagArr.forEach((item) => {
-      let idx = 0;
-      // 기존 tags 배열에 tag가 있는지 검사
-      const filtered = tags.find((data, index) => {
-        idx = index;
-        return data.name === item;
-      });
-
-      // tag가 없으면 새로운 태그 오브젝트 추가
-      if (filtered === undefined) {
-        tags.push({
-          name: item,
-          cnt: 1,
+    // tags배열 인자 검증
+    if (tagArr !== undefined && Array.isArray(tagArr)) {
+      tagArr.forEach((item) => {
+        let idx = 0;
+        // 기존 tags 배열에 tag가 있는지 검사
+        const filtered = tags.find((data, index) => {
+          idx = index;
+          return data.name === item;
         });
-      } else {
-        // tag가 존재하면 기존 태그 오브젝트의 cnt 추가
-        tags[idx].cnt++;
-      }
-    });
+
+        // tag가 없으면 새로운 태그 오브젝트 추가
+        if (filtered === undefined) {
+          tags.push({
+            name: item,
+            cnt: 1,
+          });
+        } else {
+          // tag가 존재하면 기존 태그 오브젝트의 cnt 추가
+          tags[idx].cnt++;
+        }
+      });
+    }
   });
 
   // 태그 배열 정렬

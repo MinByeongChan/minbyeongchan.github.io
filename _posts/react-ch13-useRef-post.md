@@ -1,9 +1,9 @@
 ---
 title: '[React hook] useRef, 데이터 참조, 리렌더링 시 state변경 안되는 현상 해결'
+description: "이번엔 `useRef`이다. DOM의 Focus를 제어할 때, ref라는 프로퍼티로 제어하기도 했다."
 date: '2021-01-01'
-categories: [React]
-tags: [React useRef Hook]
-comments: true
+modified_date: '2021-01-01'
+tags: [React, useRef, Hook]
 ---
 
 [React 문서 참조해서 정리](https://ko.reactjs.org/docs/hooks-reference.html#useref)

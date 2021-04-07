@@ -73,10 +73,10 @@ export const getStaticProps: GetStaticProps<IPostProps, IPostUrl> = async ({ par
   return {
     props: {
       title: post.title,
-      description: post.description,
+      description: post.description !== undefined ? post.description : '',
       date: post.date,
-      modified_date: post.modified_date,
-      image: post.image,
+      modified_date: post.modified_date !== undefined ? post.modified_date : '',
+      image: post.image !== undefined ? post.image : '',
       content,
     },
   };

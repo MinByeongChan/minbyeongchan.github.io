@@ -1,9 +1,9 @@
 ---
 title: "[React] 초기설정, JSX, 렌더링 및 기본 개념"
+description: ''
 date: "2020-07-05"
-categories: [React]
-tags: React
-comments: true
+modified_date: '2020-07-05'
+tags: [React]
 ---
 
 [React 가이드 참조해서 공부](https://ko.reactjs.org/docs/rendering-elements.html)

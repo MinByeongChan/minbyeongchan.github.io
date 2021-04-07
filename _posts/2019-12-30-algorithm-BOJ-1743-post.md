@@ -1,9 +1,9 @@
 ---
 title: "[백준] 1743 음식물 피하기"
+description: "코레스코 콘도미니엄 8층은 학생들이 3끼의 식사를 해결하는 공간이다..."
 date: "2019-12-30"
-categories: [Algorithm]
-tags: [BOJ DFS]
-comments: true
+modified_date: "2019-12-30"
+tag: [백준, DFS]
 ---
 
 # Problem

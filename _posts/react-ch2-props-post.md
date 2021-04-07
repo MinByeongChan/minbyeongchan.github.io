@@ -1,9 +1,9 @@
 ---
 title: "[React] 컴포넌트 개념, props 데이터 전달방법"
+description: '리액트는 기본적으로 컴포넌트별로 동작한다.'
 date: "2020-07-26"
-categories: [React]
-tags: React 컴포넌트 props children
-comments: true
+modified_date: "2020-07-26"
+tags: [React, 컴포넌트, props, children]
 ---
 
 [React 가이드 참조해서 공부](https://ko.reactjs.org/docs/rendering-elements.html)

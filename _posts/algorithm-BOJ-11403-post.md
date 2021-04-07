@@ -1,9 +1,11 @@
 ---
 author: Byeong Chan
 title: "[백준] 11403 경로 찾기"
+description: ''
 date: "2020-01-01"
+modified_date: "2020-01-01"
 categories: [Algorithm]
-tags: [BOJ BFS DFS]
+tags: [벡준, BFS, DFS]
 comments: true
 ---
 

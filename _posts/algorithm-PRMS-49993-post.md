@@ -1,9 +1,9 @@
 ---
 title: "[프로그래머스] 스킬트리"
+description: ''
 date: "2020-01-28"
-categories: [Algorithm]
-tags: [Programmers 완전탐색]
-comments: true
+modified_date: "2020-01-28"
+tags: [Programmers, 완전탐색]
 ---
 
 # Problem

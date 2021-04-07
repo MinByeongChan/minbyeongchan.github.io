@@ -1,8 +1,10 @@
 ---
 title: "[백준] 2468 안전 영역"
+description: ''
 date: "2020-01-09"
+modified_date: "2020-01-09"
 categories: [Algorithm]
-tags: [BOJ DFS BFS]
+tags: [BOJ, DFS, BFS]
 comments: true
 ---
 

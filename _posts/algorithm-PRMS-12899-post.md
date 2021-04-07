@@ -1,10 +1,10 @@
 ---
 author: Byeong Chan
-date: "2020-01-20"
 title: "[프로그래머스] 124 나라의 숫자"
-categories: [Algorithm]
+description: ''
+date: "2020-01-20"
+modified_date: "2020-01-20"
 tags: [Programmers]
-comments: true
 ---
 
 # Problem

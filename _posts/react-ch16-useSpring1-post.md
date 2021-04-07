@@ -1,9 +1,9 @@
 ---
 title: '[React] react에서 애니메이션 처리, react-spring'
+description: "먼저 css로 애니메이션을 일일이 매번 처리하려고하다 보니, 귀찮았다..."
 date: '2021-01-17'
-categories: [React]
-tags: [React useSpring]
-comments: true
+modified_date: '2021-01-17'
+tags: [React, useSpring]
 ---
 
 # 리액트에서 애니메이션 처리

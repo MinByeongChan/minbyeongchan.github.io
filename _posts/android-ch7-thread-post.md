@@ -1,9 +1,9 @@
 ---
 title: "[Android] 쓰레드 개념, 사용법, UI 처리"
+description: '쓰레드는 작업(실행)의 단위이다. 어떤 프로세스가 자원을 할당 받고, 프로그램이 실행이 될 때...'
 date: "2020-03-01"
-categories: [Android]
-tags: [Android Coroutine]
-comments: true
+modified_date: "2020-03-01"
+tags: [Android, Coroutine]
 ---
 
 <style>

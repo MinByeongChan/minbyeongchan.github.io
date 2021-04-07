@@ -6,7 +6,7 @@ import matter from 'gray-matter';
 const postsDirectory = join(process.cwd(), '_posts');
 
 export interface PostItemsType {
-  tag: string[];
+  tags: string[];
 }
 export type PostItems = PostItemsType & {
   [key: string]: string;

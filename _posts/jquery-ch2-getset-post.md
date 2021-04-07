@@ -1,9 +1,9 @@
 ---
 title: "[Jquery] HTML 요소 접근 방법, GET/SET"
+description: ''
 date: "2020-03-21"
-categories: [Jquery]
-tags: Jquery
-comments: true
+modified_date: "2020-03-21"
+tags: [Jquery]
 ---
 
 <style>

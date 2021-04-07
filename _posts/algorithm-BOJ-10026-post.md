@@ -1,7 +1,9 @@
 ---
 author: Byeong Chan
 title: "[백준] 10026 적록색약"
+desc: ''
 date: "2020-01-08"
+modified_date: "2020-01-08"
 categories: [Algorithm]
 tags: [BOJ DFS BFS]
 comments: true

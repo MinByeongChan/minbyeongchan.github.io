@@ -1,9 +1,9 @@
 ---
 title: "[백준] 1912 연속합"
+description: "개의 정수로 이루어진 임의의 수열이 주어진다..."
 date: "2019-12-10"
-categories: [Algorithm]
-tags: [BOJ DP]
-comments: true
+modified_date: "2019-12-10"
+tags: [백준, DP]
 ---
 
 # Problem

@@ -1,9 +1,9 @@
 ---
 title: "[Android] Webview와 Javascript 연동(Eclipse, Tomcat, Jquery)"
+description: 'Webview는 안드로이드에서 Web을 제어하기 위한 개념이다.'
 date: "2020-03-25"
-categories: [Android]
-tags: [Android Coroutine Javascript Webview]
-comments: true
+modified_date: "2020-03-25"
+tags: [Android, Coroutine, Javascript, Webview]
 ---
 
 <style>

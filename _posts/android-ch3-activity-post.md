@@ -1,9 +1,9 @@
 ---
 title: "[Android] Activity와 AppCompatActivity의 차이점"
+description: 'Activity와 AppCompatActivity의 차이점을 알아보기 전에 먼저 Context를 알아야한다.'
 date: "2020-01-08"
-categories: [Android]
-tags: [Android Activity AppCompatActivity Context]
-comments: true
+modified_date: "2020-01-08"
+tags: [Android, Activity, AppCompatActivity, Context]
 ---
 
 <style>

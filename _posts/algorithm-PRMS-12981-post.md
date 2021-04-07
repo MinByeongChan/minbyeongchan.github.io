@@ -1,9 +1,9 @@
 ---
 title: "[프로그래머스] 영어 끝말잇기"
+description: ''
 date: "2020-02-04"
-categories: [Algorithm]
-tags: [Programmers 완전탐색]
-comments: true
+modified_date: "2020-02-04"
+tags: [Programmers, 완전탐색]
 ---
 
 # Problem

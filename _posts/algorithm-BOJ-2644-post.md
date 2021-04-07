@@ -1,8 +1,10 @@
 ---
 title: "[백준] 2644 촌수계산"
+description: ''
 date: "2019-12-26"
+modified_date: "2019-12-26"
 categories: [Algorithm]
-tags: [BOJ BFS]
+tags: [BOJ, BFS]
 comments: true
 ---
 

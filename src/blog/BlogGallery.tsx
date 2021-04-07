@@ -145,7 +145,7 @@ const BlogGallery: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => {
       const tmp = props.posts.filter((data) => {
         const title = data.title.toString();
         const desc = data.description.toString();
-        const tags = data.tag.toString();
+        const tags = data.tags.toString();
 
         return (
           title.match(new RegExp(inputVal, 'i')) !== null ||
@@ -164,6 +164,7 @@ const BlogGallery: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => {
     searhFiltering(search);
   }, [router.query.search]);
 
+  console.log('posts', posts);
   return (
     <Layout>
       <TopWrapper>
@@ -200,13 +201,15 @@ const BlogGallery: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => {
               <div className="gallery-item-tags">
                 <FontAwesomeIcon className={'tags-img'} icon={faTags} />
                 <div>
-                  {elt.tag !== undefined ? elt.tag.map((item, index) => (
-                    <Link href={`/?search=${item}`} key={index}>
-                      <a className="tag-item" key={index} onClick={() => setSearch(item)}>
-                        {item}
-                      </a>
-                    </Link>
-                  )) : '-'}
+                  {elt.tags !== undefined
+                    ? elt.tags.map((item, index) => (
+                        <Link href={`/?search=${item}`} key={index}>
+                          <a className="tag-item" key={index} onClick={() => setSearch(item)}>
+                            {item}
+                          </a>
+                        </Link>
+                      ))
+                    : '-'}
                 </div>
               </div>
             </div>

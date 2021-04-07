@@ -1,9 +1,9 @@
 ---
 title: "[React] Redux, 공용 데이터 저장소 개념"
+description: '리액트는 컴포넌트별로 구성되어있는 자바스크립트 기반 프레임워크입니다.'
 date: "2020-12-08"
-categories: [React]
-tags: [React Redux]
-comments: true
+modified_date: "2020-12-08"
+tags: [React, Redux]
 ---
 
 # 리액트에서의 리덕스 필요성

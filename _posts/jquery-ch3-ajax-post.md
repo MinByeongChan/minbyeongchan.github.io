@@ -1,9 +1,9 @@
 ---
 title: "[Jquery] AJAX의 기초 / 사용 방법"
+description: ''
 date: "2020-03-23"
-categories: [Jquery ajax]
-tags: Jquery
-comments: true
+modified_data: "2020-03-23"
+tags: [Jquery]
 ---
 
 <style>

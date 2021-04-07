@@ -1,9 +1,9 @@
 ---
 title: "[React] React State, 컴포넌트의 상태 관리"
+description: '리액트는 컴포넌트 별로 구성되어 있기 때문에 각 각 컴포넌트마다 상태값이 존재한다.'
 date: "2020-11-10"
-categories: [React]
-tags: React State
-comments: true
+modified_date: '2020-11-10'
+tags: [React, State]
 ---
 
 [React 가이드 참조해서 공부](https://ko.reactjs.org/docs/rendering-elements.html)

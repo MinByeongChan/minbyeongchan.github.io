@@ -1,9 +1,9 @@
 ---
 title: "[백준] 1260 DFS와 BFS"
+description: "그래프를 DFS로 탐색한 결과와 BFS로 탐색한 결과를 출력하는 프로그램을 작성하시오..."
 date: "2019-12-26"
-categories: [Algorithm]
-tags: [BOJ BFS DFS]
-comments: true
+modified_date: "2019-12-26"
+tag: [백준, BFS, DFS]
 ---
 
 # Problem

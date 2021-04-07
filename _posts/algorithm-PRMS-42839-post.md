@@ -1,9 +1,9 @@
 ---
 title: "[프로그래머스] 소수 찾기"
+description: ''
 date: "2020-01-26"
-categories: [Algorithm]
-tags: [Programmers 에라스토테네스의체]
-comments: true
+modified_date: "2020-01-26"
+tags: [Programmers, 에라스토테네스의체]
 ---
 
 # Problem

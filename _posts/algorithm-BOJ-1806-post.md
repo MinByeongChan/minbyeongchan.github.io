@@ -1,9 +1,9 @@
 ---
 title: "[백준] 1806 부분합"
+description: "10,000 이하의 자연수로 이루어진 길이 N짜리 수열이 주어진다..."
 date: "2019-12-10"
-categories: [Algorithm]
-tags: [BOJ 투포인트]
-comments: true
+modified_date: "2019-12-10"
+tags: [백준, 투포인트]
 ---
 
 # Problem

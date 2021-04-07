@@ -1,9 +1,9 @@
 ---
 title: "[Android] 코루틴 개념, 동작 원리"
+description: '코루틴(Coroutine)을 말하기 전에 먼저 `루틴`에 대해서 알아야한다.'
 date: "2020-01-22"
-categories: [Android]
-tags: [Android Coroutine]
-comments: true
+modified_date: "2020-01-22"
+tags: [Android, Coroutine]
 ---
 
 <style>

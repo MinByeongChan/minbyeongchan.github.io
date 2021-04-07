@@ -1,9 +1,9 @@
 ---
 title: '[React hook] useEffect 기본 개념, 사용법'
+description: '이번엔 useState에 이어서 `useEffect`에 대해 정리해보려고 한다.'
 date: '2020-12-22'
-categories: [React]
-tags: [React useEffect Hook]
-comments: true
+modified_date: "2020-12-22"
+tags: [React, useEffect, Hook]
 ---
 
 [React 문서 참조해서 정리](https://ko.reactjs.org/docs/hooks-effect.html)

@@ -1,9 +1,9 @@
 ---
 title: "[React] Redux hook으로 Redux 편하게 사용하기"
+description: '이전 예제에서 데이터 컴포넌트가 리덕스 스토어를 불러오는, 그리고 리듀서를 dispatch하는 것 까지 해봤다.'
 date: "2020-12-20"
-categories: [React]
-tags: [React Redux]
-comments: true
+modified_date: '2020-12-20'
+tags: [React, Redux]
 ---
 
 # 개요

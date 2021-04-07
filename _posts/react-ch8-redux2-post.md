@@ -1,9 +1,9 @@
 ---
 title: "[React] Redux, 스토어에 데이터 저장하는 방법"
+description: '리덕스는 크게 액션, 리듀서, 스토어 3개로 구분된다. 앞서 동작 원리를 알아봤으니, 실제 사용 방법을 다시한번 복기하자.'
 date: "2020-12-17"
-categories: [React]
-tags: [React Redux]
-comments: true
+modified_date: "2020-12-17"
+tags: [React, Redux]
 ---
 
 리덕스는 크게 액션, 리듀서, 스토어 3개로 구분된다. 앞서 동작 원리를 알아봤으니, 실제 사용 방법을 다시한번 복기하자.

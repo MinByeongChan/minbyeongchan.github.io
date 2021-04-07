@@ -1,9 +1,9 @@
 ---
 title: "[Javascript] 깊은복사와 얕은복사의 차이점"
+description: ''
 date: "2020-08-17"
-category: [Javascript]
-tags: [Javascript 깊은복사 얕은복사]
-comments: true
+modified_date: "2020-08-17"
+tags: [Javascript, 깊은복사, 얕은복사]
 ---
 
 JS에서는 얕은 복사, 깊은 복사 두가지로 나뉘는 방식으로 값 할당이 이뤄진다. 어떤건지 정리하고 넘어가자.

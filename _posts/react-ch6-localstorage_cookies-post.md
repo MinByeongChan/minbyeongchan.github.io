@@ -1,9 +1,10 @@
 ---
 title: "[React] LocalStorage vs Cookie"
+description: '일반적으로 웹에서 로그인 API를 연동하기 위해 로그인 정보를 저장할 수단 및 방법이 필요하다.'
 date: "2020-11-27"
+modified_date: "2020-11-27"
 categories: [React]
-tags: React LocalStorage Cookies
-comments: true
+tags: [React, LocalStorage, Cookies]
 ---
 
 [StackOverflow 형님들 참조해서 정리](https://stackoverflow.com/questions/51109559/get-cookie-with-react)

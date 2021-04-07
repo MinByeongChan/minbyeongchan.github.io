@@ -1,9 +1,9 @@
 ---
 title: "[Android] Retrofit2 GET 사용해서 데이터 조회"
+description: 'Retrofit2라이브러리는 안드로이드에서 RestAPI를 사용할 수 있게 하는 기능이다.'
 date: "2020-01-15"
-categories: [Android]
-tags: [Android Retrofit2 RestAPI]
-comments: true
+modified_date: '2020-01-15'
+tags: [Android, Retrofit2, RestAPI]
 ---
 
 <style>

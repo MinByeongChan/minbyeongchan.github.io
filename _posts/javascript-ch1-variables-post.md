@@ -1,9 +1,9 @@
 ---
 title: "[Javascript] 변수선언 방식의 차이(const, var, let)"
+description: 'Javascript(이하 "JS")에서 `var`는 일반적으로 모든 변수 타입을 받는다.'
 date: "2020-01-02"
-category: Javascript
-tags: Javascript
-comments: true
+modified_date: "2020-01-02"
+tags: [Javascript]
 ---
 
 ## var

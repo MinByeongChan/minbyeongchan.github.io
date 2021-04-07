@@ -1,9 +1,9 @@
 ---
 title: '[React hook] useMemo, 컴포넌트 성능 최적화'
+description: "성능을 최적화하기 위한 hook, useMemo이다. 일반적으로 state가 변경될때 마다, re-rendering이 되는것을 알 수 있다..."
 date: '2021-01-04'
-categories: [React]
-tags: [React useMemo Hook]
-comments: true
+modified_date: '2021-01-04'
+tags: [React, useMemo, Hook]
 ---
 
 [React 문서 참조해서 정리](https://ko.reactjs.org/docs/hooks-reference.html#usememo)

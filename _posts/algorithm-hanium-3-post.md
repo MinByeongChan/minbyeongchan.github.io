@@ -1,10 +1,10 @@
 ---
 author: Byeong Chan
 title: "[한이음 코딩테스트] 문제 4"
+description: ''
 date: "2019-10-26"
-categories: [Algorithm]
+modified_date: "2019-10-26"
 tags: [한이음]
-comments: true
 ---
 
 # Problem

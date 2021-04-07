@@ -1,9 +1,9 @@
 ---
 title: "[React] Redux, connect dispatch를 이용한 스토어 데이터 가져오기"
+description: '앞서 리덕스에 대한 개념들을 정리하고, 액션, 리듀서의 사용법 그리고 실제 예제를 통해 액션, 리듀서를 구현시켰다.'
 date: "2020-12-19"
-categories: [React]
-tags: [React Redux]
-comments: true
+modified_date: '2020-12-19'
+tags: [React, Redux]
 ---
 
 # 개요

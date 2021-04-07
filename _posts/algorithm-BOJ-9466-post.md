@@ -1,7 +1,9 @@
 ---
 author: Byeong Chan
 title: "[백준] 9466 팀 프로젝트"
+description: ''
 date: "2020-01-07"
+modified_date: "2020-01-07"
 categories: [Algorithm]
 tags: [BOJ DFS]
 comments: true
