@@ -200,13 +200,13 @@ const BlogGallery: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => {
               <div className="gallery-item-tags">
                 <FontAwesomeIcon className={'tags-img'} icon={faTags} />
                 <div>
-                  {elt.tag.map((item, index) => (
+                  {elt.tag !== undefined ? elt.tag.map((item, index) => (
                     <Link href={`/?search=${item}`} key={index}>
                       <a className="tag-item" key={index} onClick={() => setSearch(item)}>
                         {item}
                       </a>
                     </Link>
-                  ))}
+                  )) : '-'}
                 </div>
               </div>
             </div>
@@ -220,6 +220,7 @@ const BlogGallery: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => {
           previous={props.pagination.previous}
           currPage={props.pagination.currPage}
           next={props.pagination.next}
+          maxPage={props.pagination.maxPage}
         />
       )}
     </Layout>

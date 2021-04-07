@@ -49,7 +49,7 @@ export const getStaticProps: GetStaticProps<IBlogGalleryProps, IPageUrl> = async
 
   const maxPage = pages.length;
   const pagingIndicator = Config.paging_indicator;
-
+  
   const pagingList = createPageList(currPage, maxPage, pagingIndicator);
 
   // pagination 오브젝트 init

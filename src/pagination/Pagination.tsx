@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { convertUrlToLinkHref } from '../utils/Pagination';
 import styled from '@emotion/styled';
 import { color, fontSize, fontWeight } from '../utils/StyleTheme';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDoubleLeft, faAngleDoubleRight, faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 export type IPaginationProps = {
   pagingList?: number[];
@@ -25,14 +27,20 @@ const PagingWrapper = styled.div`
 const PagingList = styled.ul`
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
 `;
 
 const PagingItem = styled.div(() => ({
   margin: '0 10px',
-  '&:hover span': {
+  '&:hover span, &:hover .paging-item-icon': {
     opacity: '0.5',
     boxShadow: '0px 1px 0px',
+  },
+  ".paging-item-icon": {
+    width:"14px",
+    height: '14px',
+    transition: "0.2s linear"
   },
 }));
 
@@ -48,13 +56,22 @@ const Pagination = (props: IPaginationProps) => {
     <PagingWrapper>
       <PagingList>
         {props.previous && (
-          <PagingItem>
-            <Link href={convertUrlToLinkHref(props.previous)} as={props.previous}>
-              <a>
-                <ItemText>←</ItemText>
-              </a>
-            </Link>
-          </PagingItem>
+          <>
+            <PagingItem>
+              <Link href={convertUrlToLinkHref(`/`)} as={`/`}>
+                <a>
+                <FontAwesomeIcon className="paging-item-icon" icon={faAngleDoubleLeft} />
+                </a>
+              </Link>
+            </PagingItem>
+            <PagingItem>
+              <Link href={convertUrlToLinkHref(props.previous)} as={props.previous}>
+                <a>
+                <FontAwesomeIcon className="paging-item-icon" icon={faAngleLeft} />
+                </a>
+              </Link>
+            </PagingItem>
+          </>
         )}
 
         {props.pagingList?.map((data, index) => {
@@ -73,13 +90,22 @@ const Pagination = (props: IPaginationProps) => {
         })}
 
         {props.next && (
-          <PagingItem>
-            <Link href={convertUrlToLinkHref(props.next)} as={props.next}>
-              <a>
-                <ItemText>→</ItemText>
-              </a>
-            </Link>
-          </PagingItem>
+          <>
+            <PagingItem>
+              <Link href={convertUrlToLinkHref(props.next)} as={props.next}>
+                <a>
+                <FontAwesomeIcon className="paging-item-icon" icon={faAngleRight} />
+                </a>
+              </Link>
+            </PagingItem>
+            <PagingItem>
+              <Link href={convertUrlToLinkHref(`page${props.maxPage}`)} as={`page${props.maxPage}`}>
+                <a>
+                  <FontAwesomeIcon className="paging-item-icon" icon={faAngleDoubleRight} />
+                </a>
+              </Link>
+            </PagingItem>          
+          </>
         )}
       </PagingList>
     </PagingWrapper>
