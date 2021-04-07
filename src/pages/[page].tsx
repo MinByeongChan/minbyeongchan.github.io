@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { GetStaticPaths, GetStaticProps } from 'next';
 
@@ -9,16 +9,24 @@ import { Main } from '../templates/Main';
 import { Config } from '../utils/Config';
 import { getAllPosts } from '../utils/Content';
 import { convertTo2D, createPageList } from '../utils/Pagination';
+import { useDispatch } from 'react-redux';
+import { setPosts } from '../modules/posts';
 
 type IPageUrl = {
   page: string;
 };
 
-const PaginatePosts = (props: IBlogGalleryProps) => (
-  <Main meta={<Meta title="Lorem ipsum" description="Lorem ipsum" />}>
-    <BlogGallery posts={props.posts} pagination={props.pagination} />
-  </Main>
-);
+const PaginatePosts = (props: IBlogGalleryProps) => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(setPosts(props.galleryPosts))
+  },[])
+  
+  return (
+    <Main meta={<Meta title="Lorem ipsum" description="Lorem ipsum" />}>
+      <BlogGallery galleryPosts={props.galleryPosts} posts={props.posts} pagination={props.pagination} />
+    </Main>
+)};
 
 export const getStaticPaths: GetStaticPaths<IPageUrl> = async () => {
   const posts = getAllPosts(['slug']);
@@ -40,11 +48,13 @@ export const getStaticPaths: GetStaticPaths<IPageUrl> = async () => {
 
 export const getStaticProps: GetStaticProps<IBlogGalleryProps, IPageUrl> = async ({ params }) => {
   const posts = getAllPosts(['title', 'date', 'description', 'slug', 'tags']);
-
   const pages = convertTo2D(posts, Config.pagination_size);
   const currPage = Number(params!.page.replace('page', ''));
   const currentInd = currPage - 1;
 
+  console.log("___getStaticProps___");
+  console.log("posts", posts);
+  console.log("pages", pages);
   const pagination: IPaginationProps = {};
 
   const maxPage = pages.length;
@@ -69,6 +79,7 @@ export const getStaticProps: GetStaticProps<IBlogGalleryProps, IPageUrl> = async
 
   return {
     props: {
+      galleryPosts: posts,
       posts: pages[currentInd],
       pagination,
     },

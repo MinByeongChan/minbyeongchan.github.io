@@ -10,8 +10,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faTags } from '@fortawesome/free-solid-svg-icons';
 import { useRouter, withRouter } from 'next/router';
 import { Config } from '../utils/Config';
+import { useDispatch } from 'react-redux';
+
+import { setPosts as setReduxPosts } from '../modules/posts';
 
 export type IBlogGalleryProps = {
+  galleryPosts: PostItems[];
   posts: PostItems[];
   pagination: IPaginationProps;
 };
@@ -124,6 +128,7 @@ const SearchInput = styled.input`
 
 const BlogGallery: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => {
   const router = useRouter();
+  const dispatch = useDispatch();
 
   const [posts, setPosts] = useState(props.posts);
   const [search, setSearch] = useState(
@@ -161,7 +166,10 @@ const BlogGallery: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => {
 
   useEffect(() => {
     searhFiltering(search);
+    dispatch(setReduxPosts(props.galleryPosts));
   }, [router.query.search]);
+
+  // console.log('prpos.posts', props.posts);
 
   return (
     <Layout>

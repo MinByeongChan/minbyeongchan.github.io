@@ -7,6 +7,8 @@ import { color, fontSize, fontWeight } from '../utils/StyleTheme';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelopeOpen, faPhoneSquareAlt } from '@fortawesome/free-solid-svg-icons';
 import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
+import { Provider } from 'react-redux';
+import { store } from '../modules/configureStore';
 
 type IMainProps = {
   meta: ReactNode;
@@ -69,7 +71,7 @@ const BottomContentEnd = styled.div`
 `;
 
 const Main: React.FC<IMainProps> = (props: IMainProps) => (
-  <>
+  <Provider store={store}>
     {props.meta}
 
     <section>
@@ -106,7 +108,7 @@ const Main: React.FC<IMainProps> = (props: IMainProps) => (
         </BottomContainer>
       </BottomWrapper>
     </section>
-  </>
+  </Provider>
 );
 
 export { Main };

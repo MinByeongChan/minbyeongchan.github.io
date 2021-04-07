@@ -12,7 +12,7 @@ import { convertTo2D, createPageList } from '../utils/Pagination';
 
 const Index: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => (
   <Main meta={<Meta title="WELCOME MY BLOG" description={Config.description} />}>
-    <BlogGallery posts={props.posts} pagination={props.pagination} />
+    <BlogGallery galleryPosts={props.galleryPosts} posts={props.posts} pagination={props.pagination} />
   </Main>
 );
 
@@ -37,6 +37,7 @@ export const getStaticProps: GetStaticProps<IBlogGalleryProps> = async () => {
 
   return {
     props: {
+      galleryPosts: posts,
       posts: posts.slice(0, Config.pagination_size),
       pagination,
     },
