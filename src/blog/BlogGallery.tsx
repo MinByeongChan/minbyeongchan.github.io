@@ -1,18 +1,15 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
-import { format } from 'date-fns';
-import Link from 'next/link';
 
 import { Pagination, IPaginationProps } from '../pagination/Pagination';
 import { PostItems } from '../utils/Content';
-import { color, fontSize, fontWeight } from '../utils/StyleTheme';
+import { fontSize, fontWeight } from '../utils/StyleTheme';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faTags } from '@fortawesome/free-solid-svg-icons';
+import { faEraser, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useRouter, withRouter } from 'next/router';
-import { Config } from '../utils/Config';
-import { useDispatch } from 'react-redux';
 
-import { setPosts as setReduxPosts } from '../modules/posts';
+import { isEmpty } from '../utils/Utility';
+import GalleryWrapper from './GalleryWrapper';
 
 export type IBlogGalleryProps = {
   galleryPosts: PostItems[];
@@ -32,75 +29,20 @@ const TopText = styled.div`
   margin-bottom: 25px;
 `;
 
-const GalleryWrapper = styled.div(() => ({
-  display: 'grid',
-  justifyContent: 'center',
-  gridTemplateColumns: '1fr 1fr 1fr',
-  gridGap: '10px',
-  '@media screen and (min-width: 481px) and (max-width: 1080px)': {
-    gridTemplateColumns: '1fr 1fr',
-  },
-  '@media screen and (min-width: 0px) and (max-width: 480px)': {
-    gridTemplateColumns: '1fr',
-  },
-}));
-
-const GalleryItem = styled.div`
-  width: 100%;
-  color: ${color.darkBlack};
-  padding: 25px 12px;
-  .gallery-item-title {
-    display: inline;
-    font-size: ${fontSize.xxg};
-    cursor: pointer;
-    &:hover {
-      box-shadow: 0px 2px 0px;
-    }
-  }
-  .gallery-item-author {
-    font-size: ${fontSize.sm};
-    margin-top: 9px;
-    .gallery-item-date {
-      font-weight: ${fontWeight.bold};
-    }
-    a {
-      font-weight: ${fontWeight.bold};
-      color: ${color.orange};
-    }
-  }
-  .gallery-item-desc {
-    font-size: ${fontSize.md};
-    margin-top: 9px;
-  }
-  .gallery-item-tags {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 15px;
-    .tags-img {
-      width: 15px;
-      height: auto;
-      margin-right: 6px;
-    }
-    .tag-item {
-      font-size: ${fontSize.sm};
-      margin: 0 3px 2px 0;
-      float: left;
-      &:hover {
-        opacity: 0.7;
-        box-shadow: 0px 2px 0px;
-      }
-    }
-  }
-`;
-
 const TopWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media screen and (min-width: 0px) and (max-width: 481px) {
+    flex-direction: column;
+  } ;
+`;
+const SearchWrapper = styled.div`
+  display: flex;
+  align-items: center;
   .search-img {
     width: 20px;
     height: 20px;
-    margin-left: 15px;
     cursor: pointer;
     :hover {
       .search-input {
@@ -108,12 +50,17 @@ const TopWrapper = styled.div`
       }
     }
   }
-  @media screen and (min-width: 0px) and (max-width: 481px) {
-    flex-direction: column;
-  } ;
 `;
-
+const SearchInputWrapper = styled.div`
+  position: relative;
+  width: 330px;
+  height: 20px;
+  margin-left: 10px;
+`;
 const SearchInput = styled.input`
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 330px;
   border: none;
   border-bottom: 1px solid #000;
@@ -126,11 +73,25 @@ const SearchInput = styled.input`
   } ;
 `;
 
+interface ITextCancelImg {
+  search: string;
+}
+
+const TextCancelImg = styled.div`
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  right: 5px;
+  top: -2px;
+  z-index: 1;
+  opacity: ${(props: ITextCancelImg) => (props.search.length === 0 ? '0' : '1')};
+`;
+
 const BlogGallery: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => {
   const router = useRouter();
-  const dispatch = useDispatch();
 
-  const [posts, setPosts] = useState(props.posts);
+  const [searchList, setSearchList] = useState([]);
   const [search, setSearch] = useState(
     router.query.search !== undefined ? router.query.search.toString() : '',
   );
@@ -140,16 +101,26 @@ const BlogGallery: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => {
     searhFiltering(e.target.value);
   };
 
+  const onClickRemove = () => {
+    setSearch('');
+  };
+
   // 검색 필터링 함수
   const searhFiltering = (value: string) => {
     let inputVal = value;
     setSearch(inputVal);
 
+    // 문자열 검증
+    if (!textVerify(inputVal)) {
+      setSearchList([]);
+      return;
+    }
+
     if (inputVal.length > 0) {
-      const tmp = props.posts.filter((data) => {
+      const tmp = props.galleryPosts.filter((data) => {
         const title = data.title.toString();
-        const desc = data.description.toString();
-        const tags = data.tags.toString();
+        const desc = !isEmpty(data.description) ? data.description : '';
+        const tags = !isEmpty(data.tags) ? data.tags.toString() : '';
 
         return (
           title.match(new RegExp(inputVal, 'i')) !== null ||
@@ -158,70 +129,41 @@ const BlogGallery: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => {
         );
       });
 
-      setPosts(tmp);
+      setSearchList(tmp);
     } else {
-      setPosts(props.posts);
+      setSearchList([]);
     }
   };
 
   useEffect(() => {
     searhFiltering(search);
-    dispatch(setReduxPosts(props.galleryPosts));
   }, [router.query.search]);
-
-  // console.log('prpos.posts', props.posts);
 
   return (
     <Layout>
       <TopWrapper>
         <TopText>Post</TopText>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          <SearchInput
-            className="search-input"
-            type="text"
-            value={search}
-            placeholder="검색내용, 태그 등을 입력해보세요!"
-            onChange={onChangeSearch}
-          />
-          <div>
-            <FontAwesomeIcon className="search-img" icon={faSearch} />
-          </div>
-        </div>
+        <SearchWrapper>
+          <FontAwesomeIcon className="search-img" icon={faSearch} />
+          <SearchInputWrapper>
+            <SearchInput
+              className="search-input"
+              type="text"
+              value={search}
+              placeholder="검색내용, 태그 등을 입력해보세요!"
+              onChange={onChangeSearch}
+            />
+            <TextCancelImg search={search} onClick={onClickRemove}>
+              <FontAwesomeIcon icon={faEraser} />
+            </TextCancelImg>
+          </SearchInputWrapper>
+        </SearchWrapper>
       </TopWrapper>
-      <GalleryWrapper>
-        {posts.map((elt, index) => (
-          <GalleryItem key={index}>
-            <div style={{ padding: '15px 15px 20px 15px' }}>
-              <Link href="/posts/[slug]" as={`/posts/${elt.slug}`}>
-                <a>
-                  <h2 className="gallery-item-title">{elt.title}</h2>
-                </a>
-              </Link>
-              <div className="gallery-item-author">
-                by <a href="https://github.com/MinByeongChan">{Config.author}</a> on{' '}
-                <span className="gallery-item-date">
-                  {format(new Date(elt.date), 'LLL d, yyyy')}
-                </span>
-              </div>
-              <div className="gallery-item-desc">{elt.description}</div>
-              <div className="gallery-item-tags">
-                <FontAwesomeIcon className={'tags-img'} icon={faTags} />
-                <div>
-                  {elt.tags !== undefined
-                    ? elt.tags.map((item, index) => (
-                        <Link href={`/?search=${item}`} key={index}>
-                          <a className="tag-item" key={index} onClick={() => setSearch(item)}>
-                            {item}
-                          </a>
-                        </Link>
-                      ))
-                    : '-'}
-                </div>
-              </div>
-            </div>
-          </GalleryItem>
-        ))}
-      </GalleryWrapper>
+
+      <GalleryWrapper
+        posts={isEmpty(searchList) ? props.posts : searchList}
+        setSearch={setSearch}
+      />
 
       {search.length === 0 && (
         <Pagination
@@ -234,6 +176,23 @@ const BlogGallery: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => {
       )}
     </Layout>
   );
+};
+
+// 문자열 검증 함수
+const textVerify = (input: any) => {
+  for (let i in input) {
+    let ascii = input[i].charCodeAt(0);
+    if (ascii >= 48 && ascii <= 57) {
+      continue;
+    } else if (ascii >= 65 && ascii <= 90) {
+      continue;
+    } else if (ascii >= 97 && ascii <= 122) {
+      continue;
+    } else {
+      return false;
+    }
+  }
+  return true;
 };
 
 export default withRouter(BlogGallery);

@@ -16,17 +16,15 @@ type IPageUrl = {
   page: string;
 };
 
-const PaginatePosts = (props: IBlogGalleryProps) => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(setPosts(props.galleryPosts))
-  },[])
-  
-  return (
-    <Main meta={<Meta title="Lorem ipsum" description="Lorem ipsum" />}>
-      <BlogGallery galleryPosts={props.galleryPosts} posts={props.posts} pagination={props.pagination} />
-    </Main>
-)};
+const PaginatePosts = (props: IBlogGalleryProps) => (
+  <Main meta={<Meta title="Lorem ipsum" description="Lorem ipsum" />}>
+    <BlogGallery
+      galleryPosts={props.galleryPosts}
+      posts={props.posts}
+      pagination={props.pagination}
+    />
+  </Main>
+);
 
 export const getStaticPaths: GetStaticPaths<IPageUrl> = async () => {
   const posts = getAllPosts(['slug']);
@@ -52,9 +50,6 @@ export const getStaticProps: GetStaticProps<IBlogGalleryProps, IPageUrl> = async
   const currPage = Number(params!.page.replace('page', ''));
   const currentInd = currPage - 1;
 
-  console.log("___getStaticProps___");
-  console.log("posts", posts);
-  console.log("pages", pages);
   const pagination: IPaginationProps = {};
 
   const maxPage = pages.length;

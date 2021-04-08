@@ -12,7 +12,11 @@ import { convertTo2D, createPageList } from '../utils/Pagination';
 
 const Index: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => (
   <Main meta={<Meta title="WELCOME MY BLOG" description={Config.description} />}>
-    <BlogGallery galleryPosts={props.galleryPosts} posts={props.posts} pagination={props.pagination} />
+    <BlogGallery
+      galleryPosts={props.galleryPosts}
+      posts={props.posts}
+      pagination={props.pagination}
+    />
   </Main>
 );
 
