@@ -1,4 +1,8 @@
-export const color = {
+export interface IStyleOptions {
+  [key: string]: string
+}
+
+export const color: IStyleOptions = {
   red: '#ff0000',
   fuchsia: '#ff009f',
   deeppink: '#ff1493',
@@ -22,7 +26,7 @@ export const color = {
   orange: 'rgb(255,90,0)',
 };
 
-export const fontSize = {
+export const fontSize: IStyleOptions = {
   xxs: '10px',
   xs: '12px',
   sm: '14px',
@@ -36,7 +40,7 @@ export const fontSize = {
   h1: '52px',
 };
 
-export const fontWeight = {
+export const fontWeight: IStyleOptions = {
   thin: '100',
   light: '300',
   medium: '400',

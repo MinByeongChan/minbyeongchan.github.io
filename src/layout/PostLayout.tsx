@@ -70,12 +70,10 @@ const ContentLayout = styled.div(() => ({
   maxWidth: '840px',
   margin: '0 auto',
   '@media screen and (min-width: 481px) and (max-width: 1080px)': {
-    width: '100%',
     minWidth: '600px',
     padding: `0 22px`,
   },
   '@media screen and (min-width: 0px) and (max-width: 480px)': {
-    width: '100%',
     minWidth: '0px',
     padding: `0 22px`,
   },
