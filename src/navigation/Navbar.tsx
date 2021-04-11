@@ -70,17 +70,25 @@ const Navbar = () => (
           <div className="bottom-line" />
         </NavLi>
         <NavLi>
-          <Link href="/about/">
+          <Link href="/tags">
             <a>
-              <Text>About</Text>
+              <Text>Tags</Text>
             </a>
           </Link>
           <div className="bottom-line" />
         </NavLi>
         <NavLi>
-          <Link href="/tags/">
+          <Link href="/portpolio">
             <a>
-              <Text>Tags</Text>
+              <Text>Portpolio</Text>
+            </a>
+          </Link>
+          <div className="bottom-line" />
+        </NavLi>
+        <NavLi>
+          <Link href="/about">
+            <a>
+              <Text>About</Text>
             </a>
           </Link>
           <div className="bottom-line" />

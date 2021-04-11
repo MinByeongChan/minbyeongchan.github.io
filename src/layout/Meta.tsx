@@ -45,7 +45,7 @@ const Meta: React.FC<IMetaProps> = (props: IMetaProps) => {
           key="icon16"
         />
         <link rel="icon" href={`${process.env.baseUrl}/favicon.ico`} key="favicon" />
-        <title>{`${props.title} | ${Config.site_name}`}</title>
+        <title>{`${props.title} | ${Config.title}`}</title>
         <meta
           name="description"
           content={props.description ? props.description : Config.description}
