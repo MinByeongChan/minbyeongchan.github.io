@@ -41,10 +41,8 @@ export const fontSize: IStyleOptions = {
 };
 
 export const fontWeight: IStyleOptions = {
-  thin: '100',
   light: '300',
-  medium: '400',
-  normal: '500',
-  bold: '700',
-  bolder: '900',
+  medium: '500',
+  normal: '600',
+  bold: '800',
 };
