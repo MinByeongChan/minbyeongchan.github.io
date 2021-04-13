@@ -1,5 +1,5 @@
 export interface IStyleOptions {
-  [key: string]: string
+  [key: string]: string;
 }
 
 export const color: IStyleOptions = {
@@ -34,7 +34,7 @@ export const fontSize: IStyleOptions = {
   md: '17px',
   lg: '18px',
   xg: '20px',
-  xxg: '30px',
+  xxg: '28px',
   h3: '38px',
   h2: '45px',
   h1: '52px',
@@ -45,4 +45,14 @@ export const fontWeight: IStyleOptions = {
   medium: '500',
   normal: '600',
   bold: '800',
+};
+
+export const lineHeight: IStyleOptions = {
+  md: '30px',
+  lg: '35px',
+  xg: '40px',
+  xxg: '45px',
+  h3: '52px',
+  h2: '63px',
+  h1: '73px',
 };
