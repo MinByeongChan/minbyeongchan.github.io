@@ -11,6 +11,12 @@ const ListItems = styled.ul`
 const ListItem = styled.li`
   align-items: start;
 `;
+const HoverLink = styled.a`
+  transition: 0.1s linear;
+  &:hover {
+    box-shadow: 0px 1px 0px;
+  }
+`;
 
 // https://play.google.com/store/apps/details?id=kr.co.ksnet.ksta
 const ProjectCompo = () => {
@@ -57,6 +63,11 @@ const ProjectCompo = () => {
             </TextDefault>
           </ListItem>
         </ListItems>
+        <div>
+            <TextDefault size="sm" weight="bold" lineHeight="md" color="lightBlue">
+              <HoverLink href="https://technetdev.ksnet.co.kr/#/">LINK</HoverLink>             
+            </TextDefault>
+        </div>
         {/* 테크넷 - 끝 */}
 
         {/* KSTA - 시작 */}
@@ -100,8 +111,46 @@ const ProjectCompo = () => {
             </TextDefault>
           </ListItem>
         </ListItems>
+        <div>
+            <TextDefault size="sm" weight="bold" lineHeight="md" color="lightBlue">
+              <HoverLink href="https://play.google.com/store/apps/details?id=kr.co.ksnet.ksta">GOOGLE PLAY</HoverLink>             
+            </TextDefault>
+        </div>
         {/* KSTA - 끝 */}
 
+
+        {/* 기술블로그 - 시작 */}
+        <ProjTop>
+          <TextDefault size="md" weight="light" lineHeight="md">
+            2021.02 – 현재
+          </TextDefault>
+        </ProjTop>
+        <TextDefault size="xg" weight="bold" lineHeight="xg">
+          기술 블로그
+        </TextDefault>
+        <ListItems>
+          <ListItem>
+            <TextDefault size="md" weight="light" lineHeight="md">
+              o 기술 자료를 기록하기 위해 개발
+            </TextDefault>
+          </ListItem>
+          <ListItem>
+            <TextDefault size="md" weight="light" lineHeight="md">
+              o 검색, 태그, Markdown 적용, Post 기능 개발
+            </TextDefault>
+          </ListItem>
+          <ListItem>
+            <TextDefault size="md" weight="light" lineHeight="md">
+              o Next.js, React.js, Typescript, Redux 사용
+            </TextDefault>
+          </ListItem>
+        </ListItems>
+        <div>
+            <TextDefault size="sm" weight="bold" lineHeight="md" color="lightBlue">
+              <HoverLink href="https://minbyeongchan.github.io/">LINK</HoverLink>             
+            </TextDefault>
+        </div>
+        {/* 기술블로그 - 끝 */}
       </>
     );
 };
