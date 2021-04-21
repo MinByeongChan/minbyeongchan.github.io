@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[12],{dfPQ:function(n,e,t){"use strict";t.r(e);var u=t("q1tI"),a=t.n(u);e.default=function(){return a.a.createElement("div",null,"RESUME")}}}]);
-//# sourceMappingURL=component---src-templates-resume-js-604b959a79b4ab8aadab.js.map

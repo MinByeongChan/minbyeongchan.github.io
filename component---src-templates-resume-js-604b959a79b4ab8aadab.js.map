@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:///./src/templates/resume.js"],"names":["resume"],"mappings":"4FAAA,gCAMeA,UAJA,WACb,OAAO","file":"component---src-templates-resume-js-604b959a79b4ab8aadab.js","sourcesContent":["import React from 'react';\r\n\r\nconst resume = () => {\r\n  return <div>RESUME</div>;\r\n};\r\n\r\nexport default resume;\r\n"],"sourceRoot":""}
