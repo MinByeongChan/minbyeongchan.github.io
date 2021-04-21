@@ -1,35 +1,32 @@
-# Leonids Gatsby starter
+# mbc-devBlog
+기술블로그 개설중
 
-**[Leonids](http://renyuanz.github.io/leonids)** is a clean, fixed sidebar Gatsby starter which is perfect for powering your GitHub hosted blog.
+## 1.	개요
+-	본인의 배운 기술 정리, React.js, Next.js를 향상, 포트폴리오를 위해 블로그를 개설 하려함
+-	기본 템플릿을 모두 가져오는 것 보다 React를 조금 더 개발하여 커스터마이징 하기 위해 개발
+-	Next.js에서 제공하는 SSR을 맘껏 사용해볼예정
+-	Next.js-Blog-boilerplate를 바탕으로 개발을 할 예정
+(Markdown를 불러오는 코드가 기본적으로 내장되어있음)
+-	배포는 어케해야할지 고민해야함. 추후 생각해보자.
 
-### Preview
+## 2.	사용 기술
+- React.js, Next.js, Typescript, HTML5/CSS, emotion
 
-![theme-preview](./content/assets/theme-preview.gif)
+## 3.	적용 기능
+-	포스트
+	- 페이징
+	- 카테고리
+-	태그
+	- 포스트 별 태그를 등록
+	- 태그 항목 클릭시 검색화면으로 전환
+	- 등록된 태그는 검색이 가능하도록 개발
+-	검색
+	- 태그 검색 가능
+	- 포스트 제목, 설명, 태그를 검색 가능.
+-	About
+	- 자기소개 페이지
+-	Portpolio
+	- 개발자료 업로드
 
-## What is Leonids?
-
-A blazing fast static blog theme built on Gatsby.js
-
-![lighthouse-performance](./content/assets/lighthouse-performance.png)
-
-- Responsive templates. Looking good on any viewport.
-- Fixed sidebar to provide a good navigation experience while reading.
-- Light/Dark mode.
-- **And** the Leonids (/ˈliːənɪdz/ lee-ə-nidz) are a prolific meteor shower associated with the comet [Tempel-Tuttle](https://en.wikipedia.org/wiki/55P/Tempel%E2%80%93Tuttle).
-
-See a [demo](http://renyuanz.github.io/leonids/) hosted on GitHub pages.
-
-## Quick setup
-
-```
-gatsby new my-blog https://github.com/renyuanz/leonids
-cd my-blog
-gatsby develop
-```
-
-Check out your awesome blog at `http://localhost:8000` and Cheers!
-
-
-## Legacy Jekyll theme
-
-This project was a Jekyll blog theme, which is archived and not maintained any more. You can still find the source code in [leonids-jekyll](https://github.com/renyuanz/leonids/tree/leonids-jekyll) branch.
+## 4.	참조
+-	AB180 기술블로그를 참조해서 만들 예정.
