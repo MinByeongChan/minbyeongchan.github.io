@@ -6,7 +6,7 @@ import { PostItems } from '../utils/Content';
 import { fontSize, fontWeight } from '../utils/StyleTheme';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEraser, faSearch } from '@fortawesome/free-solid-svg-icons';
-import { useRouter, withRouter } from 'next/router';
+import { useRouter } from 'next/router';
 
 import { isEmpty } from '../utils/Utility';
 import GalleryWrapper from './GalleryWrapper';
@@ -91,7 +91,7 @@ const TextCancelImg = styled.div`
 const BlogGallery: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => {
   const router = useRouter();
 
-  const [searchList, setSearchList] = useState([]);
+  const [searchList, setSearchList] = useState<PostItems[]>([]);
   const [search, setSearch] = useState(
     router.query.search !== undefined ? router.query.search.toString() : '',
   );
@@ -117,19 +117,19 @@ const BlogGallery: React.FC<IBlogGalleryProps> = (props: IBlogGalleryProps) => {
     }
 
     if (inputVal.length > 0) {
-      const tmp = props.galleryPosts.filter((data) => {
-        const title = data.title.toString();
-        const desc = !isEmpty(data.description) ? data.description : '';
-        const tags = !isEmpty(data.tags) ? data.tags.toString() : '';
+      setSearchList(
+        props.galleryPosts.filter((data) => {
+          const title = data.title.toString();
+          const desc = !isEmpty(data.description) ? data.description : '';
+          const tags = !isEmpty(data.tags) ? data.tags.toString() : '';
 
-        return (
-          title.match(new RegExp(inputVal, 'i')) !== null ||
-          desc.match(new RegExp(inputVal, 'i')) !== null ||
-          tags.match(new RegExp(inputVal, 'i')) !== null
-        );
-      });
-
-      setSearchList(tmp);
+          return (
+            title.match(new RegExp(inputVal, 'i')) !== null ||
+            desc.match(new RegExp(inputVal, 'i')) !== null ||
+            tags.match(new RegExp(inputVal, 'i')) !== null
+          );
+        }),
+      );
     } else {
       setSearchList([]);
     }
@@ -195,4 +195,4 @@ const textVerify = (input: any) => {
   return true;
 };
 
-export default withRouter(BlogGallery);
+export default BlogGallery;

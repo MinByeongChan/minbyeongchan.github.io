@@ -6,63 +6,63 @@ import { color } from '../../utils/StyleTheme';
 import TextDefault from '../ui/TextDefault';
 
 const KstaCard = () => {
-    return (
-        <CardContainer>
-        <CardItem>
-          <CardItemLeft>
-              <TextDefault size="h1" weight='bold' color="white">
-                KSTA
+  return (
+    <CardContainer>
+      <CardItem>
+        <CardItemLeft>
+          <TextDefault size="h1" weight="bold" color="white">
+            KSTA
+          </TextDefault>
+          <div style={{ margin: '0 0 30px 0' }}>
+            <TextDefault size="xg" color="white">
+              (Webview Android App)
+            </TextDefault>
+          </div>
+
+          <div>
+            <TextDefault size="lg" weight="bold" color="white">
+              KSNET 가맹점 매출내역 및 전표 조회 App
+            </TextDefault>
+
+            <div style={{ margin: '15px 0 0 0' }}>
+              <TextDefault size="md" weight="bold" color="white">
+                앱 페이지와 back-end API와 연동하여 매출 관리 개발을 담당했습니다.
+                <br /> 사용자에게 편의성을 제공하기위해 직관적인 UI/UX를 사용하여 개발을
+                완료했습니다.
               </TextDefault>
-              <div style={{ margin: '0 0 30px 0' }}>
-                <TextDefault size="xg" color="white">
-                  (Webview Android App)
-                </TextDefault>
-              </div>
-
-              <div>
-                <TextDefault size="lg" weight='bold' color="white" style={{ margin: '0 0 15px 0' }}>
-                  KSNET 가맹점 매출내역 및 전표 조회 App
-                </TextDefault>
-
-                <div style={{ margin: '15px 0 0 0' }}>
-                  <TextDefault size="md" weight='bold' color="white" style={{ margin: '0 0 10px 0' }}>
-                    앱 페이지와 back-end API와 연동하여 매출 관리 개발을 담당했습니다.
-                    <br /> 사용자에게 편의성을 제공하기위해 직관적인 UI/UX를 사용하여 개발을
-                    완료했습니다.
-                  </TextDefault>
-                </div>
-
-                <DescItems>
-                  <DescItem >
-                  <IconWrapper>
-                      <FontAwesomeIcon icon={faCheck} />
-                    </IconWrapper>
-                    <TextDefault size="md" color="white">
-                      Front-End 영역 개발 담당
-                    </TextDefault>
-                  </DescItem>
-                  <DescItem>
-                    <IconWrapper>
-                      <FontAwesomeIcon icon={faCheck} />
-                    </IconWrapper>
-                    <TextDefault size="md" color="white">
-                      Back-End 매출 내역 API 연동 개발
-                    </TextDefault>
-                  </DescItem>
-                  <DescItem>
-                    <IconWrapper>
-                      <FontAwesomeIcon icon={faCheck} />
-                    </IconWrapper>
-                    <TextDefault size="md" color="white">
-                      UI/UX 개발
-                    </TextDefault>
-                  </DescItem>
-                </DescItems>
             </div>
-          </CardItemLeft>
-        </CardItem>
-      </CardContainer>
-    );
+
+            <DescItems>
+              <DescItem>
+                <IconWrapper>
+                  <FontAwesomeIcon icon={faCheck} />
+                </IconWrapper>
+                <TextDefault size="md" color="white">
+                  Front-End 영역 개발 담당
+                </TextDefault>
+              </DescItem>
+              <DescItem>
+                <IconWrapper>
+                  <FontAwesomeIcon icon={faCheck} />
+                </IconWrapper>
+                <TextDefault size="md" color="white">
+                  Back-End 매출 내역 API 연동 개발
+                </TextDefault>
+              </DescItem>
+              <DescItem>
+                <IconWrapper>
+                  <FontAwesomeIcon icon={faCheck} />
+                </IconWrapper>
+                <TextDefault size="md" color="white">
+                  UI/UX 개발
+                </TextDefault>
+              </DescItem>
+            </DescItems>
+          </div>
+        </CardItemLeft>
+      </CardItem>
+    </CardContainer>
+  );
 };
 
 const CardContainer = styled.div`
@@ -86,38 +86,36 @@ const CardItem = styled.div`
   display: grid;
   grid-gap: 20px;
   align-items: center;
-  grid-template-columns: repeat(12,1fr);
-  
+  grid-template-columns: repeat(12, 1fr);
+
   background-size: contain;
   background-position: 88% 100%;
   align-content: center;
   background-repeat: no-repeat;
-  background-image: url("/assets/about/ksta.png");
-  
+  background-image: url('/assets/about/ksta.png');
+
   @media screen and (min-width: 0px) and (max-width: 768px) {
     min-height: 550px;
 
     background-size: 87%;
     background-position: top;
     align-content: flex-end;
-    background-image: url("/assets/about/ksta.png");
+    background-image: url('/assets/about/ksta.png');
   }
 `;
 const CardItemLeft = styled.div`
   grid-column: 1/7;
   align-self: center;
-  
+
   @media screen and (min-width: 0px) and (max-width: 768px) {
     grid-column: 1/-1;
-    
+
     background-size: 80vw;
     background-position: top;
     background-repeat: no-repeat;
     align-content: flex-end;
-    background-image: url("/assets/about/ksta.png");
-    background : linear-gradient(
-      180deg
-      ,rgba(40,35,135,0),#1e90ff 12%,#1e90ff);
+    background-image: url('/assets/about/ksta.png');
+    background: linear-gradient(180deg, rgba(40, 35, 135, 0), #1e90ff 12%, #1e90ff);
   }
 `;
 const DescItems = styled.ul`

@@ -21,8 +21,7 @@ export const isEmpty = (value: any) => {
   else if (
     typeof value === 'object' &&
     value.constructor.name === 'Object' &&
-    Object.keys(value).length < 1 &&
-    Object.getOwnPropertyNames(value) < 1
+    Object.keys(value).length > 0
   ) {
     return true;
   } else {

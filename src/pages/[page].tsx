@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import { GetStaticPaths, GetStaticProps } from 'next';
 
@@ -9,8 +9,6 @@ import { Main } from '../templates/Main';
 import { Config } from '../utils/Config';
 import { getAllPosts } from '../utils/Content';
 import { convertTo2D, createPageList } from '../utils/Pagination';
-import { useDispatch } from 'react-redux';
-import { setPosts } from '../modules/posts';
 
 type IPageUrl = {
   page: string;
