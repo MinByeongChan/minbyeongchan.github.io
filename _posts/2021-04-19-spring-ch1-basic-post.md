@@ -1,96 +1,47 @@
 ---
-title: "[Javascript] 깊은복사와 얕은복사의 차이점"
-description: ''
-date: "2020-08-17"
-modified_date: "2020-08-17"
-tags: [Javascript, 깊은복사, 얕은복사]
+title: "[Spring] ORM(JPA, Hibernate), JDBC 개념 정리"
+description: 'ORM(Object-Relational-Mapping)이란 객체와 관계형대이터베이스 매핑, 객체와 DB의 테이블이 매핑을 이루는 것을 말한다...'
+date: "2021-04-19"
+modified_date: "2021-04-19"
+tags: [Spring]
 ---
 
-JS에서는 얕은 복사, 깊은 복사 두가지로 나뉘는 방식으로 값 할당이 이뤄진다. 어떤건지 정리하고 넘어가자.
 
-# 깊은 복사
+# ORM 이란?
 
-```javascript
-var a = 100
-var b = a
+- ORM(Object-Relational-Mapping)이란 객체와 관계형대이터베이스 매핑, 객체와 DB의 테이블이 매핑을 이루는 것을 말한다.
+- 객체가 테이블이 되도록 매칭 시켜주는 프레임워크이다.
+- 프로그램의 복잡도를 줄이고 자바 객체와 쿼리를 분리할 수 있으며 트랜잭션 처리나 기타 데이터베이스 관련 작업들을 좀 더 편리학 처리할 수 있게 된다.
+- SQL Query가 아닌 지관적인 코드로서 데이터를 조작할 수 있다.(ORM에서 제공하는 메서드로 쿼리를 제어할 수 있다.)
 
-alert(a)
-alert(b)
-```
+# JPA 란?
 
-a, b 두 변수는 완전히 독립된 변수이다. 2번 라인에서 b = a 이니 `a, b 둘다 100`이라는 값이 할당된다.
+- JPA(Java Persistence API)이란 `자바 ORM 기술에 대한 API 표준 명세`를 말한다.
+- ORM에 대한 자바 API 규격이며, 자바 어플레케이션에서 관계형 데이터베이스를 사용하는 방식을 정의한 인터페이스이다.
+- 인터페이스 자체이기 때문에 라이브러리와 같이 특정 기능이 존재하지 않는다.
+- 따라서, JPA를 구현한 `Hibernate`와 같은 프레임워크를 사용해야한다.
+## JPA에 대한 장점
 
-```javascript
-var a = 100
-var b = a
-a = 200
+- 생산성이 뛰어나고 유지보수가 용이하다.
+  - 객체지향적인 코드를 사용하므로 비즈니스로직에 더 집중할 수 있다.
+  - 객체지향적으로 데이터를 관리할 수 있으므로 유지보수에 용이하다.
+  - SQL을 직접적으로 사용하는 것이 아닌, 메서드에 의해 동작하므로 간결하게 사용할 수 있다.
+  
 
-alert(a)
-alert(b)
-```
+- DBMS에 대한 종속성이 줄어든다.
+  - DBMS가 변경되더라도 소스, 쿼리, 구현방법, 자료형 등을 변경할 필요가 없다.
+  - 결국, 개발자는 DBMS에 대한 고려를 덜 해도 되므로 객체에 집중하여 개발할 수 있다.
 
-위 코드에서 a에 다시 200을 할당했다. 이렇게 되면 a는 200, b는 100이 나온다.
 
-이 결과로 두 변수가 `완전히 독립`되었다는 것을 알 수 있다. 두 변수에 별에 별짓을 해도 a는 b에, 또는 b는 a에 어떠한 영향을 미치지 않는다. 이것을 `깊은 복사`라고 한다.
+## JPA에 대한 단점
 
-# 객체의 복사
+- 구현 난이도
+  - JPA를 실무에서 잘사용하기 위한 비용은 비교적 높은편이다.
+  - 복잡한 쿼리를 사용할 때 불리하다.
+  - 기존 데이터베이스 중심으로 되어있는 한경에서 적용하기 어려워진다.
 
-```javascript
-var A_object = {
-  a: 100,
-  b: 100,
-}
-var B_object = A_object
 
-alert(JSON.stringify(A_object))
-alert(JSON.stringify(B_object))
-```
+# JDBC (java Database Connectivity)
+- JDBC는 Database(영속성계층)에 접근하기 위해 사용되는 API 이다.
+- JPA 또는 다른 ORM은 Object를 SQL로 매핑하는 것을 제공해주고, 그 이후 SQL을 연결하는 것은 JDBC영역 기능을 제공한다.
 
-이번엔 객체이다. 위 number와 같이 A, B 두개의 오프젝트가 있고 할당을 시킨다. 결과는 동일하게 나올것이다.
-
-객체에 변수를 저장하면 실제 값을 저장하는 것이 아닌 객체를 메모리 어딘가에 만들고 객체의 위치값을 저장
-
-```javascript
-var A_object = {
-  a: 100,
-  b: 100,
-}
-A_object.a = 200
-
-var B_object = A_object
-
-alert(JSON.stringify(A_object))
-alert(JSON.stringify(B_object))
-```
-
-다음은 A오브젝트의 a값을 변경시켜보자. A만 변경시켰을 뿐인데 B까지 변경되었다.
-
-JS에서 오브젝트는 `=`으로 깊은 복사가 되지 않는다. JS에서 오브젝트는 `참조에 의한` 복사가 이뤄진다. 값을 할당 받는 것이 아닌 A오브젝트의 `주소`값을 받게 된다.
-
-## 객체의 깊은 복사
-
-따라서, 단순히 `=`을 사용해서 복사할 수 없다. 객체에서의 깊은 복사를 하려면 별도의 함수를 만들어야 한다.
-
-```javascript
-function deepCopy(obj) {
-  var newObj = {}
-  for (var i in obj) {
-    newObj[i] = obj[i]
-  }
-  return newObj
-}
-var A_object = {
-  a: 100,
-  b: 100,
-}
-
-var B_object = A_object // 얕은 복사
-var cloned_object = deepCopy(A_object) // 깊은 복사
-A_object.a = 200
-
-alert(JSON.stringify(A_object))
-alert(JSON.stringify(B_object))
-alert(JSON.stringify(cloned_object))
-```
-
-별도의 함수를 만들었다. 오브젝트를 파라미터로 받고 안에서 하나하나 손수 새로운 오프젝트에 값을 할당시켜준다. 이렇게 새로운 오브젝트를 만들어 새로운 주소값을 갖는 하나의 객체를 만들어낸다.
