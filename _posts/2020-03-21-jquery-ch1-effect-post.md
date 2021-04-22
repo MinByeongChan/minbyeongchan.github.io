@@ -1,10 +1,9 @@
 ---
-title: "[Jquery] 셀렉터 접근 방법, 클릭 이벤트(hide, show, toggle)"
+title: "[jQuery] 셀렉터 접근 방법, 클릭 이벤트(hide, show, toggle)"
 description: 'Jquery는 selector를 빠르고 간편하게 참조할 수 있어 편리하다'
 date: "2020-03-21"
 modified_date: "2020-03-21"
-categories: [Jquery]
-tags: [Jquery]
+tags: [jQuery]
 ---
 
 [w3schools.com 참조해서 공부](https://www.w3schools.com/jquery/jquery_hide_show.asp)

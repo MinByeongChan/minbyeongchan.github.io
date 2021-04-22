@@ -1,9 +1,9 @@
 ---
-title: "[Jquery] AJAX의 기초 / 사용 방법"
-description: ''
+title: "[jQuery] AJAX의 기초 / 사용 방법"
+description: 'AJAX( Asynchronous Javascript and XML )란, 자바스크립트와 XML을 `비동기`적으로 처리하는 기법을 말한다...'
 date: "2020-03-23"
-modified_data: "2020-03-23"
-tags: [Jquery]
+modified_date: "2020-03-23"
+tags: [jQuery]
 ---
 
 [w3schools.com 참조해서 공부](https://www.w3schools.com/jquery/jquery_ajax_intro.asp)
@@ -40,12 +40,8 @@ Jquery에서는 AJAX를 지원하는 다양한 함수들이 있다. 여기서는
 
 ### AJAX 예제 1 (GET)
 
-```html
-<html>
-  <head>
-    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
+```js
+  $(document).ready(function () {
         $("#execute").click(function () {
           $.ajax({
             type: "GET",
@@ -71,20 +67,9 @@ Jquery에서는 AJAX를 지원하는 다양한 함수들이 있다. 여기서는
           })
         })
       })
-    </script>
-  </head>
-  <body>
-    <input type="button" id="execute" value="execute" />
-    <div>
-      <p>this is MBC</p>
-      <p class="content"></p>
-      <p>Hello</p>
-    </div>
-  </body>
-</html>
-```
+  ```
 
-`$.ajxa()`는 JQuery에서 지원하는 함수이다. 이 함수 안에 AJAX를 정의하는 내용을 작성한다.
+`$.ajax()`는 JQuery에서 지원하는 함수이다. 이 함수 안에 AJAX를 정의하는 내용을 작성한다.
 
 `type` : http 통신 방식인 GET / POST를 선택한다. JSON데이터를 받으려 하니 GET으로 설정했다. POST는 데이터를 보낼때 사용된다.
 
@@ -102,29 +87,18 @@ error가 발생하는 것이 당연한데, json 통신은 서버가 실행된 �
 
 서버가 정상적으로 동작하고 있는 상태라면 json.json파일에 있던
 
+```
 "name": "MBC",
 "age": "26",
 "major": "info-communication"
+```
 
 가 출력될 것이다.
 
 ### AJAX 예제 2 (POST)
 
-```html
-<html>
-  <head>
-    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
-  </head>
-  <body>
-    <input type="button" id="execute" value="execute" />
-    <div>
-      <p>this is MBC</p>
-      <p class="content"></p>
-      <input id="testData" value="1111" />
-    </div>
-  </body>
-  <script type="text/javascript">
-    $("#execute").click(function () {
+```js
+$("#execute").click(function () {
       var testDataObj = { data: $("#testData").val() }
       $.ajax({
         type: "POST",
@@ -140,8 +114,6 @@ error가 발생하는 것이 당연한데, json 통신은 서버가 실행된 �
         },
       })
     })
-  </script>
-</html>
 ```
 
 이번엔 POST 방식으로 데이터를 넘기는 예제이다.

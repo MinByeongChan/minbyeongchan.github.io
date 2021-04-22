@@ -1,9 +1,9 @@
 ---
-title: "[Jquery] HTML 요소 접근 방법, GET/SET"
-description: ''
+title: "[jQuery] HTML 요소 접근 방법, GET/SET"
+description: 'jquery에서 html 요소에 접근하는 방법이 있다. 요소에 대한 정보를 얻을 수도 있고(GET), 요소를 수정할 수도 있다(SET)...'
 date: "2020-03-21"
 modified_date: "2020-03-21"
-tags: [Jquery]
+tags: [jQuery]
 ---
 
 [w3schools.com 참조해서 공부](https://www.w3schools.com/jquery/jquery_dom_get.asp)
