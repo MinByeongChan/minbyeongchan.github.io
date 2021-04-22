@@ -6,38 +6,6 @@ modified_data: "2020-03-23"
 tags: [Jquery]
 ---
 
-<style>
-    .test01 {
-        border-radius: 5px;
-        background-color: black;
-        color: white;
-        margin: 20px;
-        padding: 10px
-    }
-</style>
-<head>
-<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
-            $("#execute").click(function() {
-                $.ajax({
-                    type: "GET",
-                    url:"./test.json",
-                    dataType:"JSON",
-                    success: function(data) {
-                        $(".content").html("name: "+ data.name+"<br/>"
-                            +"age: "+ data.age+"<br/>"
-                            +"major: "+data.major+"<br/>");
-                    },
-                    error: function(xhr, status, error) {
-                        alert("ERROR!!");
-                    }
-                })
-            })
-        })    
-</script>
-</head>
-
 [w3schools.com 참조해서 공부](https://www.w3schools.com/jquery/jquery_ajax_intro.asp)
 
 AJAX( Asynchronous Javascript and XML )란, 자바스크립트와 XML을 `비동기`적으로 처리하는 기법을 말한다.
@@ -115,17 +83,6 @@ Jquery에서는 AJAX를 지원하는 다양한 함수들이 있다. 여기서는
   </body>
 </html>
 ```
-
-<body>
-    <div class="test01">
-        <input type="button" id="execute" value="execute" />
-        <div>
-            <p>this is MBC</p>
-            <p class="content"></p>
-            <p>Hello</p>
-        </div>
-    </div>
-</body>
 
 `$.ajxa()`는 JQuery에서 지원하는 함수이다. 이 함수 안에 AJAX를 정의하는 내용을 작성한다.
 

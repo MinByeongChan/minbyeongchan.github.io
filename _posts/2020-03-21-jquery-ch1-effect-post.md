@@ -7,19 +7,6 @@ categories: [Jquery]
 tags: [Jquery]
 ---
 
-<head>
-<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
-    <script type="text/javascript">
-        $(document).load(function() {
-            $(".test_btn").click(function() {
-                $("p").toggle("slow", function() {
-                    alert("Hi, This is MBC");
-                });
-            });
-        });
-    </script>
-</head>
-
 [w3schools.com 참조해서 공부](https://www.w3schools.com/jquery/jquery_hide_show.asp)
 
 웹 개발에 필요한 정보가 많이 있다. 설명도 너무 잘되어있으니 참고하자.
@@ -111,13 +98,6 @@ hide, show, toggle 모두 각각의 신택스가 존재한다. 위에서 매개�
   </div>
 </body>
 ```
-
-<body>
-    <div>
-        <p>Hello MBC</p>
-        <button class="test_btn">버튼</button>
-    </div>
-</body>
     
 위 예제는 p태그가 hide되면서 alert가 동작하게 된다.
 
