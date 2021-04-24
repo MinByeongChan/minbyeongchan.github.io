@@ -1,8 +1,8 @@
 ---
 title: "[Spring] ORM(JPA, Hibernate), JDBC 개념 정리"
 description: 'ORM(Object-Relational-Mapping)이란 객체와 관계형대이터베이스 매핑, 객체와 DB의 테이블이 매핑을 이루는 것을 말한다...'
-date: "2021-04-19"
-modified_date: "2021-04-19"
+date: "2021-04-21"
+modified_date: "2021-04-21"
 tags: [Spring]
 ---
 
