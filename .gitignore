@@ -6,6 +6,7 @@
 
 # export
 /dist
+/out
 
 # production
 /build
