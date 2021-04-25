@@ -119,7 +119,7 @@ const AboutLayout = () => {
               <IntroItem>
                 <FontAwesomeIcon className="intro-icon" icon={faHome} />
                 <TextDefault size="lg" lineHeight="md">
-                  <a href="https://minbyeongchan.github.io">https://minbyeongchan.github.io</a>
+                  <a href="https://mbc-dev-blog.vercel.app">https://mbc-dev-blog.vercel.app</a>
                 </TextDefault>
               </IntroItem>
               <IntroItem>
