@@ -66,7 +66,7 @@ const SkillCompo = () => {
             </SubItem>
             <SubItem>
               <TextDefault size="md" weight="light" lineHeight="md">
-                o Node.js
+                o Spring Boot / Node.js
               </TextDefault>
             </SubItem>
             <SubItem>
@@ -93,7 +93,7 @@ const SkillCompo = () => {
           <SubItems>
             <SubItem>
               <TextDefault size="md" weight="light" lineHeight="md">
-                o Mysql / MongoDB
+                o Mysql
               </TextDefault>
             </SubItem>
           </SubItems>
