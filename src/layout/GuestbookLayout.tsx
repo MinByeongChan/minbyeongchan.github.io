@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLock, faLockOpen } from '@fortawesome/free-solid-svg-icons';
@@ -7,6 +7,8 @@ import TextDefault from '../components/ui/TextDefault';
 import { color, fontSize } from '../utils/StyleTheme';
 import useInput from '../hooks/useInput';
 import CommentList from '../components/guestbook/CommentList';
+import { useDispatch } from 'react-redux';
+import { commentStart } from '../modules/comment';
 
 interface iCommentBtnWrapper {
   secret?: boolean;
@@ -106,10 +108,15 @@ const GuestbookLayout = () => {
   const [password, onChangePassword] = useInput('');
   const [comment, onChangeComment] = useInput('');
   const [secret, setSecret] = useState(false);
+  const dispatch = useDispatch();
 
   const onClickSecret = () => {
     setSecret(!secret);
   };
+
+  useEffect(() => {
+    dispatch(commentStart({ url: '001' }));
+  }, []);
 
   return (
     <main

@@ -12,10 +12,14 @@ const CommentItems = styled.ul`
 `;
 const CommentItem = styled.li`
   width: 100%;
-  max-width: 460px;
-  @media screen and (min-width: 0px) and (max-width: 480px) {
-    min-width: 0px;
+  max-width: 600px;
+  @media screen and (min-width: 481px) and (max-width: 1080px) {
+    max-width: 480px;
     padding: 0 22px;
+  }
+  @media screen and (min-width: 0px) and (max-width: 480px) {
+    max-width: 480px;
+    padding: 0;
   } ;
 `;
 const CommentLayout = styled.div`
@@ -66,7 +70,7 @@ const CommentList = () => {
             Hello Comment, 안녕하세요 MBC 블로그입니다.
           </TextDefault>
         </CommentLayout>
-        <CommentBottomWrapper>
+        <CommentBottomWrapper enable={true}>
           <TextDefault size="sm" lineHeight="sm" letterSpacing="1">
             MBC
           </TextDefault>
@@ -87,13 +91,13 @@ const CommentList = () => {
             </TextDefault>
           </TextWrapper>
 
-          <span style={{ margin: '0 8px', fontSize: fontSize.xs }}>|</span>
+          {/* <span style={{ margin: '0 8px', fontSize: fontSize.xs }}>|</span>
 
           <TextWrapper>
             <TextDefault size="sm" lineHeight="sm" letterSpacing="1">
               답글
             </TextDefault>
-          </TextWrapper>
+          </TextWrapper> */}
 
           <span style={{ margin: '0 8px', fontSize: fontSize.xs }}>|</span>
 
