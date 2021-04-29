@@ -1,11 +1,11 @@
 import React from 'react';
 import { Meta } from '../../layout/Meta';
 import { Main } from '../../templates/Main';
-import GuestBookLayout from '../../layout/GuestBookLayout';
+import GuestbookLayout from '../../layout/GuestbookLayout';
 
 const GuestBook = () => (
   <Main meta={<Meta title={'방명록'} description={'Blog Guest book'} />}>
-    <GuestBookLayout />
+    <GuestbookLayout />
   </Main>
 );
 
