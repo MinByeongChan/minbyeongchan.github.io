@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import React, { useState } from 'react';
+import React from 'react';
 import { color, fontSize } from '../../utils/StyleTheme';
 import TextDefault from '../ui/TextDefault';
 
@@ -57,9 +57,7 @@ const TextWrapper = styled.div`
 //   } ;
 // `;
 
-const ComentList = () => {
-  const [reply, setReply] = useState(false);
-
+const CommentList = () => {
   return (
     <CommentItems>
       <CommentItem>
@@ -111,4 +109,4 @@ const ComentList = () => {
   );
 };
 
-export default ComentList;
+export default CommentList;
