@@ -17,8 +17,6 @@ export const DELETE_COMMENT = 'api/DELETE_COMMENT';
 export const DELETE_COMMENT_SUCCESS = 'api/DELETE_COMMENT_SUCCESS';
 export const DELETE_COMMENT_ERROR = 'api/DELETE_COMMENT_ERROR';
 
-const BASE_URL = '/BLGCMT';
-
 export const commentStart = (header: any) => ({
   type: COMMENT,
   payload: header,
@@ -57,18 +55,20 @@ export const commentError = (error: any) => ({
 //   payload: error,
 // });
 
-export function* getAllComment() {
-  return getAxios(BASE_URL + '/001');
-}
+export const getAllComment = () => {
+  return getAxios('/BLGCMT/001').then((data) => {
+    return data;
+  });
+};
 
 export const createComment = (data: any) => {
-  return putAxios(BASE_URL + '/002', data);
+  return putAxios('/BLGCMT/002', data);
 };
 
 export const updateComment = (id: String, data: any) => {
-  return putAxios(BASE_URL + '/003' + id, data);
+  return putAxios('/BLGCMT/003' + id, data);
 };
 
 export const deleteComment = (id: String) => {
-  return deleteAxios(BASE_URL + '/004' + id);
+  return deleteAxios('/BLGCMT/004' + id);
 };

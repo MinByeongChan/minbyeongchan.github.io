@@ -8,11 +8,10 @@ interface iPayload {
 export const createPromiseSaga = (type: any, promiseCreator: any) => {
   const [SUCCESS, ERROR] = [`${type}_SUCCESS`, `${type}_ERROR`];
   return function* saga(action: any) {
-    console.log('action', action);
     try {
       // 재사용성을 위하여 promiseCreator 의 파라미터엔 action.payload 값을 넣도록 설정합니다.
       const payload: iPayload = yield call(promiseCreator, action.payload);
-      yield put({ type: SUCCESS, payload: payload.data });
+      yield put({ type: SUCCESS, payload: payload });
     } catch (e) {
       yield put({ type: ERROR, error: true, payload: e });
     }

@@ -1,17 +1,25 @@
 import axios from 'axios';
 
+const BASE_URL = 'http://localhost:8080';
+
+const config = {
+  headers: {
+    'Content-Type': 'multipart/form-data',
+  },
+};
+
 export const getAxios = (url: string) => {
-  axios.get(url);
+  return axios.get(BASE_URL + url, config);
 };
 
 export const postAxios = (url: string, data: any) => {
-  axios.post(url, data);
+  return axios.post(BASE_URL + url, data, config);
 };
 
 export const putAxios = (url: string, data: any) => {
-  axios.put(url, data);
+  return axios.put(BASE_URL + url, data, config);
 };
 
 export const deleteAxios = (url: string) => {
-  axios.delete(url);
+  return axios.delete(BASE_URL + url, config);
 };

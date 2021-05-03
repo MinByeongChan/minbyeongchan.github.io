@@ -1,7 +1,9 @@
 import styled from '@emotion/styled';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { color, fontSize } from '../../utils/StyleTheme';
+import { isEmpty } from '../../utils/Utility';
 import TextDefault from '../ui/TextDefault';
+import CommentCard from './CommentCard';
 
 interface iCommentBottomWrapper {
   enable?: boolean;
@@ -61,10 +63,17 @@ const TextWrapper = styled.div`
 //   } ;
 // `;
 
-const CommentList = () => {
+export interface iCommentList {
+  [key: string]: any;
+}
+
+const CommentList = (props: iCommentList) => {
+  const { list } = props;
+  console.log('list ', list);
+
   return (
     <CommentItems>
-      <CommentItem>
+      {/* <CommentItem>
         <CommentLayout>
           <TextDefault size="md" letterSpacing="1">
             Hello Comment, 안녕하세요 MBC 블로그입니다.
@@ -90,25 +99,17 @@ const CommentList = () => {
               삭제
             </TextDefault>
           </TextWrapper>
-
-          {/* <span style={{ margin: '0 8px', fontSize: fontSize.xs }}>|</span>
-
-          <TextWrapper>
-            <TextDefault size="sm" lineHeight="sm" letterSpacing="1">
-              답글
-            </TextDefault>
-          </TextWrapper> */}
-
           <span style={{ margin: '0 8px', fontSize: fontSize.xs }}>|</span>
 
           <TextDefault size="xs" color="gray" lineHeight="sm" letterSpacing="1">
             2021.04.27
           </TextDefault>
-        </CommentBottomWrapper>
-        {/* <CommentBottomWrapper enable={reply}>
-          <TextInput enable={reply} type="text" />
-        </CommentBottomWrapper> */}
-      </CommentItem>
+        </CommentBottomWrapper> 
+      </CommentItem>*/}
+
+      {list.map((data: any) => (
+        <CommentCard cardData={data} key={data.id} />
+      ))}
     </CommentItems>
   );
 };

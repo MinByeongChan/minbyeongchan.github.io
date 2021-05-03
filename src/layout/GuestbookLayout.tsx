@@ -7,8 +7,10 @@ import TextDefault from '../components/ui/TextDefault';
 import { color, fontSize } from '../utils/StyleTheme';
 import useInput from '../hooks/useInput';
 import CommentList from '../components/guestbook/CommentList';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { commentStart } from '../modules/comment';
+import { iInitState } from '../modules/saga';
+import { isEmpty } from '../utils/Utility';
 
 interface iCommentBtnWrapper {
   secret?: boolean;
@@ -110,6 +112,10 @@ const GuestbookLayout = () => {
   const [secret, setSecret] = useState(false);
   const dispatch = useDispatch();
 
+  const { list }: iInitState = useSelector((state: any) => ({
+    list: !isEmpty(state.fetchData.comment.data) ? state.fetchData.comment.data.data : null,
+  }));
+
   const onClickSecret = () => {
     setSecret(!secret);
   };
@@ -191,7 +197,7 @@ const GuestbookLayout = () => {
               </CommentBottom>
             </CommentWriteContainer>
 
-            <CommentList />
+            {!isEmpty(list) && <CommentList list={list} />}
           </div>
         </ContentLayout>
         {/* Content Layout - 끝 */}
