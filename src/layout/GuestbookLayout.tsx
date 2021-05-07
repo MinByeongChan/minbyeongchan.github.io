@@ -8,9 +8,11 @@ import { color, fontSize } from '../utils/StyleTheme';
 import useInput from '../hooks/useInput';
 import CommentList from '../components/guestbook/CommentList';
 import { useDispatch, useSelector } from 'react-redux';
-import { commentStart } from '../modules/comment';
+import { commentStart, selectComment } from '../modules/comment';
 import { iInitState } from '../modules/saga';
 import { isEmpty } from '../utils/Utility';
+import { openModal } from '../modules/modal';
+import { COMMENT_DELETE_MODAL, COMMENT_UPDATE_MODAL } from '../modal/ModalProviderWithKey';
 
 interface iCommentBtnWrapper {
   secret?: boolean;
@@ -64,7 +66,7 @@ const TextInput = styled.input`
   max-width: 230px;
   background-color: inherit;
   border: none;
-  font-size: ${fontSize.md};
+  font-size: ${fontSize.sm};
   letter-spacing: 1px;
   margin-top: 2px;
   margin-left: 8px;
@@ -106,18 +108,71 @@ const CommentBtnWrapper = styled.div<iCommentBtnWrapper>`
 `;
 
 const GuestbookLayout = () => {
-  const [name, onChangeName] = useInput('');
-  const [password, onChangePassword] = useInput('');
-  const [comment, onChangeComment] = useInput('');
+  const [name, onChangeName, setName] = useInput('');
+  const [password, onChangePassword, setPassword] = useInput('');
+  const [message, onChangeMessage, setMessage] = useInput('');
   const [secret, setSecret] = useState(false);
   const dispatch = useDispatch();
 
   const { list }: iInitState = useSelector((state: any) => ({
-    list: !isEmpty(state.fetchData.comment.data) ? state.fetchData.comment.data.data : null,
+    success: state.fetchData.comment.data,
+    list: state.comments.list,
   }));
 
   const onClickSecret = () => {
-    setSecret(!secret);
+    let value = !secret;
+    if (value) {
+      alert('댓글을 비밀글로 전환합니다.');
+    } else {
+      alert('댓글을 공개로 전환합니다.');
+    }
+    setSecret(value);
+  };
+
+  const onClickSubmit = () => {
+    if (isEmpty(message)) {
+      alert(`댓글을 입력해주세요.`);
+      return;
+    }
+    if (isEmpty(name)) {
+      alert(`이름을 입력해주세요.`);
+      return;
+    }
+
+    let result = isEmpty(password)
+      ? confirm(`패스워드를 입력하지 않고 작성합니다.`)
+      : confirm(`이대로 작성하시겠습니까?`);
+    if (!result) return;
+
+    dispatch(
+      commentStart({
+        url: '002',
+        payload: {
+          name: name,
+          message: message,
+          password: password,
+          secret: secret ? '1' : '0',
+        },
+      }),
+    );
+
+    setName('');
+    setPassword('');
+    setMessage('');
+    setSecret(false);
+  };
+
+  const onClickDelete = (id: string) => {
+    dispatch(
+      openModal(COMMENT_DELETE_MODAL, {
+        id: id,
+      }),
+    );
+  };
+
+  const onClickUpdate = (id: number) => {
+    dispatch(selectComment(id));
+    dispatch(openModal(COMMENT_UPDATE_MODAL, {}));
   };
 
   useEffect(() => {
@@ -136,7 +191,7 @@ const GuestbookLayout = () => {
       <Layout>
         {/* Content Layout - 시작 */}
         <ContentLayout>
-          <TextDefault size="h2" weight="bold" lineHeight="h1" letterSpacing="13">
+          <TextDefault size="h3" weight="bold" lineHeight="h1" letterSpacing="13">
             방명록
           </TextDefault>
 
@@ -147,15 +202,15 @@ const GuestbookLayout = () => {
 
             <CommentWriteContainer>
               <TextAreaContainer
-                value={comment}
-                onChange={onChangeComment}
+                value={message}
+                onChange={onChangeMessage}
                 placeholder="내용, 이름과 패스워드를 작성 후, 남기고 싶은 말을 적어주세요 : )"
               />
               <CommentBottom>
                 <div>
                   <TextWrapper>
                     <span style={{ width: 70 }}>
-                      <TextDefault size="md" lineHeight="md" letterSpacing="1">
+                      <TextDefault size="sm" lineHeight="sm" letterSpacing="1">
                         이름
                       </TextDefault>
                     </span>
@@ -169,7 +224,7 @@ const GuestbookLayout = () => {
 
                   <TextWrapper>
                     <span style={{ width: 70 }}>
-                      <TextDefault size="md" lineHeight="md" letterSpacing="1">
+                      <TextDefault size="sm" lineHeight="sm" letterSpacing="1">
                         패스워드
                       </TextDefault>
                     </span>
@@ -191,13 +246,19 @@ const GuestbookLayout = () => {
                     />
                   </CommentBtnWrapper>
                   <CommentBtnWrapper>
-                    <img src="/assets/images/guestbook/write.svg" />
+                    <img src="/assets/images/guestbook/write.svg" onClick={onClickSubmit} />
                   </CommentBtnWrapper>
                 </CommentBtnContainer>
               </CommentBottom>
             </CommentWriteContainer>
 
-            {!isEmpty(list) && <CommentList list={list} />}
+            {Array.isArray(list) && !isEmpty(list) && (
+              <CommentList
+                list={list}
+                onClickDelete={onClickDelete}
+                onClickUpdate={onClickUpdate}
+              />
+            )}
           </div>
         </ContentLayout>
         {/* Content Layout - 끝 */}

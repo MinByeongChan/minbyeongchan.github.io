@@ -9,6 +9,7 @@ import { faEnvelopeOpen, faPhoneSquareAlt } from '@fortawesome/free-solid-svg-ic
 import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
 import { Provider } from 'react-redux';
 import { store } from '../modules/configureStore';
+import ModalProvider from '../modal/ModalProvider';
 
 type IMainProps = {
   meta: ReactNode;
@@ -75,6 +76,7 @@ const Main: React.FC<IMainProps> = (props: IMainProps) => (
     {props.meta}
 
     <section>
+      <ModalProvider />
       <Navbar />
 
       <LayoutMain>{props.children}</LayoutMain>

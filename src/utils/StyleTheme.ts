@@ -15,6 +15,7 @@ export const color: IStyleOptions = {
   lightslategray: '#778899 ',
   slategray: '#708090',
   gray: '#656a77',
+  gray2: '#8d8d8d',
   darkgray: '#a9a9a9',
   darkWhite: 'rgb(237,241,242)',
   lightgrey: '#d3d3d3',

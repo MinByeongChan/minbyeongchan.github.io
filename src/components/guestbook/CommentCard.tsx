@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import React from 'react';
 import { color, fontSize } from '../../utils/StyleTheme';
+import { getDateFormat, setDateComma } from '../../utils/Utility';
 import TextDefault from '../ui/TextDefault';
 
 interface iCommentBottomWrapper {
@@ -36,7 +37,7 @@ const CommentLayout = styled.div`
   height: auto;
   background-color: ${color.darkWhite};
   border-radius: 20px;
-  padding: 12px 30px;
+  padding: 8px 30px;
 `;
 
 const CommentBottomWrapper = styled.div<iCommentBottomWrapper>`
@@ -46,7 +47,7 @@ const CommentBottomWrapper = styled.div<iCommentBottomWrapper>`
   align-items: flex-end;
   padding: 5px 0 0 30px;
 `;
-const TextWrapper = styled.div`
+const TextWrapper = styled.span`
   transition: 0.1s linear;
   cursor: pointer;
   &:hover {
@@ -56,12 +57,12 @@ const TextWrapper = styled.div`
 
 const CommentCard = (props: iCommentCard) => {
   const cardData: iCardData = props.cardData;
-  console.log('cardData', cardData);
+  const { onClickDelete, onClickUpdate } = props;
 
   return (
     <CommentItem>
       <CommentLayout>
-        <TextDefault size="md" letterSpacing="1">
+        <TextDefault size="sm" letterSpacing="1">
           {cardData.message}
         </TextDefault>
       </CommentLayout>
@@ -72,7 +73,7 @@ const CommentCard = (props: iCommentCard) => {
 
         <span style={{ margin: '0 8px', fontSize: fontSize.xs }}>|</span>
 
-        <TextWrapper>
+        <TextWrapper onClick={() => onClickUpdate(cardData.id)}>
           <TextDefault size="sm" lineHeight="sm" letterSpacing="1">
             수정
           </TextDefault>
@@ -80,7 +81,7 @@ const CommentCard = (props: iCommentCard) => {
 
         <span style={{ margin: '0 8px', fontSize: fontSize.xs }}>|</span>
 
-        <TextWrapper>
+        <TextWrapper onClick={() => onClickDelete(cardData.id, cardData.password)}>
           <TextDefault size="sm" lineHeight="sm" letterSpacing="1">
             삭제
           </TextDefault>
@@ -97,12 +98,9 @@ const CommentCard = (props: iCommentCard) => {
         <span style={{ margin: '0 8px', fontSize: fontSize.xs }}>|</span>
 
         <TextDefault size="xs" color="gray" lineHeight="sm" letterSpacing="1">
-          2021.04.27
+          {setDateComma(getDateFormat(cardData.created_at))}
         </TextDefault>
       </CommentBottomWrapper>
-      {/* <CommentBottomWrapper enable={reply}>
-          <TextInput enable={reply} type="text" />
-        </CommentBottomWrapper> */}
     </CommentItem>
   );
 };

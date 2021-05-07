@@ -4,7 +4,7 @@ const BASE_URL = 'http://localhost:8080';
 
 const config = {
   headers: {
-    'Content-Type': 'multipart/form-data',
+    'Content-Type': 'application/json',
   },
 };
 

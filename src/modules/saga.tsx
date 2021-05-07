@@ -1,6 +1,6 @@
 import { takeEvery } from '@redux-saga/core/effects';
 import { createPromiseSaga, handleAsyncActions, reducerUtils } from '../lib/asyncUtil';
-import { COMMENT_ERROR, COMMENT, COMMENT_SUCCESS, getAllComment } from './comment';
+import { COMMENT_ERROR, COMMENT, COMMENT_SUCCESS, reqCommentApi } from './comment';
 
 // 액션
 export const RESET_DATA = 'api/RESET_DATA';
@@ -10,24 +10,7 @@ export const resetData = () => ({
   type: RESET_DATA,
 });
 
-// function* branchSaga(action: any) {
-//   console.log('action', action);
-//   const { url, payload } = action;
-
-//   console.log('url', url);
-//   switch (url) {
-//     case '001':
-//       return getAllComment();
-//     case '002':
-//       return createComment(payload.data);
-//     case '003':
-//       return updateComment(payload.id, payload.data);
-//     case '004':
-//       return deleteComment(payload.id);
-//   }
-// }
-
-const apiCommentSaga = createPromiseSaga(COMMENT, getAllComment);
+const apiCommentSaga = createPromiseSaga(COMMENT, reqCommentApi);
 
 export function* fetchSaga() {
   yield takeEvery(COMMENT, apiCommentSaga);

@@ -48,7 +48,8 @@ const Text = styled.span`
       (props.size === 'xxg' && fontSize.xg) ||
       (props.size === 'xg' && fontSize.lg) ||
       (props.size === 'lg' && fontSize.md) ||
-      (props.size === 'md' && fontSize.sm)};
+      (props.size === 'md' && fontSize.sm) ||
+      (props.size === 'sm' && fontSize.xs)};
   } ;
 `;
 
