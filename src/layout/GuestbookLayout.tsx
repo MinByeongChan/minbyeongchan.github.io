@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import styled from '@emotion/styled';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLock, faLockOpen } from '@fortawesome/free-solid-svg-icons';
 
 import TextDefault from '../components/ui/TextDefault';
 import { color, fontSize } from '../utils/StyleTheme';
@@ -108,10 +106,10 @@ const CommentBtnWrapper = styled.div<iCommentBtnWrapper>`
 `;
 
 const GuestbookLayout = () => {
-  const [name, onChangeName, setName] = useInput('');
-  const [password, onChangePassword, setPassword] = useInput('');
-  const [message, onChangeMessage, setMessage] = useInput('');
-  const [secret, setSecret] = useState(false);
+  const [name, onChangeName] = useInput('');
+  const [password, onChangePassword] = useInput('');
+  const [message, onChangeMessage] = useInput('');
+  // const [secret, setSecret] = useState(false);
   const dispatch = useDispatch();
 
   const { list }: iInitState = useSelector((state: any) => ({
@@ -119,15 +117,15 @@ const GuestbookLayout = () => {
     list: state.comments.list,
   }));
 
-  const onClickSecret = () => {
-    let value = !secret;
-    if (value) {
-      alert('댓글을 비밀글로 전환합니다.');
-    } else {
-      alert('댓글을 공개로 전환합니다.');
-    }
-    setSecret(value);
-  };
+  // const onClickSecret = () => {
+  //   let value = !secret;
+  //   if (value) {
+  //     alert('댓글을 비밀글로 전환합니다.');
+  //   } else {
+  //     alert('댓글을 공개로 전환합니다.');
+  //   }
+  //   setSecret(value);
+  // };
 
   const onClickSubmit = () => {
     if (isEmpty(message)) {
@@ -151,15 +149,10 @@ const GuestbookLayout = () => {
           name: name,
           message: message,
           password: password,
-          secret: secret ? '1' : '0',
+          // secret: secret ? '1' : '0',
         },
       }),
     );
-
-    setName('');
-    setPassword('');
-    setMessage('');
-    setSecret(false);
   };
 
   const onClickDelete = (id: string) => {
@@ -192,13 +185,13 @@ const GuestbookLayout = () => {
         {/* Content Layout - 시작 */}
         <ContentLayout>
           <TextDefault size="h3" weight="bold" lineHeight="h1" letterSpacing="13">
-            방명록
+            글 남기기
           </TextDefault>
 
           <div style={{ marginTop: '13px' }}>
-            <TextDefault size="xxg" weight="bold" lineHeight="lg" letterSpacing="1">
+            {/* <TextDefault size="xxg" weight="bold" lineHeight="lg" letterSpacing="1">
               글 남기기
-            </TextDefault>
+            </TextDefault> */}
 
             <CommentWriteContainer>
               <TextAreaContainer
@@ -238,13 +231,13 @@ const GuestbookLayout = () => {
                 </div>
 
                 <CommentBtnContainer>
-                  <CommentBtnWrapper secret={secret} style={{ marginLeft: 0 }}>
+                  {/* <CommentBtnWrapper secret={secret} style={{ marginLeft: 0 }}>
                     <FontAwesomeIcon
                       icon={secret ? faLock : faLockOpen}
                       style={{ width: 25, height: 25 }}
                       onClick={onClickSecret}
                     />
-                  </CommentBtnWrapper>
+                  </CommentBtnWrapper> */}
                   <CommentBtnWrapper>
                     <img src="/assets/images/guestbook/write.svg" onClick={onClickSubmit} />
                   </CommentBtnWrapper>
@@ -252,12 +245,26 @@ const GuestbookLayout = () => {
               </CommentBottom>
             </CommentWriteContainer>
 
-            {Array.isArray(list) && !isEmpty(list) && (
+            <div
+              style={{
+                width: '100%',
+                height: '1px',
+                backgroundColor: `${color.gray2}`,
+                margin: '50px 0 10px 0',
+              }}
+            ></div>
+            {Array.isArray(list) && !isEmpty(list) ? (
               <CommentList
                 list={list}
                 onClickDelete={onClickDelete}
                 onClickUpdate={onClickUpdate}
               />
+            ) : (
+              <div style={{ textAlign: 'center', padding: '100px 0' }}>
+                <TextDefault size="xg" lineHeight="lg" letterSpacing="1">
+                  가장 먼저 댓글을 달아주세요!
+                </TextDefault>
+              </div>
             )}
           </div>
         </ContentLayout>

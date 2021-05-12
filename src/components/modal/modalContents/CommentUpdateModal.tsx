@@ -1,6 +1,6 @@
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import useInput from '../../../hooks/useInput';
 import { commentStart } from '../../../modules/comment';
@@ -25,7 +25,7 @@ const CommentUpdateModal = () => {
   const [message, onChangeMessage] = useInput(content.message);
   const [name, onChangeName] = useInput(content.name);
   const [password, onChangePassword] = useInput('');
-  // const [secret, setSecret] = useState(false);
+  // const [secret, setSecret] = useState(content.secret);
   const dispatch = useDispatch();
 
   const onClickClose = () => {
