@@ -25,7 +25,7 @@ const CommentUpdateModal = () => {
   const [message, onChangeMessage] = useInput(content.message);
   const [name, onChangeName] = useInput(content.name);
   const [password, onChangePassword] = useInput('');
-  // const [secret, setSecret] = useState(false);
+  // const [secret, setSecret] = useState(content.secret);
   const dispatch = useDispatch();
 
   const onClickClose = () => {

@@ -1,5 +1,5 @@
 import { call, put } from '@redux-saga/core/effects';
-import { deleteAxios, getAxios, postAxios, putAxios } from '../api/customAxios';
+import { getAxios, postAxios, putAxios } from '../api/customAxios';
 import { CLOSE_MODAL } from './modal';
 
 export const COMMENT = 'api/COMMENT';
@@ -80,10 +80,6 @@ export function* getAllComment() {
   } else {
     yield put({ type: RESET_COMMENTS });
   }
-
-  // yield getAxios('/BLGCMT/001').then((data) => {
-  //   return data;
-  // });
 }
 
 export function* createComment(param: any) {
@@ -92,7 +88,8 @@ export function* createComment(param: any) {
 
   if (req_data.status === 200) {
     if (data.rc === '1') {
-      yield getAllComment();
+      yield alert('작성 되었습니다');
+      yield window.location.reload();
     }
   }
 }
@@ -103,26 +100,26 @@ export function* updateComment(param: any) {
 
   if (req_data.status === 200) {
     if (data.rc === '1') {
-      yield alert('수정완료되었습니다');
+      yield alert('정상적으로 수정 되었습니다');
       yield put({ type: CLOSE_MODAL });
       yield getAllComment();
     } else {
       yield alert(data.msg);
     }
   }
-  // return putAxios('/BLGCMT/003' + id, data);
 }
 
-export function* deleteComment(id: String) {
-  const req_data: ResponseGenerator = yield call(deleteAxios, '/BLGCMT/004/' + id);
+export function* deleteComment(param: any) {
+  const req_data: ResponseGenerator = yield call(postAxios, '/BLGCMT/004', param);
   const { data } = req_data;
-
-  console.log('req_data', req_data);
-  console.log('data', data);
 
   if (req_data.status === 200) {
     if (data.rc === '1') {
+      yield alert('정상적으로 삭제 되었습니다');
+      yield put({ type: CLOSE_MODAL });
       yield getAllComment();
+    } else {
+      yield alert(data.msg);
     }
   }
 }

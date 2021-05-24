@@ -63,7 +63,7 @@ const CommentCard = (props: iCommentCard) => {
     <CommentItem>
       <CommentLayout>
         <TextDefault size="sm" letterSpacing="1">
-          {cardData.message}
+          {cardData.secret ? '비밀글 입니다.' : cardData.message}
         </TextDefault>
       </CommentLayout>
       <CommentBottomWrapper enable={true}>
