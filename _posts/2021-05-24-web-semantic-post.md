@@ -1,6 +1,6 @@
 ---
-title: '[WEB] 시맨틱(Semantic) 태그에 대하여'
-description: "먼저 css로 애니메이션을 일일이 매번 처리하려고하다 보니, 귀찮았다..."
+title: '[WEB] 시맨틱(Semantic) 웹, 시맨틱 태그에 대하여'
+description: "웹개발 중 기초적인 파트중에 하나이다. 하지만, 개발을 하면서..."
 date: '2021-01-17'
 modified_date: '2021-01-17'
 tags: [React, useSpring]
