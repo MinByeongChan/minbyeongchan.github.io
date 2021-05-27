@@ -4,6 +4,8 @@ import styled from '@emotion/styled';
 import { color, fontSize, fontWeight } from '../utils/StyleTheme';
 import { Content } from '../content/Content';
 import { Config } from '../utils/Config';
+import Utterances from '../components/comment/Utterances';
+import TextDefault from '../components/ui/TextDefault';
 
 type IPostProps = {
   title: string;
@@ -81,11 +83,17 @@ const ContentLayout = styled.div(() => ({
 
 const PostContainer = styled.div`
   max-width: 720px;
+  margin: 0 auto;
 
   @media screen and (min-width: 0px) and (max-width: 768px) {
     width: 100%;
     max-width: none;
   } ;
+`;
+const CommentTitleContainer = styled.div`
+  margin: 50px 0 20px 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid ${color.gray};
 `;
 
 const PostLayout = (props: IPostProps) => {
@@ -94,7 +102,9 @@ const PostLayout = (props: IPostProps) => {
       <ContentLayout>
         <TitleContainer>
           <div className="title">{props.title}</div>
-          <div className="date">{format(new Date(props.date), 'LLLL d, yyyy')}</div>
+          <div className="date" style={{ marginTop: 15 }}>
+            {format(new Date(props.date), 'LLLL d, yyyy')}
+          </div>
         </TitleContainer>
         <SubTitleContainer>
           <div className="author-img" />
@@ -109,6 +119,18 @@ const PostLayout = (props: IPostProps) => {
             />
           </Content>
         </PostContainer>
+
+        {/* 댓글 컨테이너 - 시작 */}
+        <CommentTitleContainer>
+          <TextDefault size="xg" weight="bold">
+            Comment
+          </TextDefault>
+        </CommentTitleContainer>
+        {/* 댓글 컨테이너 - 시작 */}
+
+        {/* Utterances - 시작 */}
+        <Utterances />
+        {/* Utterances - 끝 */}
       </ContentLayout>
     </Layout>
   );

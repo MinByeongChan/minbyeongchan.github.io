@@ -1,9 +1,9 @@
 ---
 title: '[React, Next.js] Next.js CORS 문제 해결'
 description: "먼저 css로 애니메이션을 일일이 매번 처리하려고하다 보니, 귀찮았다..."
-date: '2021-01-17'
-modified_date: '2021-01-17'
-tags: [React, useSpring]
+date: '2021-05-03'
+modified_date: '2021-05-03'
+tags: [React, CORS]
 ---
 
 # Next.js CORS 문제

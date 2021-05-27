@@ -1,9 +1,9 @@
 ---
 title: '[WEB] 시맨틱(Semantic) 웹, 시맨틱 태그에 대하여'
 description: "웹개발 중 기초적인 파트중에 하나이다. 하지만, 개발을 하면서..."
-date: '2021-01-17'
-modified_date: '2021-01-17'
-tags: [React, useSpring]
+date: '2021-05-24'
+modified_date: '2021-05-24'
+tags: [WEB, 시맨틱웹]
 ---
 
 # 시맨틱(Semantic) 태그
@@ -42,18 +42,22 @@ id, class같은 속성들은 `CSS 스타일`, `jQuery`를 사용할 때 사용�
 
 아래는 Block의 사용 예제이다. width가 100%이기 때문에 연달아 사용하면 띄어쓰기가 된다.
 
+```html
 <div>
 Block
 </div>
 <div>
 Block
 </div>
+```
 
 
 아래든 inline의 사용 예제이다. width, height의 설정이 불가능하기 때문에 아래처럼 나타난다.
 
+```html
 <span>inline</span>
 <span>inline</span>
+```
 
 ## 시맨틱 도입 계기
 
