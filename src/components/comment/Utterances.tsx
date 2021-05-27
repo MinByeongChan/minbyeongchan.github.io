@@ -1,17 +1,23 @@
 import React, { createRef, useEffect } from 'react';
 
-const Utterances = () => {
+const src = 'https://utteranc.es/client.js';
+
+export interface IUtterancesProps {
+  repo: string;
+  theme: string;
+}
+
+const Utterances: React.FC<IUtterancesProps> = React.memo(({ repo, theme }) => {
   const commentRef = createRef<HTMLDivElement>();
 
   useEffect(() => {
     const utterances = document.createElement('script');
 
     const utterancesConfig = {
-      src: 'https://utteranc.es/client.js',
-      repo: 'MinByeongChan/mbc-devBlog',
+      src,
+      repo,
+      theme,
       'issue-term': 'pathname',
-      theme: 'github-light',
-      label: '✨💬 comments ✨',
       crossorigin: 'anonymous',
       async: 'true',
     };
@@ -23,7 +29,9 @@ const Utterances = () => {
     commentRef.current!.appendChild(utterances);
   }, []);
 
-  return <div className="comments" ref={commentRef}></div>;
-};
+  return <div ref={commentRef} />;
+});
+
+Utterances.displayName = 'Utterances';
 
 export default Utterances;

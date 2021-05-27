@@ -129,7 +129,7 @@ const PostLayout = (props: IPostProps) => {
         {/* 댓글 컨테이너 - 시작 */}
 
         {/* Utterances - 시작 */}
-        <Utterances />
+        <Utterances repo="MinByeongChan/mbc-devBlog" theme="github-light" />
         {/* Utterances - 끝 */}
       </ContentLayout>
     </Layout>

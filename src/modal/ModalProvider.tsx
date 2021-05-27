@@ -6,7 +6,6 @@ import { CONTENT_MAP } from './ModalProviderWithKey';
 
 const ModalProvider = () => {
   const modalReducerState = useSelector((state: any) => state.modal);
-  console.log('modalReducerState ', modalReducerState);
 
   const ModalContent = CONTENT_MAP[isEmpty(modalReducerState) ? '' : modalReducerState.contentId];
   const showModal = isEmpty(modalReducerState) ? false : modalReducerState.showModal;
