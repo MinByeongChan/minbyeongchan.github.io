@@ -8,17 +8,19 @@ tags: [React, CORS]
 
 # Next.js CORS 문제
 
-Next.js와 Spring 서버를 API 연동 작업을 하는 도중에 엄청 해매서 기록한다. 기존 React에서 사용하던 package.json에 Proxy를 추가하는 방법으로 CORS 를 해결하는 방법이 있었다.
-
+Next.js와 Spring 서버를 API 연동 작업을 하는 도중에 엄청 해매서 기록을 남기려 합니다. 기존 React에서 사용하던 package.json에 Proxy를 추가하는 방법으로 CORS 를 해결하는 방법이 있었습니다만, next.js에서는 무슨일인지 먹히지 않았습니다. 그래서 이외의 방법은 어떤것이 있는지 알아보려고 합니다.
 
 ## Cross-Origin Resource Sharing(CORS)
 
-문제를 다루기전에 CORS애 대해 간단히 집고 넘어가자.
+문제를 다루기전에 CORS애 대해 간단히 개념을 잡고 넘어가야합니다.
 
-CORS 는 HTTP 헤더를 사용해서 다른 리소스에 접근할 수 있도록 하는 것을 말한다. 기본적으로 다른 리소스에 접근하지 못하도록 브라우저에서 차단하고 있다.(보안때문!)
+CORS는 추가 HTTP헤더를 사용해서 별도의 WAS에서 실행중인 웹 어플리케이션 리소스에 접근할 수 있도록 권한을 부여하는 것을 말합니다. 기본적으로 브라우저(User-Agent), 웹어플리케이션에서 다른 리소스에 접근하지 못하도록 차단하고 있다.(보안때문!)
 
-그래서 이러한 차단을 풀어줘야하는데 Proxy라는 중계서버를 중간에 놓고 대신 전달해주는 방식으로 가야한다. 하지만, 요즘 React나 스프링 등 다양한 방식으로 CORS를 처리해주기 때문에 Proxy 서버까지 굳이 만들지 않고 해결할 수 있다.
+보통 XMLHttpRequest를 사용해서 uri 요청하게 되는데 보안상 브라우저는 CORS를 제한합니다.
 
+CORS는 `XMLHttpRequest`, `Fetch API`를 사용하여, CSS, Javascript, HTML, img 등과 같은 리소스를 불러올 때 발생합니다.
+
+그래서 이러한 차단을 풀어줘야하는데 Proxy라는 중간에서 데이터를 처리해주는 장치를 중간에 놓고 대신 전달해주는 방식으로 가야한다. 하지만, 요즘 React의 webpack이나 스프링 등 다양한 방식으로 CORS를 처리해주기 때문에 Proxy 서버까지 만들지 않고 해결할 수 있다.
 
 ## CORS 오류
 
