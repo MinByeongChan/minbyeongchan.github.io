@@ -90,7 +90,56 @@ age = 20;                  // 에러 발생
 
 [let, var, const에 대한 차이점](https://gist.github.com/LeoHeo/7c2a2a6dbcf80becaaa1e61e90091e5d)
 
+## Block-scoped vs Function-scoped
 
+function-scoped는 함수를 선언할 때 항상 마주하게 된다. 또한, top-level scope의 global scope로도 보게 된다. global 변수는 window객체에 의해 제어된다는 뜻이기도 하다.
+
+block-scoped는 for, while, if 문을 사용 할 때 사용되는 block을 말한다. 
+
+function-scoped는 함수를 호출할 때 사용되는 block을 말한다. 함수 안에서 사용되는 변수를 `var`으로 선언하느냐 또는 `let`으로 선언하느냐에 따라 호이스팅 여부가 갈린다. 
+
+## 이벤트 버블링(Bubbling) vs 이벤트 캡처링(Capturing)
+
+### Bubbling
+
+특정 엘리먼트에 이벤트가 발생할 때 엘리먼트 DOM의 parent까지 이벤트가 전달된다. 이것을 bubbling이라고 한다.
+
+```html
+<form onClick="alert('form')">
+    Form
+    <div onClick="alert('div')">
+        Div
+        <p onClick="alert('p')">P</p>
+        <p onClick="alert('p2')">P2</p>
+    </div>
+</form>
+```
+
+위 예제에서 P를 클릭하면 P -> div -> form 순으로 alert가 발생하는 것을 확인할 수 있다. nested 엘리먼트부터 parent 엘리먼트까지 이벤트가 버블링 되는 것이다. Sibling인 P2는 상위 엘리먼트가 아니므로 전달되지 않는다.
+
+### 버블링 막는 법
+
+버블링은 nested 엘리먼트에서 parent 엘리먼트까지 이벤트가 전달된다고 한다. 하지만 이벤트 전달을 막고 싶을 때가 있는데 stopPropagation()을 사용하면 된다.
+
+```
+<button onClick="event.stopPropagation()">클릭</button>
+```
+
+event.propagation()을 사용하면 해당 엘리먼트는 이벤트가 발생하지 않도록 제어할 수 있다.
+
+
+
+
+
+## IIFE(Immediately Invoked Function Expression) 
+
+함수를 선언함과 동시에 실행시키는 기능을 말한다. 호이스팅을 피하거나 사이드 이펙트에 의한 변수의 취약성을 노출시키는 것을 방지하기 위해 사용된다.
+
+```js
+void function() {
+// do something 
+}()
+```
 
 # WEB
 
