@@ -141,6 +141,38 @@ void function() {
 }()
 ```
 
+## closure란?
+
+클로저는 `독립적인 변수를 가리키는 함수`이다. 그리고, 클로저 안에서 정의된 함수는 그 환경을 기억한다.
+
+일종의 `함수를 만드는 공장`표현할 수 있겠다. 공장안에서 만들 반환되는 함수를 정의하고 반환된 함수의 변수를 변경시킬 수 있다. 그리고 이 환경을 기억한다.
+
+예제와 같이 반환되는 함수를 변형시킬 수 있다.
+
+```js
+function sayHelloTo(name) {
+    var sentence = "Hello, My name is "+ name;
+    // Closure
+    return function() {
+        console.log(sentence);
+    }
+}
+
+const func1 = sayHelloTo('Byeong Chan');
+const func2 = sayHelloTo('Cheol Soo');
+
+func1();
+func2();
+```
+
+### closure는 코드의 은닉화를 보장
+
+위 예제에서 바라보면 sayHelloTo()에서 sentence라는 변수가 선언되어 있다. 여기서 sentence를 다른 변수로 재할당 할수 있는 방법은 존재하지 않는다. name이라는 파라미터로 변경 할수 있지 않냐 라고 할 수 있는데 이것은 변수의 재할당이라고 할 수 없다. `sentence = "Hello";` 라는게 성립 되어야 재할당이 가능하다고 할 수 있다. 
+
+이렇게 클로저는 변수 또는 함수의 은닉화를 보장한다.
+
+
+
 # WEB
 
 ## 렌더링 과정에 대해 설명하라.
