@@ -44,7 +44,7 @@ const SkillCompo = () => {
             </SubItem>
             <SubItem>
               <TextDefault size="md" weight="light" lineHeight="md">
-                o Webpack / yarn / npm
+                o yarn / npm
               </TextDefault>
             </SubItem>
           </SubItems>
@@ -127,7 +127,7 @@ const SkillCompo = () => {
           <SubItems>
             <SubItem>
               <TextDefault size="md" weight="light" lineHeight="md">
-                o Github / SVN / Slack / Zeplin
+                o Github / Slack / Zeplin
               </TextDefault>
             </SubItem>
           </SubItems>
