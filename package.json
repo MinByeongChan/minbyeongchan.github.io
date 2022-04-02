@@ -1,85 +1,21 @@
 {
-  "name": "mbc-new-blog",
-  "version": "1.0.0",
-  "homepage": "https://MinByeongChan/minbyeongchan.github.io",
+  "name": "mbc-blog",
+  "private": true,
+  "version": "0.2.0",
   "scripts": {
-    "dev": "next",
-    "build": "next build && next export",
-    "start": "next start",
-    "build-stats": "ANALYZE=true npm run build",
-    "export": "next export -o dist",
-    "build-prod": "run-s clean build export",
-    "clean": "rimraf .next dist",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx ."
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@emotion/react": "^11.1.5",
-    "@emotion/styled": "^11.1.5",
-    "@fortawesome/fontawesome-svg-core": "^1.2.35",
-    "@fortawesome/free-brands-svg-icons": "^5.15.3",
-    "@fortawesome/free-solid-svg-icons": "^5.15.3",
-    "@fortawesome/react-fontawesome": "^0.1.14",
-    "@mapbox/rehype-prism": "^0.6.0",
-    "axios": "^0.21.1",
-    "date-fns": "^2.18.0",
-    "gray-matter": "^4.0.2",
-    "http-proxy-middleware": "^1.3.1",
-    "next": "^10.0.7",
-    "next-seo": "^4.20.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-redux": "^7.2.3",
-    "redux": "^4.0.5",
-    "redux-devtools-extension": "^2.13.9",
-    "redux-logger": "^3.0.6",
-    "redux-saga": "^1.1.3",
-    "rehype-stringify": "^8.0.0",
-    "remark-gfm": "^1.0.0",
-    "remark-parse": "^9.0.0",
-    "remark-rehype": "^8.0.0",
-    "styled-jsx-plugin-postcss": "^4.0.1",
-    "unified": "^9.2.1"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^10.0.7",
-    "@types/node": "^14.14.31",
-    "@types/react": "^17.0.2",
-    "@types/redux-logger": "^3.0.8",
-    "@typescript-eslint/eslint-plugin": "4.0.1",
-    "@typescript-eslint/eslint-plugin-tslint": "^4.20.0",
-    "@typescript-eslint/parser": "4.0.1",
-    "autoprefixer": "^10.2.4",
-    "eslint": "^7.21.0",
-    "eslint-config-airbnb-typescript": "^12.3.1",
-    "eslint-config-prettier": "^8.1.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-react": "^7.22.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "husky": "^4.3.8",
-    "lint-staged": "^10.5.4",
-    "npm-run-all": "^4.1.5",
-    "postcss": "^8.2.6",
-    "prettier": "^2.2.1",
-    "rimraf": "^3.0.2",
-    "tailwindcss": "^2.0.3",
-    "typescript": "^4.2.2"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "prettier --write",
-      "eslint --fix",
-      "eslint"
-    ],
-    "*.json": [
-      "prettier --write"
-    ]
-  },
-  "license": "ISC"
+    "@types/react": "^17.0.33",
+    "@types/react-dom": "^17.0.10",
+    "@vitejs/plugin-react": "^1.0.7",
+    "typescript": "^4.5.4",
+    "vite": "^2.9.0"
+  }
 }
