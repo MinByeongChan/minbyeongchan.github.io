@@ -15,10 +15,7 @@
 ## 2.	사용 기술
 
 ### Front-end
-- React.js, Next.js, Typescript, HTML5/CSS, emotion,
-
-### Back-end
-- Spring Boot, Hibernates(JPA), Mysql, AWS EC2, Java
+- React.js, Typescript, HTML5/CSS, emotion
 
 ## 3.	적용 기능
 -	포스트
