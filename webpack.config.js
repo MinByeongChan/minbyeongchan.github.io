@@ -38,6 +38,13 @@ module.exports = (env) => {
     },
     resolve: {
       extensions: ['.tsx', '.ts', '.js'],
+      alias: {
+        '@components': path.resolve(__dirname, './src/components'),
+        '@hooks': path.resolve(__dirname, './src/hooks'),
+        '@assets': path.resolve(__dirname, './src/assets'),
+        '@pages': path.resolve(__dirname, './src/pages'),
+        '@utils': path.resolve(__dirname, './src/utils'),
+      },
     },
     plugins: [
       new HtmlWebpackPlugin({

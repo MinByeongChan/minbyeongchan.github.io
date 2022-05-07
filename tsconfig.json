@@ -10,8 +10,19 @@
     "allowJs": true,
     "jsx": "react",
     "allowSyntheticDefaultImports": true,
-    "keyofStringsOnly": true
+    "keyofStringsOnly": true,
+    "baseUrl": ".",
+    "paths": {
+      "components/*": ["src/components/*"],
+      "assets/*": ["src/assets/*"],
+      "hooks/*": ["src/hooks/*"],
+      "modal/*": ["src/modal/*"],
+      "pages/*": ["src/pages/*"],
+      "store": ["src/store/index.ts"],
+      "store/*": ["src/store/*"],
+      "utils/*": ["src/utils/*"]
+    }
   },
-  "exclude": ["node_modules", "build"],
-  "include": ["src"]
+  "include": ["src", "src/**/*.tsx", "src/custom.d.ts"],
+  "exclude": ["node_modules", "build", "**/*.spec.ts"]
 }
