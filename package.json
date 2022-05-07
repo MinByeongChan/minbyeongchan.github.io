@@ -5,10 +5,10 @@
   "version": "0.2.0",
   "scripts": {
     "start": "dotenv -e .env.development webpack serve --open",
-    "build": "dotenv -e .env.production webpack --progress --mode=production",
+    "build": "dotenv -e .env.development webpack --progress",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-page -d build"
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "react": "^17.0.2",
@@ -19,6 +19,7 @@
     "@types/react-dom": "^17.0.10",
     "css-loader": "^6.7.1",
     "dotenv-cli": "^5.1.0",
+    "dotenv-webpack": "^7.1.0",
     "esbuild-loader": "^2.18.0",
     "gh-pages": "^3.2.3",
     "html-webpack-plugin": "^5.5.0",

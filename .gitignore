@@ -11,14 +11,16 @@
 
 # rollup.js default build output
 dist/
-
+/dist
+`
 # Temporary folders
 tmp/
 temp/
 
 node_modules
-/dist
 /build
+/package-lock.json
+package-lock.json
 
 
 # Log files
@@ -32,3 +34,4 @@ pnpm-debug.log*
 .vscode
 jsconfig.json
 
+.DS_Store
