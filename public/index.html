@@ -3,6 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href="{props.canonical}" key="canonical" />
+    <!-- <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ` { "description":
+    "${props.description ? props.description : Config.description}", "author": { "@type": "Person",
+    "name": "${Config.author}" }, "@type": "BlogPosting", "url":
+    "${Config.url}${process.env.baseUrl}${addTrailingSlash(router.asPath)}", "publisher": { "@type":
+    "Organization", "logo": { "@type": "ImageObject", "url":
+    "${Config.url}${process.env.baseUrl}/assets/images/logo.png" }, "name": "${Config.author}" },
+    "headline": "${props.title} | ${Config.site_name}", "image":
+    ["${Config.url}${process.env.baseUrl}${props.post.image}"], "datePublished": "${new
+    Date(props.post.date).toISOString()}", "dateModified": "${new
+    Date(props.post.modified_date).toISOString()}", "mainEntityOfPage": { "@type": "WebPage", "@id":
+    "${Config.url}${process.env.baseUrl}${addTrailingSlash(router.asPath)}" }, "@context":
+    "http://schema.org" }`, }} key="ldjson" /> -->
   </head>
   <body>
     <div id="root"></div>

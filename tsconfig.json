@@ -13,16 +13,17 @@
     "keyofStringsOnly": true,
     "baseUrl": ".",
     "paths": {
-      "components/*": ["src/components/*"],
-      "assets/*": ["src/assets/*"],
-      "hooks/*": ["src/hooks/*"],
-      "modal/*": ["src/modal/*"],
-      "pages/*": ["src/pages/*"],
-      "store": ["src/store/index.ts"],
-      "store/*": ["src/store/*"],
-      "utils/*": ["src/utils/*"]
+      "@components/*": ["src/components/*"],
+      "@assets/*": ["src/assets/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@modal/*": ["src/modal/*"],
+      "@pages/*": ["src/pages/*"],
+      "@store": ["src/store/index.ts"],
+      "@store/*": ["src/store/*"],
+      "@utils/*": ["src/utils/*"],
+      "@types": ["src/types/*"]
     }
   },
-  "include": ["src", "src/**/*.tsx", "src/custom.d.ts"],
+  "include": ["src", "src/**/*.tsx", "src/types/*.d.ts", "meta.js"],
   "exclude": ["node_modules", "build", "**/*.spec.ts"]
 }

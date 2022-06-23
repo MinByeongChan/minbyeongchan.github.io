@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const dotenv = require('dotenv');
 const webpack = require('webpack');
+const meta = require('./meta');
 
 module.exports = (env) => {
   dotenv.config();
@@ -13,6 +14,7 @@ module.exports = (env) => {
     output: {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'build'),
+      assetModuleFilename: 'assets/[hash][ext][query]',
       clean: true,
     },
     module: {
@@ -30,9 +32,49 @@ module.exports = (env) => {
           test: /\.css$/i,
           use: ['style-loader', 'css-loader'],
         },
+        // {
+        //   test: /\.(jpg|jpeg|gif|png|svg|ico)?$/,
+        //   use: [
+        //     {
+        //       loader: 'file-loader',
+        //       options: {
+        //         name: '[name].[ext]?[hash]',
+        //         outputPath: 'assets/',
+        //         publicPath: path.resolve(__dirname, './src/assets'),
+        //       },
+        //     },
+        //   ],
+        // },
+        {
+          test: /\.(jpg|jpeg|gif|png|ico)?$/,
+          use: [
+            {
+              loader: 'url-loader',
+              options: {
+                limit: 10000,
+                fallback: 'file-loader',
+                name: '[name].[ext]?[hash]',
+                outputPath: 'assets/',
+                publicPath: path.resolve(__dirname, './src/assets'),
+              },
+            },
+          ],
+          type: 'javascript/auto',
+        },
         {
           test: /\.(png|svg|jpg|jpeg|gif)$/i,
           type: 'asset/resource',
+          resourceQuery: /url/, // *.svg?url
+        },
+        {
+          test: /\.txt/,
+          type: 'asset',
+        },
+        {
+          test: /\.svg$/i,
+          issuer: /\.[jt]sx?$/,
+          resourceQuery: { not: [/url/] }, // exclude react component if *.svg?url
+          use: ['@svgr/webpack'],
         },
       ],
     },
@@ -47,10 +89,7 @@ module.exports = (env) => {
       },
     },
     plugins: [
-      new HtmlWebpackPlugin({
-        template: './public/index.html',
-        title: `MBC Dev Blog | 기술블로그 | ${ENV === 'developement' && '개발'}`,
-      }),
+      new HtmlWebpackPlugin({ ...meta }),
       new webpack.DefinePlugin({
         'process.env': JSON.stringify(process.env),
       }),
@@ -63,6 +102,7 @@ module.exports = (env) => {
       port: 3000,
       open: true,
       hot: true,
+      historyApiFallback: { index: '/', disableDotRule: true },
     },
     devtool: 'inline-source-map',
   };

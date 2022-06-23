@@ -1,12 +1,20 @@
+// dependency
 import React from 'react';
-import './App.css';
-import Header from './components/Header';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+// components
+import MainLayout from '@components/layout/MainLayout';
+import Portpolio from '@pages/Portpolio';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route path="portpolio" element={<Portpolio />} />
+        </Route>
+        <Route path="/*" element={<></>} />
+      </Routes>
+    </Router>
   );
 }
 
