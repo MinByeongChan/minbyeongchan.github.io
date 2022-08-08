@@ -1,11 +1,12 @@
 // dependency
 import React from 'react';
 import styled from '@emotion/styled';
-import { default as CheckIcon } from '@assets/check.svg';
+import { unitColor } from '@utils/StyleTheme';
+import CheckIcon from '@assets/check.svg';
+import myBlogImg from '@assets/myblog.png';
 
 // components
 import Text from '@components/atoms/Text';
-import { color } from '@utils/StyleTheme';
 
 const BlogCard = () => {
   return (
@@ -31,9 +32,6 @@ const BlogCard = () => {
               <br />
               React.js를 사용하여 웹페이지의 기본적인 틀을 구성하였습니다.
             </Text>
-          </div>
-          <div>
-            <img alt="ksta" src="/assets/ksta.png" />
           </div>
 
           <DescItems>
@@ -86,7 +84,7 @@ const CardItem = styled.div`
   background-position: 5% 100%;
   align-content: center;
   background-repeat: no-repeat;
-  background-image: url('/assets/images/portpolio/myblog.png');
+  background-image: url('${myBlogImg}');
 
   @media screen and (min-width: 0px) and (max-width: 768px) {
     min-height: 550px;
@@ -94,7 +92,7 @@ const CardItem = styled.div`
     background-size: 87%;
     background-position: top;
     align-content: flex-end;
-    background-image: url('/assets/images/portpolio/myblog.png');
+    background-image: url('${myBlogImg}');
   }
 `;
 const CardItemContent = styled.div`
@@ -108,7 +106,7 @@ const CardItemContent = styled.div`
     background-position: top;
     background-repeat: no-repeat;
     align-content: flex-end;
-    background-image: url('/assets/images/portpolio/myblog.png');
+    background-image: url('${myBlogImg}');
     background: linear-gradient(180deg, rgba(40, 35, 135, 0), #8e8e8e 12%, #8e8e8e);
   }
 `;
@@ -122,7 +120,7 @@ const DescItem = styled.li`
 `;
 const IconWrapper = styled.div`
   margin: 0 8px 0 0;
-  color: ${color.white};
+  color: ${unitColor.white};
   width: 16px;
   height: 16px;
 `;
