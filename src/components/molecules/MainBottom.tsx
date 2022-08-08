@@ -1,7 +1,7 @@
 // dependency
 import React from 'react';
 import styled from '@emotion/styled';
-import { color, fontSize, fontWeight } from '@utils/StyleTheme';
+import { unitColor, fontSize, fontWeight } from '@utils/StyleTheme';
 import GithubIcon from '@assets/github.svg';
 import MailIcon from '@assets/envelope.svg';
 import PhoneIcon from '@assets/phone.svg';
@@ -40,11 +40,11 @@ const MainBottom = () => {
 };
 
 const BottomWrapper = styled.footer`
-  background-color: ${color.black};
+  background-color: ${unitColor.black};
   padding: 60px 30px;
-  color: ${color.white};
+  color: ${unitColor.white};
   a {
-    color: ${color.orange};
+    color: ${unitColor.orange};
     font-weight: ${fontWeight.bold};
   }
   @media screen and (min-width: 0px) and (max-width: 480px) {
@@ -87,7 +87,7 @@ const BottomContentMid = styled.div`
   img {
     width: 24px;
     height: 24px;
-    color: ${color.white};
+    color: ${unitColor.white};
   }
 `;
 
