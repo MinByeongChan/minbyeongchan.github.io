@@ -58,7 +58,7 @@ export default function PostDetailContent(props: IPostDetailContent) {
         <div className="content" dangerouslySetInnerHTML={{ __html: htmlContent }} />
       </PostContainer>
 
-      <Utterances repo="MinByeongChan/mbc-devBlog" theme="github-light" />
+      <Utterances repo="MinByeongChan/minbyeongchan.github.io" theme="github-light" />
     </div>
   );
 }
