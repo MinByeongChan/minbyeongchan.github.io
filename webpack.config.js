@@ -72,12 +72,6 @@ module.exports = () => {
           type: 'asset',
         },
         {
-          test: /\.svg$/i,
-          issuer: /\.[jt]sx?$/,
-          resourceQuery: { not: [/url/] }, // exclude react component if *.svg?url
-          use: ['@svgr/webpack'],
-        },
-        {
           // url-loadaer role
           test: /\.(jpg|jpeg|gif|png|ico|md)$/i,
           type: 'asset/inline',

@@ -1,7 +1,6 @@
 // dependency
 import React from 'react';
 import styled from '@emotion/styled';
-import profileCircleImg from '@assets/profile_circle_img.png';
 
 // components
 import Text from '@components/atoms/Text';
@@ -59,7 +58,7 @@ export default function IntroCard() {
         </IntroItem>
       </IntroItems>
 
-      <ProfileImg alt="" src={profileCircleImg} />
+      <ProfileImg alt="" src="/assets/profile_circle_img.png" />
     </IntroWrapper>
   );
 }

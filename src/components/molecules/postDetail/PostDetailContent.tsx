@@ -9,7 +9,6 @@ import styled from '@emotion/styled';
 import { IPostsAtom } from '@store/posts';
 import { fontSize, unitColor } from '@utils/StyleTheme';
 import { Config } from '@utils/Config';
-import MBCIconPng from '@assets/mbc_img.png';
 
 // components
 import Text from '@components/atoms/Text';
@@ -48,7 +47,7 @@ export default function PostDetailContent(props: IPostDetailContent) {
       </TitleContainer>
       <SubTitleContainer>
         <a href={String(Config.url)}>
-          <MBCIcon src={MBCIconPng} />
+          <MBCIcon src="/assets/mbc_img.png" />
         </a>
         <Text className="author-name" size="md" color={unitColor.darkBlack} weight="bold">
           {String(Config.author)}
@@ -59,7 +58,7 @@ export default function PostDetailContent(props: IPostDetailContent) {
         <div className="content" dangerouslySetInnerHTML={{ __html: htmlContent }} />
       </PostContainer>
 
-      <Utterances repo="MinByeongChan/mbc-devBlog" theme="github-light" />
+      <Utterances repo="MinByeongChan/minbyeongchan.github.io" theme="github-light" />
     </div>
   );
 }

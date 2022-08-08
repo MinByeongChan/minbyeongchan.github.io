@@ -2,7 +2,7 @@ export interface IStyleOptions {
   [key: string]: string;
 }
 
-export const color: IStyleOptions = {
+export const unitColor: IStyleOptions = {
   red: '#ff0000',
   fuchsia: '#ff009f',
   deeppink: '#ff1493',
