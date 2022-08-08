@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from '@emotion/styled';
-import { color, fontSize, fontWeight } from '@utils/StyleTheme';
+import { unitColor, fontSize, fontWeight } from '@utils/StyleTheme';
 
 const Nav = () => (
   <NavLayout>
@@ -41,9 +41,9 @@ const NavLayout = styled.nav(() => ({
   top: '0',
   width: '100%',
   height: '67px',
-  borderBottom: `1px solid ${color.darkWhite}`,
+  borderBottom: `1px solid ${unitColor.darkWhite}`,
   boxShadow: '0 0 9px 3px rgb(41 41 41 / 25%)',
-  backgroundColor: `${color.white}`,
+  backgroundColor: `${unitColor.white}`,
   opacity: '0.9',
 }));
 
@@ -71,7 +71,7 @@ const NavLi = styled.li(() => ({
     bottom: '0',
     width: '100%',
     height: '0px',
-    backgroundColor: color.darkslategray,
+    backgroundColor: unitColor.darkslategray,
     transition: '0.1s linear',
   },
   ':hover span': {
