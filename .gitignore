@@ -20,7 +20,6 @@ temp/
 node_modules
 /build
 /package-lock.json
-package-lock.json
 
 
 # Log files
@@ -35,3 +34,5 @@ pnpm-debug.log*
 jsconfig.json
 
 .DS_Store
+
+package-lock.json

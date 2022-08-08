@@ -1,10 +1,15 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const dotenv = require('dotenv');
 const webpack = require('webpack');
 const meta = require('./meta');
+const getPost = require('./config/post.js');
 
-module.exports = (env) => {
+// posts fs 가져오기
+getPost();
+
+module.exports = () => {
   dotenv.config();
   const { ENV } = process.env;
 
@@ -14,23 +19,19 @@ module.exports = (env) => {
     output: {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'build'),
-      assetModuleFilename: 'assets/[hash][ext][query]',
+      assetModuleFilename: 'images/[hash][ext][query]',
       clean: true,
     },
     module: {
       rules: [
         {
           test: /\.(ts|tsx)$/,
-          loader: 'esbuild-loader',
-          options: {
-            loader: 'tsx',
-            target: 'es2015',
-          },
+          use: 'ts-loader',
           exclude: /node_modules/,
         },
         {
-          test: /\.css$/i,
-          use: ['style-loader', 'css-loader'],
+          test: /\.s[ac]ss$/i,
+          use: ['style-loader', 'css-loader', 'sass-loader'],
         },
         // {
         //   test: /\.(jpg|jpeg|gif|png|svg|ico)?$/,
@@ -62,7 +63,7 @@ module.exports = (env) => {
           type: 'javascript/auto',
         },
         {
-          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          test: /\.(jpg|jpeg|gif|png|ico)$/i,
           type: 'asset/resource',
           resourceQuery: /url/, // *.svg?url
         },
@@ -76,6 +77,24 @@ module.exports = (env) => {
           resourceQuery: { not: [/url/] }, // exclude react component if *.svg?url
           use: ['@svgr/webpack'],
         },
+        {
+          // url-loadaer role
+          test: /\.(jpg|jpeg|gif|png|ico|md)$/i,
+          type: 'asset/inline',
+        },
+        {
+          test: /\.svg$/i,
+          issuer: /\.[jt]sx?$/,
+          use: ['@svgr/webpack'],
+        },
+        {
+          test: /\.(txt|json)/,
+          type: 'asset/source',
+        },
+        {
+          test: /\.(woff(2)?|eot|ttf|otf|)$/,
+          type: 'asset/inline',
+        },
       ],
     },
     resolve: {
@@ -84,6 +103,7 @@ module.exports = (env) => {
         '@components': path.resolve(__dirname, './src/components'),
         '@hooks': path.resolve(__dirname, './src/hooks'),
         '@assets': path.resolve(__dirname, './src/assets'),
+        '@store': path.resolve(__dirname, './src/store'),
         '@pages': path.resolve(__dirname, './src/pages'),
         '@utils': path.resolve(__dirname, './src/utils'),
       },
@@ -92,6 +112,22 @@ module.exports = (env) => {
       new HtmlWebpackPlugin({ ...meta }),
       new webpack.DefinePlugin({
         'process.env': JSON.stringify(process.env),
+      }),
+      new CopyPlugin({
+        patterns: [
+          {
+            from: path.resolve(__dirname, './public/assets'),
+            to: path.resolve(__dirname, './build/assets'),
+          },
+          {
+            from: path.resolve(__dirname, './_posts'),
+            to: path.resolve(__dirname, './build/posts'),
+          },
+          {
+            from: path.resolve(__dirname, './fonts'),
+            to: path.resolve(__dirname, './build/fonts'),
+          },
+        ],
       }),
     ],
     optimization: {

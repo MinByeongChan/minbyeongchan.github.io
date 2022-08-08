@@ -11,6 +11,8 @@
     "jsx": "react",
     "allowSyntheticDefaultImports": true,
     "keyofStringsOnly": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
@@ -18,7 +20,6 @@
       "@hooks/*": ["src/hooks/*"],
       "@modal/*": ["src/modal/*"],
       "@pages/*": ["src/pages/*"],
-      "@store": ["src/store/index.ts"],
       "@store/*": ["src/store/*"],
       "@utils/*": ["src/utils/*"],
       "@types": ["src/types/*"]
