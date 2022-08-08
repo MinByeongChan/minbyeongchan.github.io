@@ -1,24 +1,10 @@
 import styled from '@emotion/styled';
 import React, { ReactNode } from 'react';
-import { color as fontColor, fontSize, fontWeight, lineHeight as lh } from '@utils/StyleTheme';
-
-const Text = (props: IText) => {
-  const { children, size, color, weight, lineHeight, letterSpacing } = props;
-
-  return (
-    <TextWrapper
-      size={size ? fontSize[`${size}`] : fontSize[`${fontSize.md}`]}
-      color={color ? fontColor[`${color}`] : ''}
-      weight={weight ? fontWeight[`${weight}`] : fontWeight[`${fontWeight.normal}`]}
-      lineHeight={lineHeight ? lh[`${lineHeight}`] : lh[`${lh.md}`]}
-      letterSpacing={letterSpacing}
-    >
-      {children}
-    </TextWrapper>
-  );
-};
+import { unitColor as fontColor, fontSize, fontWeight, lineHeight as lh } from '@utils/StyleTheme';
 
 interface IText {
+  className?: string;
+  tagName?: 'h1' | 'h2' | 'h3' | 'pre' | 'span' | 'p';
   size?: string;
   color?: string;
   weight?: string;
@@ -27,30 +13,83 @@ interface IText {
   children?: ReactNode;
 }
 
-const TextWrapper = styled.span`
-  font-size: ${(props: IText) => props.size};
-  color: ${(props: IText) => props.color};
-  font-weight: ${(props: IText) => props.weight};
-  line-height: ${(props: IText) => props.lineHeight};
-  letter-spacing: ${(props: IText) => props.letterSpacing}px;
+const Text = (props: IText) => {
+  const { tagName = 'span', children } = props;
 
-  @media (min-width: 500px) and (max-width: 820px) {
-    font-size: ${(props: IText) =>
-      (props.size === 'h1' && fontSize.xxg) ||
-      (props.size === 'xxg' && fontSize.xg) ||
-      (props.size === 'xg' && fontSize.lg) ||
-      (props.size === 'lg' && fontSize.lg) ||
-      (props.size === 'md' && fontSize.md)};
-  }
-  @media (min-width: 0px) and (max-width: 499px) {
-    font-size: ${(props: IText) =>
-      (props.size === 'h1' && fontSize.xxg) ||
-      (props.size === 'xxg' && fontSize.xg) ||
-      (props.size === 'xg' && fontSize.lg) ||
-      (props.size === 'lg' && fontSize.md) ||
-      (props.size === 'md' && fontSize.sm) ||
-      (props.size === 'sm' && fontSize.xs)};
-  } ;
-`;
+  const renderByTagName = () => {
+    switch (tagName) {
+      case 'h1':
+        return <H1 {...props}>{children}</H1>;
+      case 'h2':
+        return <H2 {...props}>{children}</H2>;
+      case 'h3':
+        return <H3 {...props}>{children}</H3>;
+      case 'pre':
+        return <Pre {...props}>{children}</Pre>;
+      case 'p':
+        return <P {...props}>{children}</P>;
+      case 'span':
+        return <Span {...props}>{children}</Span>;
+      default:
+        return <Span {...props}>{children}</Span>;
+    }
+  };
+
+  return renderByTagName();
+};
+
+const getStyledByProps = ({ size, weight, lineHeight, color, letterSpacing }: IText) => ({
+  fontSize: fontSize[size],
+  fontWeight: fontWeight[weight] as string,
+  lineHeight: lh[lineHeight] as string,
+  color,
+  letterSpacing,
+});
+
+const H1 = styled.h1(
+  {
+    fontSize: fontSize.h1,
+    color: fontColor.black,
+    margin: 0,
+  },
+  getStyledByProps,
+);
+const H2 = styled.h2(
+  {
+    fontSize: fontSize.h2,
+    color: fontColor.black,
+    margin: 0,
+  },
+  getStyledByProps,
+);
+const H3 = styled.h3(
+  {
+    fontSize: fontSize.h3,
+    color: fontColor.black,
+    margin: 0,
+  },
+  getStyledByProps,
+);
+const Pre = styled.pre(
+  {
+    fontSize: fontSize.md,
+    color: fontColor.black,
+  },
+  getStyledByProps,
+);
+const P = styled.p(
+  {
+    fontSize: fontSize.md,
+    color: fontColor.black,
+  },
+  getStyledByProps,
+);
+const Span = styled.span(
+  {
+    fontSize: fontSize.md,
+    color: fontColor.black,
+  },
+  getStyledByProps,
+);
 
 export default Text;
