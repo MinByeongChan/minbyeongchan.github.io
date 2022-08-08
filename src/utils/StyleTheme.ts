@@ -27,7 +27,7 @@ export const color: IStyleOptions = {
   orange: 'rgb(255,90,0)',
 };
 
-export const fontSize: IStyleOptions = {
+export const fontSize = {
   xxs: '10px',
   xs: '12px',
   sm: '14px',
@@ -41,14 +41,14 @@ export const fontSize: IStyleOptions = {
   h1: '52px',
 };
 
-export const fontWeight: IStyleOptions = {
+export const fontWeight = {
   light: '300',
   medium: '500',
   normal: '600',
   bold: '800',
 };
 
-export const lineHeight: IStyleOptions = {
+export const lineHeight = {
   md: '30px',
   lg: '35px',
   xg: '40px',
