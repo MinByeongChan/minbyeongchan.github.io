@@ -27,11 +27,11 @@ export default function PostCard(props: IPostCard) {
     return `${year}.${month}.${day}`;
   };
 
-  const getPathName = () => fileName.substring(0, fileName.length - 3);
+  const getPathName = () => fileName.replace('.md', '');
 
   return (
     <PostCardItem>
-      <Link to={`/${getPathName()}`}>
+      <Link to={`/posts/detail?id=${getPathName()}`}>
         <CardTitle>{title}</CardTitle>
       </Link>
       <CardAuthor>

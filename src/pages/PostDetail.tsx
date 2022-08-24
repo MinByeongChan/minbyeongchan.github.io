@@ -1,28 +1,39 @@
 // dependency
 import React, { useEffect, useMemo, useState } from 'react';
 import styled from '@emotion/styled';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useAtom } from 'jotai';
 import { getMarkdown } from '@utils/Markdown';
 import { IPostsAtom, postsAtom } from '@store/posts';
+import useScrollTop from '@hooks/useScrollTop';
+import { getQueryString } from '@utils/Utility';
 
 // components
 import PostDetailContent from '@components/molecules/postDetail/PostDetailContent';
-import useScrollTop from '@hooks/useScrollTop';
+
+// interfaces
+type IPostDetailQueryString = {
+  id?: string;
+};
 
 export default function PostDetail() {
-  const params = useParams();
+  // const params = useParams();
+  const { search } = useLocation();
+  const queryString: IPostDetailQueryString = getQueryString(location.search);
   const [posts] = useAtom(postsAtom);
   const [post, setPost] = useState<IPostsAtom>();
   const [htmlContent, setHtmlContent] = useState<string>('');
 
   const navigate = useNavigate();
 
+  if (!queryString?.id) {
+    navigate('/error', { replace: true });
+  }
   // 스크롤 상단 위치
   useScrollTop();
 
-  const mdName = useMemo(() => `${params.id}.md`, [params]);
+  const mdName = useMemo(() => decodeURIComponent(`${queryString?.id}.md`), [queryString]);
 
   const initPost = () => {
     const filteredPostContentIndex = posts.findIndex((instance) => instance.fileName === mdName);
@@ -45,7 +56,7 @@ export default function PostDetail() {
       }
       if (start && !end && barValidate(html, i)) {
         end = true;
-        pivot = i + 2;
+        pivot = i + 3;
         break;
       }
     }
@@ -54,7 +65,13 @@ export default function PostDetail() {
   };
 
   const getPostContent = async () => {
-    const response = await axios.get(`/posts/${mdName}`, { responseType: 'text' });
+    const url = `/posts/${mdName}`;
+    const response = await axios.get(url, {
+      headers: {
+        'Content-Type': 'charset=utf-8',
+      },
+      responseType: 'text',
+    });
 
     try {
       if (response.status !== 200) {
@@ -65,7 +82,8 @@ export default function PostDetail() {
       const { data } = response;
 
       const filteredContent = filterMetaData(data);
-      const mdText = getMarkdown(filteredContent).substring(21);
+      const mdText = getMarkdown(filteredContent);
+
       setHtmlContent(mdText);
     } catch (error) {
       console.error('error', error);
