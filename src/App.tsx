@@ -24,7 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route path="/" element={<Posts />} />
-            <Route path="/:id" element={<PostDetail />} />
+            <Route path="/posts/detail" element={<PostDetail />} />
             <Route path="/tags" element={<Tags />} />
             <Route path="/portpolio" element={<Portpolio />} />
             <Route path="/about" element={<About />} />

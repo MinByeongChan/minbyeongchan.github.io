@@ -1,3 +1,7 @@
+type IQueryString = {
+  [key: string]: string;
+};
+
 // Date 변환
 export const getDateFormat = (value: string): string => {
   const d = new Date(value);
@@ -13,4 +17,17 @@ export const getDateFormat = (value: string): string => {
   }
 
   return year + month + day;
+};
+
+export const getQueryString = (search: string) => {
+  const queryString = search.substring(1);
+  let queryInstance: IQueryString = {};
+
+  queryString.split('&').forEach((query) => {
+    const key = query.split('=')[0];
+    const value = query.split('=')[1];
+    queryInstance[key] = decodeURIComponent(value);
+  });
+
+  return queryInstance;
 };
