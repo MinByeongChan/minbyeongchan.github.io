@@ -4,6 +4,8 @@ import styled from '@emotion/styled';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useAtom } from 'jotai';
+import { getDownloadURL, getStorage, ref } from 'firebase/storage';
+import { getApp } from 'firebase/app';
 import { getMarkdown } from '@utils/Markdown';
 import { IPostsAtom, postsAtom } from '@store/posts';
 import useScrollTop from '@hooks/useScrollTop';
@@ -11,6 +13,7 @@ import { getQueryString } from '@utils/Utility';
 
 // components
 import PostDetailContent from '@components/molecules/postDetail/PostDetailContent';
+import Loading from '@components/molecules/Loading';
 
 // interfaces
 type IPostDetailQueryString = {
@@ -22,7 +25,7 @@ export default function PostDetail() {
   const { search } = useLocation();
   const queryString: IPostDetailQueryString = getQueryString(location.search);
   const [posts] = useAtom(postsAtom);
-  const [post, setPost] = useState<IPostsAtom>();
+  const [post, setPost] = useState<IPostsAtom | undefined>();
   const [htmlContent, setHtmlContent] = useState<string>('');
 
   const navigate = useNavigate();
@@ -33,10 +36,12 @@ export default function PostDetail() {
   // 스크롤 상단 위치
   useScrollTop();
 
-  const mdName = useMemo(() => decodeURIComponent(`${queryString?.id}.md`), [queryString]);
+  const mdName = useMemo(() => decodeURIComponent(`${queryString?.id}`), [queryString]);
 
   const initPost = () => {
-    const filteredPostContentIndex = posts.findIndex((instance) => instance.fileName === mdName);
+    const filteredPostContentIndex = posts.findIndex(
+      ({ fileName }) => fileName.replace('.md', '') === mdName,
+    );
     setPost(posts[filteredPostContentIndex]);
   };
 
@@ -65,45 +70,48 @@ export default function PostDetail() {
   };
 
   const getPostContent = async () => {
-    const url = `/posts/${mdName}`;
-    const response = await axios.get(url, {
-      headers: {
-        'Content-Type': 'charset=utf-8',
-      },
-      responseType: 'text',
-    });
+    const storage = getStorage(getApp());
+    const pathReference = ref(storage, `posts/${mdName}.md`);
+
+    const url = await getDownloadURL(pathReference);
 
     try {
-      if (response.status !== 200) {
-        navigate('/error');
-        return;
+      const response = await axios.get(url);
+
+      if (response.status === 200) {
+        const { data } = response;
+
+        const filteredContent = filterMetaData(data);
+        const mdText = getMarkdown(filteredContent);
+        setHtmlContent(mdText);
+      } else {
+        navigate('/error', { replace: true });
+        throw new Error('Network error');
       }
-
-      const { data } = response;
-
-      const filteredContent = filterMetaData(data);
-      const mdText = getMarkdown(filteredContent);
-
-      setHtmlContent(mdText);
     } catch (error) {
-      console.error('error', error);
+      navigate('/error', { replace: true });
+      console.error(error);
     }
   };
 
   useEffect(() => {
     if (posts.length === 0) return;
-    initPost();
     getPostContent();
+    initPost();
   }, [posts]);
 
   return (
-    <Layout>
-      <ContentLayout>
-        {post && htmlContent.length !== 0 && (
-          <PostDetailContent post={post} htmlContent={htmlContent} />
-        )}
-      </ContentLayout>
-    </Layout>
+    <>
+      {htmlContent.length === 0 && <Loading />}
+
+      <Layout>
+        <ContentLayout>
+          {post && htmlContent.length !== 0 && (
+            <PostDetailContent post={post} htmlContent={htmlContent} />
+          )}
+        </ContentLayout>
+      </Layout>
+    </>
   );
 }
 
