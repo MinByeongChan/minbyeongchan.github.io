@@ -24,13 +24,13 @@ function App() {
         <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route path="/" element={<Posts />} />
-            <Route path="/posts/detail" element={<PostDetail />} />
+            <Route path="/content" element={<PostDetail />} />
             <Route path="/tags" element={<Tags />} />
             <Route path="/portpolio" element={<Portpolio />} />
             <Route path="/about" element={<About />} />
           </Route>
           <Route path="/error" element={<Error />} />
-          <Route path="/*" element={<NotFound />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </React.Suspense>

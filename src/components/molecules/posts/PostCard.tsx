@@ -31,7 +31,7 @@ export default function PostCard(props: IPostCard) {
 
   return (
     <PostCardItem>
-      <Link to={`/posts/detail?id=${getPathName()}`}>
+      <Link to={`/content?id=${getPathName()}`}>
         <CardTitle>{title}</CardTitle>
       </Link>
       <CardAuthor>
