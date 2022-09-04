@@ -114,6 +114,10 @@ module.exports = () => {
             to: path.resolve(__dirname, './build/assets'),
           },
           {
+            from: path.resolve(__dirname, './public/404.html'),
+            to: path.resolve(__dirname, './build/'),
+          },
+          {
             from: path.resolve(__dirname, './_posts'),
             to: path.resolve(__dirname, './build/posts'),
           },
