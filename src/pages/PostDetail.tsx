@@ -21,22 +21,22 @@ type IPostDetailQueryString = {
 };
 
 export default function PostDetail() {
-  // const params = useParams();
   const { search } = useLocation();
-  const queryString: IPostDetailQueryString = getQueryString(location.search);
+  const { id }: IPostDetailQueryString = getQueryString(search);
   const [posts] = useAtom(postsAtom);
   const [post, setPost] = useState<IPostsAtom | undefined>();
   const [htmlContent, setHtmlContent] = useState<string>('');
 
   const navigate = useNavigate();
 
-  if (!queryString?.id) {
-    navigate('/error', { replace: true });
-  }
   // 스크롤 상단 위치
   useScrollTop();
 
-  const mdName = useMemo(() => decodeURIComponent(`${queryString?.id}`), [queryString]);
+  if (!id) {
+    navigate('/error', { replace: true });
+  }
+
+  const mdName = useMemo(() => decodeURIComponent(`${id}`), [id]);
 
   const initPost = () => {
     const filteredPostContentIndex = posts.findIndex(
